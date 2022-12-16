@@ -2,7 +2,7 @@
             <div class="card">
               <div class="card-header">
                 <!-- <h3 class="card-title">TABLE <?=$titlepage?></h3> -->
-                <a class="btn btn-danger" href="<?=base_url("akunbank/add")?>">Tambah</a>
+                <a class="btn btn-danger" href="<?=base_url("transaksi/add/".$dataresult->project_id)?>">Tambah</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -10,27 +10,27 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>akunbankCode</th>
-                      <th>total_akunbank</th>
-                      <th>taggal_peminjaman</th>
-                      <th>saldo_sekarang</th>
-                      <th>bungabank</th>
-                      <th>bungapartner</th>
+                      <th>akunbank_transaksiCode</th>
+                      <th>transaksiNote</th>
+                      <th>transaksiDate</th>
+                      <th>transaksiJumlah</th>
+                      <th>akunBankCode</th>
+                      <th>statusTransaksi</th>
                       <th>MODE</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php
-                    foreach ($dataresult as $key => $value) { 
+                    foreach ($datatable as $key => $value) { 
                     ?>
                     <tr class="odd">
-                      <td class="sorting_1 dtr-control"><?=$value["akunbankCode"]?></td>
-                      <td><?=$value["total_akunbank"]?></td>
-                      <td><?=$value["taggal_peminjaman"]?></td>
-                      <td><?=$value["saldo_sekarang"]?></td>
-                      <td><?=$value["bungabank"]?></td>
-                      <td><?=$value["bungapartner"]?></td>
-                      <td><a href="<?=base_url("akunbank/delete/".$value["akunbankCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
+                      <td class="sorting_1 dtr-control"><?=$value["akunbank_transaksiCode"]?></td>
+                      <td><?=$value["transaksiNote"]?></td>
+                      <td><?=$value["transaksiDate"]?></td>
+                      <td><?=$value["transaksiJumlah"]?></td>
+                      <td><?=$value["akunBankCode"]?></td>
+                      <td><?=$value["statusTransaksi"]?></td>
+                      <td><a href="<?=base_url("transaksi/delete/".$value["akunbank_transaksiCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
                     </tr>
                   <?php
                      }

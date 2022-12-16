@@ -44,7 +44,7 @@
                     </td>
                     <td><?=$value["project_status"]?></td>
                     <td>
-                      <a href="#" class="text-muted">
+                      <a href="<?=base_url("project/detail/".$value["project_id"])?>"  class="text-muted">
                         <i class="fas fa-search"></i>
                       </a>
                     </td>

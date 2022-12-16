@@ -7,7 +7,10 @@ class Project extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('project_model');
+			
+			$this->load->model('log_project_model');
 			$this->load->model('job_model');
+			$this->load->helper(array('form', 'url','directory'));
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
 			}
@@ -41,5 +44,26 @@ class Project extends CI_Controller {
             redirect('/project', 'refresh');
 		
 		}
+	}
+	public function detail($id){
+        $data["dataresult"] = $this->project_model->viewSinggle($id);
+		$data["logproject"] = $this->log_project_model->getlogproject($id);
+        $data["datajob"] = $this->job_model->view();
+		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+		//membaca file upload
+		// $file =  '../assets/'.$id;
+		//serverdir
+		
+		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
+
+		//local dir
+		$file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
+        $map = directory_map($file, false , true);
+        // $map = directory_map($file, 1);
+		// $map = scandir($file);
+		$data["map"] =  $map;
+		$this->load->view('template/header' , $data);
+		$this->load->view('projectpart/detail' , $data);
+		$this->load->view('template/footer');
 	}
 }

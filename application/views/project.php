@@ -27,7 +27,7 @@
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
                       <td><?=$value["project_note"]?></td>
-                      <td><a class="btn btn-success"><i class="fas fa-search fa-fw"></i></a> | <a href="<?=base_url("project/setting/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-money-bill"></i></a></td>
+                      <td><a href="<?=base_url("project/detail/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-search fa-fw"></i></a> | <a href="<?=base_url("project/setting/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-money-bill"></i></a> | <a href="<?=base_url("transaksi/setting/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-money-bill"></i></a></td>
                     </tr>
                   <?php
                      }
