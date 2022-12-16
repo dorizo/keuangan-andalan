@@ -7,6 +7,7 @@ class Project extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('project_model');
+			$this->load->model('akunbankTransaksi_model');
 			
 			$this->load->model('log_project_model');
 			$this->load->model('job_model');
@@ -48,19 +49,13 @@ class Project extends CI_Controller {
 	public function detail($id){
         $data["dataresult"] = $this->project_model->viewSinggle($id);
 		$data["logproject"] = $this->log_project_model->getlogproject($id);
+		$data["sumproject"] = $this->akunbankTransaksi_model->sumproject($id);
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
-		//membaca file upload
-		// $file =  '../assets/'.$id;
-		//serverdir
-		
 		$file =  $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
-
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
         $map = directory_map($file, false , true);
-        // $map = directory_map($file, 1);
-		// $map = scandir($file);
 		$data["map"] =  $map;
 		$this->load->view('template/header' , $data);
 		$this->load->view('projectpart/detail' , $data);

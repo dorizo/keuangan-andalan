@@ -10,6 +10,13 @@ class akunbankTransaksi_model extends CI_Model {
             $db = $this->db->get("akunbank_transaksi");
             return $db->result_array();
         }
+        
+        public function sumproject($id){
+            $this->db->select_sum('transaksiJumlah');
+            $this->db->where("project_id" , $id);
+            $db = $this->db->get("akunbank_transaksi");
+            return $db->row();
+        }
         public function viewsingle($kode){
             $this->db->where("akunbank_transaksiCode" , $kode);
             $db = $this->db->get("akunbank_transaksi");
