@@ -54,7 +54,7 @@ class Project extends CI_Controller {
 		// $file =  '../assets/'.$id;
 		//serverdir
 		
-		$file =  $_SERVER["DOCUMENT_ROOT"]."/api/assets/".$id."/";
+		$file =  $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
 
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
