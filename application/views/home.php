@@ -1,7 +1,7 @@
 <div class="col-lg-12">
 <div class="card">
               <div class="card-header border-0">
-                <h3 class="card-title">Products</h3>
+                <h3 class="card-title">Status Project </h3>
                 <div class="card-tools">
                   <a href="#" class="btn btn-tool btn-sm">
                     <i class="fas fa-download"></i>
@@ -15,33 +15,45 @@
                 <table class="table table-striped table-valign-middle">
                   <thead>
                   <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Sales</th>
-                    <th>More</th>
+                    <th>Project</th>
+                    <th>Estimasi Project Selesai</th>
+                    <th>Kewajiban Bunga</th>
+                    <th>Project Status</th>
+                    <th>Detail</th>
                   </tr>
                   </thead>
                   <tbody>
+                    <?php
+                    foreach ($dataresult as $key => $value) {
+                      $now = time(); // or your date as well
+                      $your_date = strtotime($value["project_done"]);
+                      $datediff = $your_date - $now;
+                    ?>
                   <tr>
                     <td>
-                      <img src="<?=base_url()?>asset/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
-                      Some Product
+                      <?=$value["cat_name"]?><br />
+                      <?=$value["project_code"]?>
                     </td>
-                    <td>$13 USD</td>
                     <td>
-                      <small class="text-success mr-1">
-                        <i class="fas fa-arrow-up"></i>
-                        12%
-                      </small>
-                      12,000 Sold
+                      tgl estimasi : <?=$value["project_done"]?><br />
+                      tgl berjalan : <?=round($datediff / (60 * 60 * 24));?>
                     </td>
+                    <td>
+                      Nilai Project : <?=rupiah($value["nilai_project"])?><br />
+                      
+                    </td>
+                    <td><?=$value["project_status"]?></td>
                     <td>
                       <a href="#" class="text-muted">
                         <i class="fas fa-search"></i>
                       </a>
                     </td>
                   </tr>
-                  <tr>
+                  <?php
+                     # code...
+                    }
+                  ?>
+                  <!-- <tr>
                     <td>
                       <img src="<?=base_url()?>asset/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
                       Another Product
@@ -98,7 +110,7 @@
                         <i class="fas fa-search"></i>
                       </a>
                     </td>
-                  </tr>
+                  </tr> -->
                   </tbody>
                 </table>
               </div>

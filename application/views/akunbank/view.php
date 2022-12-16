@@ -2,6 +2,7 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">TABLE <?=$titlepage?></h3>
+                <a class="btn btn-danger" href="<?=base_url("akunbank/add")?>">Tambah</a>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -9,11 +10,12 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>PROJECT ID LOCAL</th>
-                      <th>PROJECT CODE</th>
-                      <th>PROJECT STATUS</th>
-                      <th>ESTIMASI PROJECT DONE</th>
-                      <th>CATATAN PROJECT</th>
+                      <th>akunbankCode</th>
+                      <th>total_akunbank</th>
+                      <th>taggal_peminjaman</th>
+                      <th>saldo_sekarang</th>
+                      <th>bungabank</th>
+                      <th>bungapartner</th>
                       <th>MODE</th>
                     </tr>
                   </thead>
@@ -22,12 +24,13 @@
                     foreach ($dataresult as $key => $value) { 
                     ?>
                     <tr class="odd">
-                      <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
-                      <td><?=$value["project_code"]?></td>
-                      <td><?=$value["project_status"]?></td>
-                      <td><?=$value["project_done"]?></td>
-                      <td><?=$value["project_note"]?></td>
-                      <td><a class="btn btn-success"><i class="fas fa-search fa-fw"></i></a> | <a href="<?=base_url("project/setting/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-money-bill"></i></a></td>
+                      <td class="sorting_1 dtr-control"><?=$value["akunbankCode"]?></td>
+                      <td><?=$value["total_akunbank"]?></td>
+                      <td><?=$value["taggal_peminjaman"]?></td>
+                      <td><?=$value["saldo_sekarang"]?></td>
+                      <td><?=$value["bungabank"]?></td>
+                      <td><?=$value["bungapartner"]?></td>
+                      <td><a href="<?=base_url("akunbank/delete/".$value["akunbankCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
                     </tr>
                   <?php
                      }
@@ -35,11 +38,13 @@
 
                 </tbody>
                  <tfoot>
-                  <tr>
-                     <th>PROJECT ID</th>
-                      <th>PROJECT NAME</th>
-                      <th>PROJECT STATUS</th>
-                      <th>ESTIMASI PROJECT DONE</th>
+                    <tr>
+                      <th>akunbankCode</th>
+                      <th>total_akunbank</th>
+                      <th>taggal_peminjaman</th>
+                      <th>saldo_sekarang</th>
+                      <th>bungabank</th>
+                      <th>bungapartner</th>
                       <th>MODE</th>
                     </tr>
                  </tfoot>

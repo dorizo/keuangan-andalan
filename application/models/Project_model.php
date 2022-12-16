@@ -6,7 +6,21 @@ class Project_model extends CI_Model {
                 $this->load->database();
         }
         public function view(){
+                $this->db->join("project_cat" , "project.cat_id=project_cat.cat_id");
             $db = $this->db->get("project");
             return $db->result_array();
+        }
+
+        public function viewSinggle($a){
+                
+        $this->db->where("project_id", $a);
+        $this->db->join("project_cat" , "project.cat_id=project_cat.cat_id");
+        $db = $this->db->get("project");
+        return $db->row();
+        }
+
+        public function edit(){
+              $this->db->where("project_id", $this->input->post("project_id"));
+              $this->db->update("project" , $this->input->post());
         }
 }

@@ -198,19 +198,19 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="<?=base_url("akunbank")?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>AKUN BANK</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="<?=base_url("akunbank")?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CLOSING HARIAN</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link ">
+                <a href="<?=base_url("akunbank")?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>CLOSING BULANAN</p>
                 </a>
