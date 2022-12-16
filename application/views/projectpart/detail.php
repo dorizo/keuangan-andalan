@@ -1,3 +1,4 @@
+<div class="col-12">
 
       <!-- Default box -->
       <div class="card">
@@ -152,3 +153,4 @@
         <!-- /.card-body -->
       </div>
       <!-- /.card -->
+</div>
