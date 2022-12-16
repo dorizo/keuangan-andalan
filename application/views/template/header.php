@@ -129,7 +129,7 @@
             <i class="fas fa-file mr-2"></i> Setting
           </a>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="<?=base_url("login/logout")?>" class="dropdown-item">
             <i class="fas fa-file mr-2"></i> Logout
           </a>
         </div>

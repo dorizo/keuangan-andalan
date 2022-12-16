@@ -7,6 +7,9 @@ class Project extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('project_model');
+			if(!$this->session->userdata("userCode")){
+				redirect('/login', 'refresh');
+			}
 	}
 
 
