@@ -47,8 +47,13 @@ class Project extends CI_Controller {
 		}
 	}
 	public function download($id){
-
-		$path = $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
+		$x = explode("/",$_SERVER['DOCUMENT_ROOT']);
+		unset($x[4]);
+		unset($x[5]);
+		unset($x[6]);
+		$path =  implode("/",$x)."/api/assets/".$id."/";
+	
+		// $path = $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
 		// $path =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
 
 		$this->zip->read_dir($path);
@@ -64,14 +69,14 @@ class Project extends CI_Controller {
 		$data["transaksiproject"] = $this->akunbankTransaksi_model->view($id);
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
-		echo $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
+		// echo $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
 		
 			$x = explode("/",$_SERVER['DOCUMENT_ROOT']);
 			unset($x[4]);
 			unset($x[5]);
 			unset($x[6]);
 			// print_r($x);
-		echo $file =  implode("/",$x)."/api/assets/".$id."/";
+		 $file =  implode("/",$x)."/api/assets/".$id."/";
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
         $map = directory_map($file, false , true);
