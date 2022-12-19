@@ -64,7 +64,15 @@ class Project extends CI_Controller {
 		$data["transaksiproject"] = $this->akunbankTransaksi_model->view($id);
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
-		$file =  $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
+		// $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
+		
+			$x = explode("/",$_SERVER['DOCUMENT_ROOT']);
+			unset($x[3]);
+			unset($x[4]);
+			unset($x[5]);
+			unset($x[6]);
+			// print_r($x);
+		$file =  implode("/",$x)."api/assets/".$id."/";
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
         $map = directory_map($file, false , true);
