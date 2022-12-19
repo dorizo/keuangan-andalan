@@ -36,7 +36,7 @@ if ( ! function_exists('hitungbunga'))
         $persen = ($nilairup/100*0.8);
         $total_hari= round(($param2 - strtotime($var)) / (60 * 60 * 24));
         $bunga = (($total_hari * ($persen))/30); 
-        return 'Rp ' .number_format($bunga);
+        return $bunga;
         // return $bunga ;
     }   
 }

@@ -17,6 +17,7 @@
                   <tr>
                     <th>Project</th>
                     <th>Estimasi Project Selesai</th>
+                    <th>Real Project</th>
                     <th>Kewajiban Bunga</th>
                     <th>Project Status</th>
                     <th>Detail</th>
@@ -35,8 +36,15 @@
                       <?=$value["project_code"]?>
                     </td>
                     <td>
-                      tgl estimasi : <?=$value["project_done"]?><br />
-                      tgl berjalan : <?=round($datediff / (60 * 60 * 24));?>
+                      Estimasi Mulai : <?=tanggalindo($value["project_start"])?><br />
+                      Estimasi Selesai : <?=tanggalindo($value["project_done"])?><br />
+                      Hitung Hari : <?=$value["project_paid"]?"Project Selesai":round($datediff / (60 * 60 * 24))." hari";?> 
+                    </td>
+                    
+                    <td>
+                      Project Mulai : <?=tanggalindo($value["project_date"])?><br />
+                      Project Paid : <?=$value["project_paid"]?tanggalindo($value["project_paid"]):"project Belum Selesai"?><br />
+                      Pembayaran : <?=countday($value["project_date"],$value["project_paid"]);?> hari
                     </td>
                     <td>
                       Nilai Project : <?=rupiah($value["nilai_project"])?><br />

@@ -44,8 +44,8 @@
                 <div class="col-12 col-sm-4">
                   <div class="info-box bg-light">
                     <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">Estimated project duration</span>
-                      <span class="info-box-number text-center text-muted mb-0">20</span>
+                      <span class="info-box-text text-center text-muted">project duration</span>
+                      <span class="info-box-number text-center text-muted mb-0"><?=countday($dataresult->project_start ,$dataresult->project_paid);?> Hari</span>
                     </div>
                   </div>
                 </div>
@@ -53,20 +53,35 @@
               <div class="row">
                 <div class="col-12">
                 <table class="table">
+                  
+                <head>
+                    <tr>
+                      <th>Transaksi Note</th>
+                      <th>Tanggal Pembayaran Vendor</th>
+                      <th>Jumlah Pembayaran </th>
+                      <th>Jumlah Hari</th>
+                      <th>Bunga Berjalan</th>
+                    </tr>
+                  </head>
                   <?php
+                  $totalbunga = 0;
                   foreach ($transaksiproject as $key => $value) {
-                    
+                    $totalbunga = $totalbunga + hitungbunga($value["transaksiDate"] ,$value["project_paid"] ,$value["transaksiJumlah"] );
                   ?>
                     <tr>
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=tanggalindo($value["transaksiDate"])?></td>
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
                       <td><?=countday($value["transaksiDate"] ,$value["project_paid"]);?></td>
-                      <td><?=hitungbunga($value["transaksiDate"] ,$value["project_paid"] ,$value["transaksiJumlah"] );?></td>
+                      <td><?=rupiah(hitungbunga($value["transaksiDate"] ,$value["project_paid"] ,$value["transaksiJumlah"] ));?></td>
                     </tr>
                   <?php 
                    }
                   ?>
+                  <tr>
+                    <td colspan=4 ></td>
+                    <td><?=rupiah($totalbunga)?></td>
+                  </tr>
 
                 </table>
 
