@@ -72,7 +72,7 @@ class Project extends CI_Controller {
 			unset($x[5]);
 			unset($x[6]);
 			// print_r($x);
-		$file =  implode("/",$x)."api/assets/".$id."/";
+		$file =  implode("/",$x)."/api/assets/".$id."/";
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
         $map = directory_map($file, false , true);
