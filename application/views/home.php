@@ -44,7 +44,7 @@
                     <td>
                       Project Mulai : <?=tanggalindo($value["project_date"])?><br />
                       Project Paid : <?=$value["project_paid"]?tanggalindo($value["project_paid"]):"project Belum Selesai"?><br />
-                      Pembayaran : <?=countday($value["project_date"],$value["project_paid"]);?> hari
+                      Project Berjalan : <?=countday($value["project_date"],$value["project_paid"]);?> hari
                     </td>
                     <td>
                      <?=rupiah($value["nilai_project"])?><br />
