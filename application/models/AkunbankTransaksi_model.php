@@ -39,7 +39,7 @@ class akunbankTransaksi_model extends CI_Model {
             $julahtransaksi = str_replace(",", "",$this->input->post("transaksiJumlah"));
             $p["transaksiJumlah"] =  str_replace(",", "",$this->input->post("transaksiJumlah"));
             $this->db->insert("akunbank_transaksi" , $p);
-            $a = $this->db->query('Select saldo_sekarang from akunBank where akunBankCode='.$this->input->post("akunBankCode"))->row();
+            $a = $this->db->query('Select saldo_sekarang from akunbank where akunBankCode='.$this->input->post("akunBankCode"))->row();
            if($this->input->post("statusTransaksi") == "CR"){
             // credit saldo mengurangi dan input ke sini
             $saldo = $a->saldo_sekarang - str_replace(",", "",$this->input->post("transaksiJumlah"));
