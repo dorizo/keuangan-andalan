@@ -20,7 +20,7 @@
                       </div>
                       <div class="form-group">
                         <label>transaksiJumlah</label>
-                      <input type="text" name="transaksiJumlah" class="form-control" placeholder="">
+                      <input type="text" name="transaksiJumlah" class="form-control number-separator" placeholder="">
                       </div>
                       
                       <div class="form-group">

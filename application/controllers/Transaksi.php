@@ -48,9 +48,9 @@ class Transaksi extends CI_Controller {
     public function add($id){
 
 		$this->form_validation->set_rules('project_id', 'project_id', 'required');
-      $data["titlepage"] = "Transaksi Project ";
-	  $data["project_id"] = $id;
-	  $data["akunbank"] = $this->akunbank_model->view();
+		$data["titlepage"] = "Transaksi Project ";
+		$data["project_id"] = $id;
+		$data["akunbank"] = $this->akunbank_model->view();
 	//   print_r($data["akunbank"]);
 	   if ($this->form_validation->run() === FALSE)
         {

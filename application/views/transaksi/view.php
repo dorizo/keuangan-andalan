@@ -27,7 +27,7 @@
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_transaksiCode"]?></td>
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=$value["transaksiDate"]?></td>
-                      <td><?=$value["transaksiJumlah"]?></td>
+                      <td><?=rupiah($value["transaksiJumlah"])?></td>
                       <td><?=$value["akunBankCode"]?></td>
                       <td><?=$value["statusTransaksi"]?></td>
                       <td><a href="<?=base_url("transaksi/delete/".$value["akunbank_transaksiCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>

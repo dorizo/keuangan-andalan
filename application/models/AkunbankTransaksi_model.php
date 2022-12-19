@@ -33,7 +33,9 @@ class akunbankTransaksi_model extends CI_Model {
             $this->db->delete("akunbank_transaksi");
         }
         public function submitadd(){
-            $this->db->insert("akunbank_transaksi" , $this->input->post());
+            $p =  $this->input->post();
+            $p["transaksiJumlah"] =  str_replace(",", "",$this->input->post("transaksiJumlah"));
+            $this->db->insert("akunbank_transaksi" , $p);
         }
 
        

@@ -18,7 +18,7 @@
                     <th>Project</th>
                     <th>Estimasi Project Selesai</th>
                     <th>Real Project</th>
-                    <th>Kewajiban Bunga</th>
+                    <th>Nilai Project</th>
                     <th>Project Status</th>
                     <th>Detail</th>
                   </tr>
@@ -47,7 +47,7 @@
                       Pembayaran : <?=countday($value["project_date"],$value["project_paid"]);?> hari
                     </td>
                     <td>
-                      Nilai Project : <?=rupiah($value["nilai_project"])?><br />
+                     <?=rupiah($value["nilai_project"])?><br />
                       
                     </td>
                     <td><?=$value["project_status"]?></td>

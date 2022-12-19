@@ -24,7 +24,11 @@ class Akunbank_model extends CI_Model {
             $this->db->delete("akunbank");
         }
         public function submitadd(){
-            $this->db->insert("akunbank" , $this->input->post());
+            
+			$p = $this->input->post();
+			$p["total_akunbank"] =  str_replace(",", "", $this->input->post("total_akunbank"));
+			$p["saldo_sekarang"] =  str_replace(",", "", $this->input->post("saldo_sekarang"));
+            $this->db->insert("akunbank" , $p);
         }
 
        

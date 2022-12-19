@@ -35,6 +35,7 @@
 
 <!-- OPTIONAL SCRIPTS -->
 <script src="<?=base_url()?>asset/plugins/chart.js/Chart.min.js"></script>
+<script src="<?=base_url()?>asset/js/easy-number-separator.js"></script>
 <!-- AdminLTE for demo purposes -->
 </body>
 </html>

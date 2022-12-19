@@ -10,8 +10,8 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>total_akunbank</label>
-                        <input type="text" name="total_akunbank" class="form-control" placeholder="">
+                        <label>total akunbank</label>
+                        <input type="text" name="total_akunbank" class="form-control number-separator">
                       </div>
                       
                       <div class="form-group">
@@ -21,7 +21,7 @@
                       
                       <div class="form-group">
                         <label>saldo_sekarang</label>
-                        <input type="number" name="saldo_sekarang" class="form-control" placeholder="">
+                        <input type="text" name="saldo_sekarang" class="form-control number-separator" placeholder="">
                       </div>
                       
                       <div class="form-group">

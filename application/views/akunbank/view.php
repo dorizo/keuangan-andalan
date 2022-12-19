@@ -25,9 +25,9 @@
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["akunbankCode"]?></td>
-                      <td><?=$value["total_akunbank"]?></td>
-                      <td><?=$value["taggal_peminjaman"]?></td>
-                      <td><?=$value["saldo_sekarang"]?></td>
+                      <td><?=rupiah($value["total_akunbank"])?></td>
+                      <td><?=tanggalindo($value["taggal_peminjaman"])?></td>
+                      <td><?=rupiah($value["saldo_sekarang"])?></td>
                       <td><?=$value["bungabank"]?></td>
                       <td><?=$value["bungapartner"]?></td>
                       <td><a href="<?=base_url("akunbank/delete/".$value["akunbankCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
