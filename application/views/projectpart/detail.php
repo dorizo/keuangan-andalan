@@ -1,5 +1,7 @@
 <div class="col-12">
-
+<?php
+echo $_SERVER['DOCUMENT_ROOT'];
+?>
       <!-- Default box -->
       <div class="card">
         <div class="card-header">
