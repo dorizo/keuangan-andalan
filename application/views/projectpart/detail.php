@@ -167,7 +167,7 @@
               
               </ul>
               <div class="text-center mt-5 mb-3">
-                <a href="#" class="btn btn-sm btn-primary">Download File</a>
+                <a href="<?=base_url("project/download/".$dataresult->project_id);?>" class="btn btn-sm btn-primary">Download File</a>
               </div>
             </div>
           </div>

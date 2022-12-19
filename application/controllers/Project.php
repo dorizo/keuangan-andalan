@@ -8,7 +8,7 @@ class Project extends CI_Controller {
 			parent::__construct();
 			$this->load->model('project_model');
 			$this->load->model('akunbankTransaksi_model');
-			
+			$this->load->library('zip');
 			$this->load->model('log_project_model');
 			$this->load->model('job_model');
 			$this->load->helper(array('form', 'url','directory'));
@@ -45,6 +45,17 @@ class Project extends CI_Controller {
             redirect('/project', 'refresh');
 		
 		}
+	}
+	public function download($id){
+
+		$path = $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
+		// $path =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
+
+		$this->zip->read_dir($path);
+
+		// Download the file to your desktop. Name it "my_backup.zip"
+		$this->zip->download('my_backup.zip');
+
 	}
 	public function detail($id){
         $data["dataresult"] = $this->project_model->viewSinggle($id);
