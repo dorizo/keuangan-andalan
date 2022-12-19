@@ -67,7 +67,6 @@ class Project extends CI_Controller {
 		echo $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";
 		
 			$x = explode("/",$_SERVER['DOCUMENT_ROOT']);
-			unset($x[3]);
 			unset($x[4]);
 			unset($x[5]);
 			unset($x[6]);
