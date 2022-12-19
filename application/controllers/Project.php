@@ -50,6 +50,7 @@ class Project extends CI_Controller {
         $data["dataresult"] = $this->project_model->viewSinggle($id);
 		$data["logproject"] = $this->log_project_model->getlogproject($id);
 		$data["sumproject"] = $this->akunbankTransaksi_model->sumproject($id);
+		$data["transaksiproject"] = $this->akunbankTransaksi_model->view($id);
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
 		$file =  $_SERVER["DOCUMENT_ROOT"]."/../../api/assets/".$id."/";

@@ -6,7 +6,8 @@ class akunbankTransaksi_model extends CI_Model {
                 $this->load->database();
         }
         public function view($id){
-            $this->db->where("project_id" , $id);
+            $this->db->where("akunbank_transaksi.project_id" , $id);
+            $this->db->join("project" , "project.project_id=akunbank_transaksi.project_id" );
             $db = $this->db->get("akunbank_transaksi");
             return $db->result_array();
         }

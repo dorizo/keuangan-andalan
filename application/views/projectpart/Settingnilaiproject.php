@@ -10,26 +10,25 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>Masukan Nilai Kontrak Project</label>
+                        <label>Masukan Nilai SIUJK</label>
                         <input type="hidden" name="project_id" value="<?=$dataresult->project_id?>" class="form-control" placeholder="Enter ...">
                         <input type="text" name="nilai_project" value="<?=$dataresult->nilai_project?>" class="form-control" placeholder="Enter ...">
-                        <div class="col-sm-12">
-                      <!-- select -->
-                      <div class="form-group">
-                        <label>Status Project</label>
-                        <select name="project_status" class="custom-select">
-                            <option value="<?=$dataresult->project_status?>"><?=$dataresult->project_status?></option>
-                            <?php
-                            foreach ($datajob as $key => $value) {
-                                # code...
-                                echo "<option value=\"".$value['job_name']."\">".$value['job_name']."</option>";
-                            }
-                            ?>
-                    
-                        </select>
-                        
-                      </div>
-                    </div>
+                        <label>Masukan Nilai Kontrak BOQ</label>
+                        <input type="text" name="nilai_boq" value="<?=$dataresult->nilai_boq?>" class="form-control" placeholder="Enter ...">
+                        <div class="form-group">
+                          <label>Status Project</label>
+                          <select name="project_status" class="custom-select">
+                              <option value="<?=$dataresult->project_status?>"><?=$dataresult->project_status?></option>
+                              <?php
+                              foreach ($datajob as $key => $value) {
+                                  # code...
+                                  echo "<option value=\"".$value['job_name']."\">".$value['job_name']."</option>";
+                              }
+                              ?>
+                      
+                          </select>
+                          
+                        </div>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

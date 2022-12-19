@@ -7,3 +7,45 @@ if ( ! function_exists('rupiah'))
     return 'Rp ' . number_format($var);
     }   
 }
+
+
+if ( ! function_exists('countday'))
+{
+    function countday($var = "0000-00-00" , $param2)
+    {
+        if($param2==NULL){
+            $param2 = time();
+        }else{
+            $param2 = strtotime($param2);
+        }
+        // $datediff = $var - $var2;
+        return round(($param2 - strtotime($var))/ (60 * 60 * 24)); 
+    }   
+}
+
+if ( ! function_exists('hitungbunga'))
+{
+    function hitungbunga($var = "0000-00-00" , $param2 , $nilairup)
+    {
+        if($param2==NULL){
+            $param2 = time();
+        }else{
+            $param2 = strtotime($param2);
+        }
+        // $datediff = $var - $var2;
+        $persen = ($nilairup/100*0.8);
+        $total_hari= round(($param2 - strtotime($var)) / (60 * 60 * 24));
+        $bunga = (($total_hari * ($persen))/30); 
+        return 'Rp ' .number_format($bunga);
+        // return $bunga ;
+    }   
+}
+
+if ( ! function_exists('tanggalindo'))
+{
+    function tanggalindo($var = "0000-00-00" )
+    {
+       
+        return date("d M Y", strtotime($var));
+    }   
+}

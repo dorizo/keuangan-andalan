@@ -52,6 +52,24 @@
               </div>
               <div class="row">
                 <div class="col-12">
+                <table class="table">
+                  <?php
+                  foreach ($transaksiproject as $key => $value) {
+                    
+                  ?>
+                    <tr>
+                      <td><?=$value["transaksiNote"]?></td>
+                      <td><?=tanggalindo($value["transaksiDate"])?></td>
+                      <td><?=rupiah($value["transaksiJumlah"])?></td>
+                      <td><?=countday($value["transaksiDate"] ,$value["project_paid"]);?></td>
+                      <td><?=hitungbunga($value["transaksiDate"] ,$value["project_paid"] ,$value["transaksiJumlah"] );?></td>
+                    </tr>
+                  <?php 
+                   }
+                  ?>
+
+                </table>
+
                   <h4>Recent Activity</h4>
                   <?php
                   foreach ($logproject as $key => $value) {
