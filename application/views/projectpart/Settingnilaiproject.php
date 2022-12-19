@@ -12,9 +12,9 @@
                       <div class="form-group">
                         <label>Masukan Nilai SIUJK</label>
                         <input type="hidden" name="project_id" value="<?=$dataresult->project_id?>" class="form-control" placeholder="Enter ...">
-                        <input type="text" name="nilai_project" value="<?=$dataresult->nilai_project?>" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nilai_project" value="<?=$dataresult->nilai_project?>" class="form-control number-separator" placeholder="Enter ...">
                         <label>Masukan Nilai Kontrak BOQ</label>
-                        <input type="text" name="nilai_boq" value="<?=$dataresult->nilai_boq?>" class="form-control" placeholder="Enter ...">
+                        <input type="text" name="nilai_boq" value="<?=$dataresult->nilai_boq?>" class="form-control number-separator" placeholder="Enter ...">
                         <div class="form-group">
                           <label>Status Project</label>
                           <select name="project_status" class="custom-select">

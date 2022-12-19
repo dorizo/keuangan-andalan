@@ -21,6 +21,9 @@ class Project_model extends CI_Model {
 
         public function edit(){
               $this->db->where("project_id", $this->input->post("project_id"));
-              $this->db->update("project" , $this->input->post());
+              $p = $this->input->post();
+              $p["nilai_project"] = str_replace(",", "",$this->input->post("nilai_project"));
+              $p["nilai_boq"] = str_replace(",", "", $this->input->post("nilai_boq"));
+              $this->db->update("project" , $p);
         }
 }
