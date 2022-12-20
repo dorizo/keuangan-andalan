@@ -25,7 +25,7 @@ if ( ! function_exists('countday'))
 
 if ( ! function_exists('hitungbunga'))
 {
-    function hitungbunga($var = "0000-00-00" , $param2 , $nilairup)
+    function hitungbunga($var = "0000-00-00" , $param2 =  "0000-00-00" , $nilairup = 0)
     {
         if($param2==NULL){
             $param2 = time();
