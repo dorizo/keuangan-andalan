@@ -57,8 +57,7 @@
                     </td>
                     <td>
                     Status Project  : <?=$value["project_status"]?><br />
-                    Persentase Profit  : <?=@(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2))?>%<br />
-                  
+                    
                     </td>
                     <td>
                       <a href="<?=base_url("project/detail/".$value["project_id"])?>"  class="text-muted">
