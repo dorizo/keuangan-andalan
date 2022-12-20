@@ -63,8 +63,19 @@
                     }else{
                      $point =  @(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2));
                     }
+                    if($point <= 0){
+                      $background = "bg-primary";
+                    }elseif($point < 30){
+                      $background = "bg-danger";
+                    }elseif($point < 45){
+                      $background = "bg-warning";
+                    }elseif($point < 100){
+                      $background = "bg-success";
+                    }
                     ?>
+                    <card class="<?=$background?>">
                     Persentase Profit  :<?=$point?>%<br />
+                    </card>
                   
                     </td>
                     <td>
