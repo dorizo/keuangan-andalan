@@ -57,7 +57,14 @@
                     </td>
                     <td>
                     Status Project  : <?=$value["project_status"]?><br />
-                    Persentase Profit  : <?=@(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2))?>%<br />
+                    <?php
+                    if(!$value["paymentvendor"]){
+                    $point=0;
+                    }else{
+                     $point =  @(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2));
+                    }
+                    ?>
+                    Persentase Profit  :<?=$point?>%<br />
                   
                     </td>
                     <td>
