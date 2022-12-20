@@ -15,6 +15,12 @@
                         <input type="text" name="nilai_project" value="<?=$dataresult->nilai_project?>" class="form-control number-separator" placeholder="Enter ...">
                         <label>Masukan Nilai Kontrak BOQ</label>
                         <input type="text" name="nilai_boq" value="<?=$dataresult->nilai_boq?>" class="form-control number-separator" placeholder="Enter ...">
+                        <label>Sharing Vendor (%)</label>
+                        <input type="number" name="sharing_vendor" value="<?=$dataresult->sharing_vendor?>" class="form-control number-separator" placeholder="Enter ...">
+                        <label>Sharing Owner (%)</label>
+                        <input type="number" name="sharing_owner" value="<?=$dataresult->sharing_owner?>" class="form-control number-separator" placeholder="Enter ...">
+                       
+                        
                         <div class="form-group">
                           <label>Status Project</label>
                           <select name="project_status" class="custom-select">

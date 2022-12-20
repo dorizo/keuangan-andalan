@@ -4,10 +4,6 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">Projects Detail</h3>
-          <?php
-        //   print_r($dataresult);
-          ?>
-
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
               <i class="fas fa-minus"></i>
@@ -46,6 +42,38 @@
                     <div class="info-box-content">
                       <span class="info-box-text text-center text-muted">project duration</span>
                       <span class="info-box-number text-center text-muted mb-0"><?=countday($dataresult->project_start ,$dataresult->project_paid);?> Hari</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Persentase Profit</span>
+                      <span class="info-box-number text-center text-muted mb-0">
+                        
+                      <?=rupiah(($dataresult->nilai_project * $dataresult->sharing_vendor)/100)?>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Sharing Owner</span>
+                      <span class="info-box-number text-center text-muted mb-0">
+                        <?=rupiah(($dataresult->nilai_project * $dataresult->sharing_owner)/100)?>
+                        
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">Persentase Profit</span>
+                      <span class="info-box-number text-center text-muted mb-0">
+                         <?=@(round((((($dataresult->nilai_project * $dataresult->sharing_owner)/100)/($dataresult->paymentvendor+$dataresult->totalbungaseluruh))*100),2))?>%
+                      </span>
                     </div>
                   </div>
                 </div>

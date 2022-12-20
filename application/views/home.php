@@ -44,13 +44,22 @@
                     <td>
                       Project Mulai : <?=tanggalindo($value["project_date"])?><br />
                       Project Paid : <?=$value["project_paid"]?tanggalindo($value["project_paid"]):"project Belum Selesai"?><br />
-                      Project Berjalan : <?=countday($value["project_date"],$value["project_paid"]);?> hari
+                      Project Berjalan : <?=countday($value["project_date"],$value["project_paid"]);?> hari <br />
+                    
+              
                     </td>
                     <td>
-                     <?=rupiah($value["nilai_project"])?><br />
+                       Pembagian Hasil :  <?=$value["sharing_vendor"];?>/<?=$value["sharing_owner"];?><br />
+                       Nilai Project : <?=rupiah($value["nilai_project"])?><br />
+                       Bunga Berjalan : <?=rupiah($value["totalbungaseluruh"]);?> <br />
+                       Pembayaran Vendor :  <?=rupiah($value["paymentvendor"]);?>
                       
                     </td>
-                    <td><?=$value["project_status"]?></td>
+                    <td>
+                    Status Project  : <?=$value["project_status"]?><br />
+                    Persentase Profit  : <?=@(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2))?>%<br />
+                  
+                    </td>
                     <td>
                       <a href="<?=base_url("project/detail/".$value["project_id"])?>"  class="text-muted">
                         <i class="fas fa-search"></i>

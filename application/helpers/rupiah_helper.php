@@ -19,7 +19,7 @@ if ( ! function_exists('countday'))
             $param2 = strtotime($param2);
         }
         // $datediff = $var - $var2;
-        return round(($param2 - strtotime($var))/ (60 * 60 * 24)); 
+        return floor(($param2 - strtotime($var))/ (60 * 60 * 24)); 
     }   
 }
 
@@ -34,7 +34,7 @@ if ( ! function_exists('hitungbunga'))
         }
         // $datediff = $var - $var2;
         $persen = ($nilairup/100*0.8);
-        $total_hari= round(($param2 - strtotime($var)) / (60 * 60 * 24));
+        $total_hari= floor(($param2 - strtotime($var)) / (60 * 60 * 24));
         $bunga = (($total_hari * ($persen))/30); 
         return $bunga;
         // return $bunga ;
