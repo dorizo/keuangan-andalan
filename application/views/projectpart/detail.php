@@ -17,10 +17,19 @@
           <div class="row">
             <div class="col-12 col-md-12 col-lg-8 order-2 order-md-1">
               <div class="row">
+                
+              <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">NILAI BOQ</span>
+                      <span class="info-box-number text-center text-muted mb-0"><?=rupiah($dataresult->nilai_boq)?></span>
+                    </div>
+                  </div>
+                </div>
                 <div class="col-12 col-sm-4">
                   <div class="info-box bg-light">
                     <div class="info-box-content">
-                      <span class="info-box-text text-center text-muted">budget Project</span>
+                      <span class="info-box-text text-center text-muted">NILAI SIUJK</span>
                       <span class="info-box-number text-center text-muted mb-0"><?=rupiah($dataresult->nilai_project)?></span>
                     </div>
                   </div>
