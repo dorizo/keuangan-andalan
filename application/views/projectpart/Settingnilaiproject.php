@@ -41,6 +41,23 @@
                           </select>
                           
                         </div>
+
+                        
+                        <div class="form-group">
+                          <label>witel</label>
+                          <select name="witel_id" class="custom-select">
+                              <option value="Pilih Vendor">Pilih witel</option>
+                              <?php
+                              foreach ($witelresult as $key => $value) {
+                                  # code...
+                                  $noted = $value['witel_id'] == $dataresult->witel_id ? ' selected="selected"' : '';
+                                  echo "<option value=\"".$value['witel_id']."\" ".$noted.">".$value['witel_name']."</option>";
+                              }
+                              ?>
+                      
+                          </select>
+                          
+                        </div>
                         <div class="form-group">
                           <label>Status Project</label>
                           <select name="project_status" class="custom-select">
