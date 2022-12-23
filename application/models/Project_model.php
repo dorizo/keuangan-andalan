@@ -8,6 +8,7 @@ class Project_model extends CI_Model {
         public function view(){
         $this->db->select("* , (select vendorName from vendor where vendorCode=project.vendorCode) as vendor ,(select COALESCE(sum(a.transaksiJumlah),0) from akunbank_transaksi a where a.project_id=project.project_id ) as paymentvendor , (select  COALESCE(sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) )),0)  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id) as totalbungaseluruh");
         $this->db->join("project_cat" , "project.cat_id=project_cat.cat_id");
+        $this->db->order_by("project_id" , "DESC");
         $db = $this->db->get("project");
         return $db->result_array();
         }

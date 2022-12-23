@@ -14,7 +14,6 @@
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
                       <th>CATATAN PROJECT</th>
-                      <th>CATATAN PROJECT</th>
                       <th>MODE</th>
                     </tr>
                   </thead>
