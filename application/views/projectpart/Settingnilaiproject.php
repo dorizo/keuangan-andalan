@@ -20,7 +20,21 @@
                         <label>Sharing Owner (%)</label>
                         <input type="number" name="sharing_owner" value="<?=$dataresult->sharing_owner?>" class="form-control number-separator" placeholder="Enter ...">
                        
-                        
+                        <div class="form-group">
+                          <label>Vendor</label>
+                          <select name="vendorCode" class="custom-select">
+                              <option value="Pilih Vendor">Pilih Vendor</option>
+                              <?php
+                              foreach ($vendorresult as $key => $value) {
+                                  # code...
+                                  $noted = $value['vendorCode'] == $dataresult->vendorCode ? ' selected="selected"' : '';
+                                  echo "<option value=\"".$value['vendorCode']."\" ".$noted.">".$value['vendorName']."</option>";
+                              }
+                              ?>
+                      
+                          </select>
+                          
+                        </div>
                         <div class="form-group">
                           <label>Status Project</label>
                           <select name="project_status" class="custom-select">

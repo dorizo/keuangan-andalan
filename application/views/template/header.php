@@ -207,15 +207,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url("akunbank")?>" class="nav-link">
+                <a href="<?=base_url("vendor")?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>CLOSING HARIAN</p>
+                  <p>VENDOR</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=base_url("akunbank")?>" class="nav-link ">
+                <a href="<?=base_url("report")?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>CLOSING BULANAN</p>
+                  <p>REPORT</p>
                 </a>
               </li>
             </ul>

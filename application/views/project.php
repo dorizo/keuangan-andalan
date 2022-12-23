@@ -14,6 +14,7 @@
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
                       <th>CATATAN PROJECT</th>
+                      <th>CATATAN PROJECT</th>
                       <th>MODE</th>
                     </tr>
                   </thead>
@@ -49,6 +50,7 @@
                      <th>PROJECT ID</th>
                       <th>PROJECT NAME</th>
                       <th>PROJECT STATUS</th>
+                      <th>ESTIMASI PROJECT DONE</th>
                       <th>ESTIMASI PROJECT DONE</th>
                       <th>MODE</th>
                     </tr>

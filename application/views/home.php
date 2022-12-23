@@ -20,6 +20,7 @@
                     <th>Real Project</th>
                     <th>Nilai Project</th>
                     <th>Project Status</th>
+                    <th>User</th>
                     <th>Detail</th>
                   </tr>
                   </thead>
@@ -77,6 +78,19 @@
                     Persentase Profit  :<?=$point?>%<br />
                     </card>
                   
+                    </td>
+                    <td>
+                    VENDOR : <?=$value["vendor"]?><hr />
+                    <?php
+                    $m = $this->db->query("select * from project_user a JOIN user b on a.userCode=b.userCode JOIN role_user c ON c.userCode=b.userCode JOIN role d ON d.roleCode=c.roleCode where a.deleteAt IS NULL AND project_id=".$value["project_id"])->result_array();
+                    foreach ($m as $keym => $valm) {
+                    echo $valm["role"]." : ".$valm["name"]."<hr />";
+                    ?>
+                    <?php
+                      # code...
+                    }
+                    ?>
+
                     </td>
                     <td>
                       <a href="<?=base_url("project/detail/".$value["project_id"])?>"  class="text-muted">
