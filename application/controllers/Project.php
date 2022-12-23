@@ -7,6 +7,7 @@ class Project extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('project_model');
+			$this->load->model('vendor_model');
 			$this->load->model('akunbankTransaksi_model');
 			$this->load->library('zip');
 			$this->load->model('log_project_model');
@@ -31,6 +32,7 @@ class Project extends CI_Controller {
 		$this->form_validation->set_rules('project_id', 'project_id', 'required');
         
         $data["dataresult"] = $this->project_model->viewSinggle($id);
+        $data["vendorresult"] = $this->vendor_model->view();
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
 	   if ($this->form_validation->run() === FALSE)

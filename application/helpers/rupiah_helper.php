@@ -49,3 +49,13 @@ if ( ! function_exists('tanggalindo'))
         return date("d M Y", strtotime($var));
     }   
 }
+
+
+
+if ( ! function_exists('isValidMd5'))
+{
+    function isValidMd5($md5 ='')
+    {
+        return preg_match('/^[a-f0-9]{32}$/', $md5);
+    }  
+}
