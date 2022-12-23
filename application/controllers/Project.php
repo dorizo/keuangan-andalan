@@ -48,6 +48,27 @@ class Project extends CI_Controller {
 		
 		}
 	}
+
+	
+	public function done($id){
+
+		$this->form_validation->set_rules('project_id', 'project_id', 'required');
+        
+        $data["dataresult"] = $this->project_model->viewSinggle($id);
+        $data["vendorresult"] = $this->vendor_model->view();
+        $data["datajob"] = $this->job_model->view();
+		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('projectpart/done' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			$this->project_model->doneproject();
+            redirect('/project', 'refresh');
+		}
+	}
 	public function download($id){
 		$x = explode("/",$_SERVER['DOCUMENT_ROOT']);
 		unset($x[4]);

@@ -29,6 +29,12 @@ class Project_model extends CI_Model {
               $this->db->update("project" , $p);
         }
         
+
+        public function doneproject(){
+                $this->db->where("project_id", $this->input->post("project_id"));
+                $p = $this->input->post();
+                $this->db->update("project" , $p);
+          }
         public function submitadd(){
                 $p = $this->input->post();
                 $p["project_status"] = "Pending";
