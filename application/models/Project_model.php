@@ -28,5 +28,11 @@ class Project_model extends CI_Model {
               $p["nilai_boq"] = str_replace(",", "", $this->input->post("nilai_boq"));
               $this->db->update("project" , $p);
         }
+        
+        public function submitadd(){
+                $p = $this->input->post();
+                $p["project_status"] = "Pending";
+                $this->db->insert("project" , $p);     
+        }
 
 }

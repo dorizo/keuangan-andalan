@@ -1,7 +1,14 @@
 <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">TABLE <?=$titlepage?></h3>
+                <div class="row">
+                  <div class="col-10">
+                    <h3 class="card-title">TABLE <?=$titlepage?></h3>
+                  </div>
+                  <div class="col-2">
+                  <a class="btn btn-danger" href="<?=base_url("project/add")?>">Tambah</a>
+                  </div>
+                </div>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
