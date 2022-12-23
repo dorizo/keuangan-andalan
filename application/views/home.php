@@ -66,11 +66,11 @@
                     }
                     if($point <= 0){
                       $background = "bg-primary";
-                    }elseif($point < 30){
+                    }elseif($point < 25){
                       $background = "bg-danger";
-                    }elseif($point < 45){
+                    }elseif($point < 35){
                       $background = "bg-warning";
-                    }elseif($point < 100){
+                    }elseif($point < 300){
                       $background = "bg-success";
                     }
                     ?>
