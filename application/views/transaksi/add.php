@@ -5,7 +5,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <form method="post">
+                <form method="post" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-sm-12">
                       <!-- text input -->
@@ -39,9 +39,13 @@
                         <label>statusTransaksi</label>
                         
                         <select name="statusTransaksi" class="custom-select">
-                          <option value="DB">DEBIT</option>
                           <option value="CR">CREDIT</option>
                         </select>
+                      </div>
+                      
+                      <div class="form-group">
+                        <label>UPLOAD FILE TRANSAKSI</label>
+                      <input type="file" name="file" class="form-control number-separator" placeholder="">
                       </div>
                       
                         <input type="hidden" name="project_id" class="form-control" value="<?=$project_id?>">

@@ -21,6 +21,7 @@ class Transaksi extends CI_Controller {
 		$data["dataresult"] = $this->project_model->viewSinggle($a);
 		$data["titlepage"] = "Tambah Transaksi Project = " .$data["dataresult"]->project_code;
 		$data["datatable"] = $this->akunbankTransaksi_model->view($a);
+		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('transaksi/view' , $data);
 		$this->load->view('template/footer');
@@ -59,11 +60,32 @@ class Transaksi extends CI_Controller {
 		$this->load->view('template/footer');
 		
 		}else{
-			$this->akunbankTransaksi_model->submitadd();	
-            redirect('/transaksi/setting/'.$id, 'refresh');
+
+			$config['upload_path']          = './pembayaran/';
+			$config['allowed_types']        = 'gif|jpg|png|jpeg';
+			$config['max_size']             = 1000;
+			$config['max_width']            = 10240;
+			$config['max_height']           = 7680;
+			$config['encrypt_name']           = TRUE;
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('file'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+				$this->load->view('template/header' , $data);
+				$this->load->view('transaksi/add' , $data);
+				$this->load->view('template/footer');
+			}else{
+				// print_r();		
+				$this->akunbankTransaksi_model->submitadd($this->upload->data("file_name"));	
+				redirect('/transaksi/setting/'.$id, 'refresh');
+			}
 		}
 	}
     public function delete($d){
+
         $this->akunbankTransaksi_model->delete($d);
 		redirect($_SERVER['HTTP_REFERER']);  
     }

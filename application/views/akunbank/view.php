@@ -30,7 +30,7 @@
                       <td><?=rupiah($value["saldo_sekarang"])?></td>
                       <td><?=$value["bungabank"]?></td>
                       <td><?=$value["bungapartner"]?></td>
-                      <td><a href="<?=base_url("akunbank/delete/".$value["akunbankCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
+                      <td><a onclick="hapus('<?=base_url('akunbank/delete/'.$value['akunbankCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
                     </tr>
                   <?php
                      }

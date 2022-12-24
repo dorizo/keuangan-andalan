@@ -17,6 +17,7 @@ class Akunbank extends CI_Controller {
 	{
 		$data["dataresult"] = $this->akunbank_model->view();
 		$data["titlepage"] = "PROYEK";
+		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('akunbank/view' , $data);
 		$this->load->view('template/footer');

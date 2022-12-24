@@ -32,12 +32,13 @@ class akunbankTransaksi_model extends CI_Model {
             $this->db->where("akunbank_transaksiCode",$i);
             $this->db->delete("akunbank_transaksi");
         }
-        public function submitadd(){
+        public function submitadd($add){
             
             $this->db->trans_begin();
             $p =  $this->input->post();
             $julahtransaksi = str_replace(",", "",$this->input->post("transaksiJumlah"));
             $p["transaksiJumlah"] =  str_replace(",", "",$this->input->post("transaksiJumlah"));
+            $p["upload_file"] =  $add;
             $this->db->insert("akunbank_transaksi" , $p);
             $a = $this->db->query('Select saldo_sekarang from akunbank where akunBankCode='.$this->input->post("akunBankCode"))->row();
            if($this->input->post("statusTransaksi") == "CR"){

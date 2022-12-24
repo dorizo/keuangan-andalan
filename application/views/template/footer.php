@@ -34,6 +34,14 @@
 <!-- OPTIONAL SCRIPTS -->
 <script src="<?=base_url()?>asset/plugins/chart.js/Chart.min.js"></script>
 <script src="<?=base_url()?>asset/js/easy-number-separator.js"></script>
+
+<script src="<?=base_url()?>asset/plugins/sweetalert2/sweetalert2.min.js"></script>
+<?php
+if(!empty($pluginjs)){
+  echo "plugginnn";
+  echo "<script src=".base_url("js/".$pluginjs)."></script>";
+};
+?>
 <!-- AdminLTE for demo purposes -->
 </body>
 </html>
