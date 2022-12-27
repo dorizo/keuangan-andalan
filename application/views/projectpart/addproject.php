@@ -55,7 +55,7 @@
                   </div>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Catatan</label>
-                    <input type="text" name="project_code" class="form-control">
+                    <input type="text" name="project_note" class="form-control">
                   </div>
                 </div>
                 <!-- /.card-body -->
