@@ -9,6 +9,13 @@
                   <div class="row">
                     <div class="col-sm-12">
                       <!-- text input -->
+                      
+                      
+                      <div class="form-group">
+                        <label>VENDOR CODE</label>
+                      <input type="text" name="vendorID" class="form-control" placeholder="">
+                      </div>
+                      
                       <div class="form-group">
                         <label>NIK</label>
                         <input type="hidden" name="vendorCode" class="form-control" value="<?=$dataresult->vendorCode?>">
