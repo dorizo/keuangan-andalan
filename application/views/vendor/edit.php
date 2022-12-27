@@ -13,7 +13,7 @@
                       
                       <div class="form-group">
                         <label>VENDOR CODE</label>
-                      <input type="text" name="vendorID" class="form-control" placeholder="">
+                      <input type="text" name="vendorID" class="form-control" placeholder="" value="<?=$dataresult->vendorID?>">
                       </div>
                       
                       <div class="form-group">
