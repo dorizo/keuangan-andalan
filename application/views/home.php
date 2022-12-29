@@ -1,18 +1,8 @@
 <div class="col-lg-12">
-<div class="card">
-              <div class="card-header border-0">
-                <h3 class="card-title">Status Project </h3>
-                <div class="card-tools">
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-download"></i>
-                  </a>
-                  <a href="#" class="btn btn-tool btn-sm">
-                    <i class="fas fa-bars"></i>
-                  </a>
-                </div>
-              </div>
+<div class="card p-2">
+              
               <div class="card-body table-responsive p-0">
-                <table class="table table-striped table-valign-middle">
+                <table id="example1" class="table table-striped table-valign-middle" style="font-size:12px">
                   <thead>
                   <tr>
                     <th>Project</th>
@@ -33,8 +23,10 @@
                     ?>
                   <tr>
                     <td>
-                      <?=$value["cat_name"]?><br />
-                      <?=$value["project_code"]?>
+                      
+                      Witel : <?=$value["witel"]?><hr />
+                      Kategori : <?=$value["cat_name"]?><hr />
+                      project Code : <?=$value["project_code"]?>
                     </td>
                     <td>
                       Estimasi Mulai : <?=tanggalindo($value["project_start"])?><br />
@@ -54,7 +46,9 @@
                        Nilai Project : <?=rupiah($value["nilai_project"])?><br />
                        Bunga Berjalan : <?=rupiah($value["totalbungaseluruh"]);?> <br />
                        Pembayaran Vendor :  <?=rupiah($value["paymentvendor"]);?>
-                      
+                       <?php if($value["sharing_vendor"] != 0) : ?><br />
+                       Sisa Pembayaran Vendor :  <?=rupiah((($value["nilai_project"]*$value["sharing_vendor"])/100)-$value["paymentvendor"]);?>
+                      <?php endif ?>
                     </td>
                     <td>
                     Status Project  : <?=$value["project_status"]?><br />

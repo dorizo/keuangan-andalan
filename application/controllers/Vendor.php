@@ -17,6 +17,7 @@ class Vendor extends CI_Controller {
 	{
 		$data["dataresult"] = $this->vendor_model->view();
 		$data["titlepage"] = "VENDOR";
+		$data["pluginjs"] = "vendor.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('vendor/view' , $data);
 		$this->load->view('template/footer');

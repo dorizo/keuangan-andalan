@@ -36,9 +36,20 @@
 <script src="<?=base_url()?>asset/js/easy-number-separator.js"></script>
 
 <script src="<?=base_url()?>asset/plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/jszip/jszip.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/pdfmake/pdfmake.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/pdfmake/vfs_fonts.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <?php
 if(!empty($pluginjs)){
-  echo "plugginnn";
   echo "<script src=".base_url("js/".$pluginjs)."></script>";
 };
 ?>
