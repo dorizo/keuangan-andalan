@@ -1239,6 +1239,8 @@
     iconMaximize: 'fa-expand',
     iconMinimize: 'fa-compress'
   };
+  
+  console.log(Default$7);
   /**
    * Class Definition
    * ====================================================

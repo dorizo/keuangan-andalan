@@ -33,7 +33,7 @@
                       <td><?=$value["vendorEmail"]?></td>
                       <td><?=$value["username"]?></td>
                       <td width=120px>
-                        <a href="<?=base_url("vendor/delete/".$value["vendorCode"])?>" class="btn btn-success"><i class="fas fa-trash"></i></a>
+                        <a onclick="hapus('<?=base_url('vendor/delete/'.$value['vendorCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a>
                         <a href="<?=base_url("vendor/edit/".$value["vendorCode"])?>" class="btn btn-success"><i class="fas fa-edit"></i></a>
                       </td>
                     </tr>

@@ -1,15 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Transaksi extends CI_Controller {
+class Pengajuan extends CI_Controller {
 
 	public function __construct()
 	{
 			parent::__construct();
 			$this->load->model('project_model');
-			$this->load->model('akunbankTransaksi_model');
-			$this->load->model('akunbank_model');
 			$this->load->model('akunbank_pengajuan_model');
+			$this->load->model('akunbank_model');
 			
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
@@ -20,11 +19,11 @@ class Transaksi extends CI_Controller {
 	public function setting($a)
 	{
 		$data["dataresult"] = $this->project_model->viewSinggle($a);
-		$data["titlepage"] = "Tambah Transaksi Project = " .$data["dataresult"]->project_code;
-		$data["datatable"] = $this->akunbankTransaksi_model->view($a);
+		$data["titlepage"] = "LIST PENGAJUAN CALL CENTER = " .$data["dataresult"]->project_code;
+		$data["datatable"] = $this->akunbank_pengajuan_model->view($a);
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
-		$this->load->view('transaksi/view' , $data);
+		$this->load->view('pengajuan/view' , $data);
 		$this->load->view('template/footer');
 	}
 	public function edit($id){
@@ -37,7 +36,7 @@ class Transaksi extends CI_Controller {
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
-		$this->load->view('transaksi/edit' , $data);
+		$this->load->view('pengajuan/edit' , $data);
 		$this->load->view('template/footer');
 		
 		}else{
@@ -47,20 +46,17 @@ class Transaksi extends CI_Controller {
 		}
 	}
 
-    public function add($id , $pengajuanCode=0 ){
+    public function add($id){
+
 		$this->form_validation->set_rules('project_id', 'project_id', 'required');
 		$data["titlepage"] = "Transaksi Project ";
 		$data["project_id"] = $id;
 		$data["akunbank"] = $this->akunbank_model->view();
-		$data["pengajuan"] = $this->akunbank_pengajuan_model->view($id);
-		$data["pengajuanCode"] = $pengajuanCode;
-		$data["resultdata"] = $this->akunbank_pengajuan_model->viewsingle($pengajuanCode);
 	//   print_r($data["akunbank"]);
-	
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
-		$this->load->view('transaksi/add' , $data);
+		$this->load->view('pengajuan/add' , $data);
 		$this->load->view('template/footer');
 		
 		}else{
@@ -79,18 +75,18 @@ class Transaksi extends CI_Controller {
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
 				$this->load->view('template/header' , $data);
-				$this->load->view('transaksi/add' , $data);
+				$this->load->view('pengajuan/add' , $data);
 				$this->load->view('template/footer');
 			}else{
 				// print_r();		
-				$this->akunbankTransaksi_model->submitadd($this->upload->data("file_name"));	
-				redirect('/transaksi/setting/'.$id, 'refresh');
+				$this->akunbank_pengajuan_model->submitadd($this->upload->data("file_name"));	
+				redirect('/pengajuan/setting/'.$id, 'refresh');
 			}
 		}
 	}
     public function delete($d){
 
-        $this->akunbankTransaksi_model->delete($d);
+        $this->akunbank_pengajuan_model->delete($d);
 		redirect($_SERVER['HTTP_REFERER']);  
     }
 }

@@ -48,6 +48,8 @@
 <script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?=base_url()?>asset/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
+<script src="<?=base_url()?>asset/plugins/pace-progress/pace.min.js"></script>
 <?php
 if(!empty($pluginjs)){
   echo "<script src=".base_url("js/".$pluginjs)."></script>";

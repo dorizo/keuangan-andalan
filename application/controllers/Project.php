@@ -22,7 +22,7 @@ class Project extends CI_Controller {
 
 	public function index()
 	{
-		$data["pluginjs"] = "home.js";
+		$data["pluginjs"] = "home.js?22";
 		$data["dataresult"] = $this->project_model->view();
 		$data["titlepage"] = "PROYEK";
 		$this->load->view('template/header' , $data);
@@ -52,6 +52,58 @@ class Project extends CI_Controller {
 		}
 	}
 
+	public function edit($id){
+
+		$data["kategori"] = $this->db->query("select * from project_cat")->result_array();
+		$this->form_validation->set_rules('project_id', 'project_id', 'required');
+        
+        $data["dataresult"] = $this->project_model->viewSinggle($id);
+        $data["vendorresult"] = $this->vendor_model->view();
+        $data["witelresult"] = $this->witel_model->view();
+        $data["datajob"] = $this->job_model->view();
+		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('projectpart/edit' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			$this->project_model->edit();
+			
+            redirect('/project', 'refresh');
+		
+		}
+	}
+
+	public function generate($id){
+		$data = $this->project_model->viewSinggle($id);
+		$tgl =date("Y" ,strtotime($data->project_date));
+		$parameter = explode("-", $data->project_code);
+		// echo;
+		$witel = $this->db->query("select * from witel where witel_id=".$data->witel_id)->row();
+		$search = $witel->region_id."-".$witel->witel_code."-".$tgl;
+		$codetahun = $this->db->query("SELECT * FROM project where project_code LIKE '%-".$tgl."-%'")->num_rows();
+		$generetecallcenter =  $search."-".str_pad(($codetahun+1), 4, '0', STR_PAD_LEFT);
+
+		if(count($parameter) == 4){
+			$dataddd["titlepage"] = "<div class='bg-danger'>ERROR <hr />PROJECT UNTUK COLCANTER INI TELAH DI BUAT = ".$data->project_code."<hr /><a href='".BASE_URL("project")."'>BACK</a></div>";	
+			$this->load->view('template/header' , $dataddd);
+			$this->load->view('template/footer');
+		}else{
+			$data = array("project_code" => $generetecallcenter );
+			$this->db->where("project_id" , $id);
+			$sss = $this->db->update("project" ,$data);
+			if($sss){
+				
+				redirect('/project', 'refresh');
+			}
+		
+		}
+		// ;
+		// $this->
+
+	}
 	
 	public function done($id){
 
@@ -116,6 +168,7 @@ class Project extends CI_Controller {
 	public function add(){
 		
         $data["vendorresult"] = $this->vendor_model->view();
+        $data["witelresult"] = $this->witel_model->view();
 		$data["titlepage"] = "Tambah Project";
 		$data["kategori"] = $this->db->query("select * from project_cat")->result_array();
 			$this->form_validation->set_rules('project_name', 'project_name', 'required');

@@ -16,7 +16,7 @@
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                     <tr>
-                      <th>PROJECT ID LOCAL</th>
+                      <th>NO</th>
                       <th>PROJECT CODE</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
@@ -42,9 +42,15 @@
                         <div class="dropdown-menu">
                           <!-- Dropdown menu links -->
                           <a class="dropdown-item" href="<?=base_url("project/detail/".$value["project_id"])?>"><i class="fas fa-search fa-fw"></i> Detail</a>
-                          <a class="dropdown-item" href="<?=base_url("project/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> Setting Project</a>
-                          <a class="dropdown-item" href="<?=base_url("transaksi/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> Pembayaran Vendor</a>
-                          <a class="dropdown-item" href="<?=base_url("project/done/".$value["project_id"])?>"><i class="fas fa-user fa-fw"></i> Penyelesaian Project</a>
+                          <?=projectmenu("CPRO",base_url("pengajuan/setting/".$value["project_id"]) , "fa-money-bill" , "Pengajuan")?>
+                          <?=projectmenu("KEUW",base_url("project/generate/".$value["project_id"]) , "fa-money-bill" , "Generate CALLCENTER")?>
+                          <?=projectmenu("UPRO",base_url("project/edit/".$value["project_id"]) , "fa-money-bill" , "Edit")?>
+                          <?=projectmenu("KEUW",base_url("project/setting/".$value["project_id"]) , "fa-money-bill" , "Setting Project")?>
+                          <?=projectmenu("KEUW",base_url("transaksi/setting/".$value["project_id"]) , "fa-money-bill" , "Pembayaran Vendor")?>
+                          <?=projectmenu("KEUW",base_url("project/done/".$value["project_id"]) , "fa-money-bill" , "Penyelesaian Project")?>
+                          <!-- <a class="dropdown-item" href="<?=base_url("project/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> </a>
+                          <a class="dropdown-item" href="<?=base_url("transaksi/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> </a>
+                          <a class="dropdown-item" href="<?=base_url("project/done/".$value["project_id"])?>"><i class="fas fa-user fa-fw"></i> </a> -->
                     
                         </div>
                       </div>
