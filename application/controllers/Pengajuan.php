@@ -23,7 +23,7 @@ class Pengajuan extends CI_Controller {
 		$data["datatable"] = $this->akunbank_pengajuan_model->view($a);
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
-		$this->load->view('pengajuan/view' , $data);
+		$this->load->view('Pengajuan/view' , $data);
 		$this->load->view('template/footer');
 	}
 	public function edit($id){
@@ -36,7 +36,7 @@ class Pengajuan extends CI_Controller {
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
-		$this->load->view('pengajuan/edit' , $data);
+		$this->load->view('Pengajuan/edit' , $data);
 		$this->load->view('template/footer');
 		
 		}else{
@@ -56,7 +56,7 @@ class Pengajuan extends CI_Controller {
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
-		$this->load->view('pengajuan/add' , $data);
+		$this->load->view('Pengajuan/add' , $data);
 		$this->load->view('template/footer');
 		
 		}else{
@@ -75,12 +75,12 @@ class Pengajuan extends CI_Controller {
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
 				$this->load->view('template/header' , $data);
-				$this->load->view('pengajuan/add' , $data);
+				$this->load->view('Pengajuan/add' , $data);
 				$this->load->view('template/footer');
 			}else{
 				// print_r();		
 				$this->akunbank_pengajuan_model->submitadd($this->upload->data("file_name"));	
-				redirect('/pengajuan/setting/'.$id, 'refresh');
+				redirect('/Pengajuan/setting/'.$id, 'refresh');
 			}
 		}
 	}
