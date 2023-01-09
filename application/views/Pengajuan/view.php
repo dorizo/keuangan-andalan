@@ -9,7 +9,7 @@
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
-                    <tr>
+                    <tr> 
                       <th>akunbank_pengajuanCode</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
