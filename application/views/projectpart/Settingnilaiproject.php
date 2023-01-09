@@ -11,7 +11,7 @@
                       <!-- text input -->
                       <div class="form-group">
                       <label>PROJECT CODE</label>
-                        <input type="text" name="project_code" value="<?=$dataresult->project_code?>" class="form-control" placeholder="Enter ...">
+                        <input type="text" disabled name="project_code" value="<?=$dataresult->project_code?>" class="form-control" placeholder="Enter ...">
                        
                         <label>PROJECT NAME</label>
                         <input type="text" name="project_name" value="<?=$dataresult->project_name?>" class="form-control" placeholder="Enter ...">

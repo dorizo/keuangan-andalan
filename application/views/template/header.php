@@ -222,8 +222,10 @@
               </p>
             </a>
           </li>
-          <?=projectmenu("CPRO",base_url("keuangan") , "fa-money-bill" , "BIAYA LAIN LAIN")?>
-         
+          
+          <li class="nav-item">
+          <?=projectmenu("CPRO",base_url("biayalain") , "fas fa-th" , "BIAYA LAINNYA")?>
+          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
