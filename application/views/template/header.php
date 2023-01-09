@@ -224,7 +224,7 @@
           </li>
           
           <li class="nav-item">
-          <?=projectmenu("CPRO",base_url("biayalain") , "fas fa-th" , "BIAYA LAINNYA")?>
+          <?=projectmenu("KEUW",base_url("biayalain") , "fas fa-th" , "BIAYA LAINNYA")?>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
