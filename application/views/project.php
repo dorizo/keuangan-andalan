@@ -30,8 +30,8 @@
                     foreach ($dataresult as $key => $value) { 
                     ?>
                     <tr class="odd">
-                      <td><?=$value["witel"]?></td>
                       <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
+                      <td><?=$value["witel"]?></td>
                       <td><?=$value["project_code"]?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
