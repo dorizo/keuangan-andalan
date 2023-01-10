@@ -22,7 +22,7 @@ class Project extends CI_Controller {
 
 	public function index()
 	{
-		$data["pluginjs"] = "home.js?22";
+		$data["pluginjs"] = "project.js?22";
 		$data["dataresult"] = $this->project_model->view();
 		$data["titlepage"] = "PROYEK";
 		$this->load->view('template/header' , $data);
