@@ -17,6 +17,7 @@
                   <thead>
                     <tr>
                       <th>NO</th>
+                      <th>Witel</th>
                       <th>PROJECT CODE</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
@@ -29,6 +30,7 @@
                     foreach ($dataresult as $key => $value) { 
                     ?>
                     <tr class="odd">
+                      <td><?=$value["witel"]?></td>
                       <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
                       <td><?=$value["project_code"]?></td>
                       <td><?=$value["project_status"]?></td>
@@ -43,7 +45,7 @@
                           <!-- Dropdown menu links -->
                           <a class="dropdown-item" href="<?=base_url("project/detail/".$value["project_id"])?>"><i class="fas fa-search fa-fw"></i> Detail</a>
                           <?=projectmenu("CPRO",base_url("pengajuan/setting/".$value["project_id"]) , "fa-money-bill" , "Pengajuan")?>
-                          <?=projectmenu("KEUW",base_url("project/generate/".$value["project_id"]) , "fa-money-bill" , "Generate CALLCENTER")?>
+                          <?=projectmenu("KEUW",base_url("project/generate/".$value["project_id"]) , "fa-money-bill" , "Generate COST CENTER")?>
                           <?=projectmenu("UPRO",base_url("project/edit/".$value["project_id"]) , "fa-money-bill" , "Edit")?>
                           <?=projectmenu("KEUW",base_url("project/setting/".$value["project_id"]) , "fa-money-bill" , "Setting Project")?>
                           <?=projectmenu("KEUW",base_url("transaksi/setting/".$value["project_id"]) , "fa-money-bill" , "Pembayaran Vendor")?>
@@ -64,6 +66,7 @@
                  <tfoot>
                   <tr>
                      <th>PROJECT ID</th>
+                      <th>WITEL</th>
                       <th>PROJECT NAME</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
