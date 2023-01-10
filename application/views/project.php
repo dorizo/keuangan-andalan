@@ -19,6 +19,7 @@
                       <th>NO</th>
                       <th>Witel</th>
                       <th>PROJECT CODE</th>
+                      <th>PROJECT NAME</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
                       <th>CATATAN PROJECT</th>
@@ -33,6 +34,7 @@
                       <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
                       <td><?=$value["witel"]?></td>
                       <td><?=$value["project_code"]?></td>
+                      <td><?=$value["project_name"]?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
                       <td><?=$value["project_note"]?></td>
@@ -67,6 +69,7 @@
                   <tr>
                      <th>PROJECT ID</th>
                       <th>WITEL</th>
+                      <th>PROJECT CODE</th>
                       <th>PROJECT NAME</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
