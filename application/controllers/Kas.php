@@ -9,7 +9,7 @@ class Kas extends CI_Controller {
 			$this->load->model('project_model');
 			$this->load->model('akunbank_kas_model');
 			$this->load->model('akunbank_model');
-			
+			$this->load->model('akunakutansi_model');
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
 			}
@@ -50,6 +50,7 @@ class Kas extends CI_Controller {
 		$this->form_validation->set_rules('status', 'status', 'required');
 		$data["titlepage"] = "Transaksi Project ";
 		$data["akunbank"] = $this->akunbank_model->view();
+		$data["akunakutansi"] = $this->akunakutansi_model->view();
 	//   print_r($data["akunbank"]);
 	   if ($this->form_validation->run() === FALSE)
         {

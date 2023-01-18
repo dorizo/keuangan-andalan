@@ -34,7 +34,17 @@
                     
                         </select>
                       </div>
-                      
+                      <div class="form-group">
+                        <label>Akun Akutansi</label>    
+                        <select name="AkunAkuntansiCode" class="custom-select">
+                        <?php
+                            foreach ($akunakutansi as $key => $value) {
+                                echo "<option value=\"".$value['AkunAkuntansiCode']."\">".$value["AkunAkutansiName"]."(".$value['AkunAkutansiCodeName'].")</option>";
+                            }
+                            ?>
+                    
+                        </select>
+                      </div>
                       <div class="form-group">
                         <label>Status</label>    
                         <select name="status" class="custom-select">

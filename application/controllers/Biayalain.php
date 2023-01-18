@@ -10,6 +10,8 @@ class Biayalain extends CI_Controller {
 			$this->load->model('akunbank_model');
 			$this->load->model('project_model');
 			$this->load->model('witel_model');
+			$this->load->model('akunakutansi_model');
+			
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
 			}
@@ -52,6 +54,7 @@ class Biayalain extends CI_Controller {
 	  
 		$data["akunbank"] = $this->akunbank_model->view();
 		$data["witel"] = $this->witel_model->view();
+		$data["akunakutansi"] = $this->akunakutansi_model->view();
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
