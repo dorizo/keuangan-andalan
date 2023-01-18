@@ -14,7 +14,7 @@
                         <input type="text" name="akunbankName" class="form-control">
                       </div>
                       <div class="form-group">
-                        <label>total akunbank</label>
+                        <label>NILAI PINJAMAN</label>
                         <input type="text" name="total_akunbank" class="form-control number-separator">
                       </div>
                       
