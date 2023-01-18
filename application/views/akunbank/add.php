@@ -10,7 +10,7 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
-                        <label>AKUN BANK CODE</label>
+                        <label>NO REK PINJAMAN</label>
                         <input type="text" name="akunbankName" class="form-control">
                       </div>
                       <div class="form-group">
