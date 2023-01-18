@@ -8,6 +8,7 @@ class Transaksi extends CI_Controller {
 			parent::__construct();
 			$this->load->model('project_model');
 			$this->load->model('akunbankTransaksi_model');
+			$this->load->model('akunakutansi_model');
 			$this->load->model('akunbank_model');
 			$this->load->model('akunbank_pengajuan_model');
 			
@@ -55,6 +56,7 @@ class Transaksi extends CI_Controller {
 		$data["pengajuan"] = $this->akunbank_pengajuan_model->view($id);
 		$data["pengajuanCode"] = $pengajuanCode;
 		$data["resultdata"] = $this->akunbank_pengajuan_model->viewsingle($pengajuanCode);
+		$data["akunakutansi"] = $this->akunakutansi_model->view();
 	//   print_r($data["akunbank"]);
 	
 	   if ($this->form_validation->run() === FALSE)
@@ -82,7 +84,8 @@ class Transaksi extends CI_Controller {
 				$this->load->view('transaksi/add' , $data);
 				$this->load->view('template/footer');
 			}else{
-				// print_r();		
+				// print_r();
+				$this->db->query("UPDATE `api`.`akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);		
 				$this->akunbankTransaksi_model->submitadd($this->upload->data("file_name"));	
 				redirect('/transaksi/setting/'.$id, 'refresh');
 			}

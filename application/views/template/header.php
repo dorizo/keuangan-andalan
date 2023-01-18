@@ -239,24 +239,18 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="<?=base_url("akunbank")?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>AKUN BANK</p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="<?=base_url("vendor")?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>VENDOR</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="<?=base_url("report")?>" class="nav-link ">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>REPORT</p>
-                </a>
-              </li>
+              </li> -->
+              
+          <?=projectmenu("KEUW",base_url("akunbank") , "far fa-circle" , "AKUN BANK")?>
+          <?=projectmenu("KEUW",base_url("akunakutansi") , "far fa-circle" , "AKUN AKUTANSI")?>
+          <?=projectmenu("KEUW",base_url("vendor") , "far fa-circle" , "VENDOR")?>
+          <?=projectmenu("KEUW",base_url("report") , "far fa-circle" , "REPORT")?>
+              
             </ul>
           </li>
           <li class="nav-item">

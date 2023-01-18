@@ -23,7 +23,7 @@
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>">   <i class="fa fa-download"></i></a> </td>
                       <td>
                         <?php
-                        if($value["statusTransaksi"] = "PENDING"){
+                        if($value["statusTransaksi"] == "PENDING"){
                         ?>
                         <a href="<?=base_url('transaksi/add/'.$value['project_id'].'/'.$value['akunbank_pengajuanCode'])?>" class="btn btn-success">Proses <i class="fa fa-arrow-right"></i></a></td>
                         <?php
@@ -61,6 +61,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>transaksiNote</label>
+                        <input type="hidden" name="akunbank_pengajuanCode" class="form-control" value="<?=$resultdata->akunbank_pengajuanCode?>">
                         <input type="text" name="transaksiNote" class="form-control" value="<?=$resultdata->transaksiNote?>">
                       </div>
                       
@@ -84,6 +85,19 @@
                     
                         </select>
                       </div>
+                      
+                      <div class="form-group">
+                        <label>Akun Akutansi</label>    
+                        <select name="akunBankCode" class="custom-select">
+                        <?php
+                            foreach ($akunakutansi as $key => $value) {
+                                echo "<option value=\"".$value['AkunAkuntansiCode']."\">".$value["AkunAkutansiName"]."(".$value['AkunAkutansiCodeName'].")</option>";
+                            }
+                            ?>
+                    
+                        </select>
+                      </div>
+                      
                       
                       <div class="form-group">
                         <label>statusTransaksi</label>
