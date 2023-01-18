@@ -25,7 +25,7 @@
                         <?php
                         if($value["statusTransaksi"] = "PENDING"){
                         ?>
-                        <a href="<?=base_url('transaksi/add/1/'.$value['akunbank_pengajuanCode'])?>" class="btn btn-success">Proses <i class="fa fa-arrow-right"></i></a></td>
+                        <a href="<?=base_url('transaksi/add/'.$value['project_id'].'/'.$value['akunbank_pengajuanCode'])?>" class="btn btn-success">Proses <i class="fa fa-arrow-right"></i></a></td>
                         <?php
                           }
                           ?>

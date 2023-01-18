@@ -9,6 +9,14 @@ if ( ! function_exists('rupiah'))
 }
 
 
+if ( ! function_exists('tanggal'))
+{
+    function tanggal($var = '')
+    {
+    return $var;
+    }   
+}
+
 if ( ! function_exists('countday'))
 {
     function countday($var = "0000-00-00" , $param2 = "0000-00-00")

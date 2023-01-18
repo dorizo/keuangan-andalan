@@ -21,6 +21,9 @@
   <link rel="stylesheet" href="<?=base_url()?>asset/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   
   <link rel="stylesheet" href="<?=base_url()?>asset/plugins/pace-progress/themes/black/pace-theme-flat-top.css">
+  
+  <link rel="stylesheet" href="<?=base_url()?>/asset/plugins/select2/css/select2.min.css">
+   <link rel="stylesheet" href="<?=base_url()?>/asset/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
 <!-- jQuery -->
 <script src="<?=base_url()?>asset/plugins/jquery/jquery.min.js"></script>
 </head>
@@ -251,6 +254,29 @@
                 <a href="<?=base_url("report")?>" class="nav-link ">
                   <i class="far fa-circle nav-icon"></i>
                   <p>REPORT</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                User
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=base_url("/Master/role")?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ROLE</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url("/Master/user")?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>USER</p>
                 </a>
               </li>
             </ul>
