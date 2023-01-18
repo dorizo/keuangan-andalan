@@ -10,6 +10,10 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
+                        <label>AKUN BANK CODE</label>
+                        <input type="text" name="akunbankName" class="form-control">
+                      </div>
+                      <div class="form-group">
                         <label>total akunbank</label>
                         <input type="text" name="total_akunbank" class="form-control number-separator">
                       </div>

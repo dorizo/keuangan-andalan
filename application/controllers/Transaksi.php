@@ -85,7 +85,7 @@ class Transaksi extends CI_Controller {
 				$this->load->view('template/footer');
 			}else{
 				// print_r();
-				$this->db->query("UPDATE `api`.`akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);		
+				$this->db->query("UPDATE `akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);		
 				$this->akunbankTransaksi_model->submitadd($this->upload->data("file_name"));	
 				redirect('/transaksi/setting/'.$id, 'refresh');
 			}

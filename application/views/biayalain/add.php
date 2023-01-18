@@ -25,7 +25,7 @@
                         <select name="akunBankCode" class="custom-select">
                         <?php
                             foreach ($akunbank as $key => $value) {
-                                echo "<option value=\"".$value['akunbankCode']."\">".$value["akunbankCode"]."(".$value['saldo_sekarang'].")</option>";
+                                echo "<option value=\"".$value['akunbankCode']."\">".$value["akunbankName"]."(".$value['saldo_sekarang'].")</option>";
                             }
                             ?>
                     
