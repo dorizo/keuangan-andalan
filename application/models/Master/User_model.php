@@ -22,13 +22,13 @@ class User_model extends CI_Model {
         }
         public function submitadd(){
                 $param = $this->input->post();
-                $param["password"] = password_hash($this->input->post("password") , PASSWORD_DEFAULT);
+                $param["password"] = md5($this->input->post("password"));
                 $this->db->insert("user" , $param);
         }
         public function submitedit(){
                 $param = $this->input->post();
                 if(strlen($this->input->post("password")) <= 30){
-                        $param["password"] = password_hash($this->input->post("password") , PASSWORD_DEFAULT);
+                        $param["password"] = md5($this->input->post("password"));
                 };
                 $this->db->where("userCode" , $this->input->post("userCode"));
                 $this->db->update("user" , $param);
