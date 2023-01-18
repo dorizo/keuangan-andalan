@@ -14,6 +14,7 @@
                       <th>KAS NOTE</th>
                       <th>TANGGAL </th>
                       <th>JUMLAH TRANSAKSI</th>
+                      <th>STATUS TRANSAKSI</th>
                       <th>STATUS</th>
                       <th>ACTION</th>
                     </tr>
@@ -27,6 +28,7 @@
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=$value["transaksiDate"]?></td>
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
+                      <td><?=$value["status"]?></td>
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
                       <td><a onclick="hapus('<?=base_url('kas/delete/'.$value['akunbank_kasCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
                     </tr>
@@ -41,6 +43,7 @@
                       <th>KAS NOTE</th>
                       <th>TANGGAL </th>
                       <th>JUMLAH TRANSAKSI</th>
+                      <th>STATUS TRANSAKSI</th>
                       <th>STATUS</th>
                       <th>ACTION</th>
                     </tr>
