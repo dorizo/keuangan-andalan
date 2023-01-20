@@ -11,6 +11,14 @@ class akunbank_pengajuan_model extends CI_Model {
             $db = $this->db->get("akunbank_pengajuan");
             return $db->result_array();
         }
+
+        
+        public function pengajuannotiv($id){
+            $this->db->where("akunbank_pengajuan.statusTransaksi" , $id);
+            $this->db->join("project" , "project.project_id=akunbank_pengajuan.project_id" );
+            $db = $this->db->get("akunbank_pengajuan");
+            return $db->result_array();
+        }
         
         public function sumproject($id){
             $this->db->select_sum('transaksiJumlah');
