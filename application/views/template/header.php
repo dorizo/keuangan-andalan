@@ -263,7 +263,7 @@
             </a>
             <ul class="nav nav-treeview">
             <?=projectmenu("CR",base_url("Master/role") , "far fa-circle" , "ROLE")?>
-            <?=projectmenu("SUPE",base_url("Master/user") , "far fa-circle" , "USER")?>
+            <?=projectmenu("CU",base_url("Master/user") , "far fa-circle" , "USER")?>
               <!-- <li class="nav-item">
                 <a href="<?=base_url("/Master/role")?>" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
