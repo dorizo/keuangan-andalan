@@ -219,6 +219,7 @@
           <li class="nav-item">
           <?=projectmenu("KEUW",base_url("biayalain") , "fas fa-th" , "BIAYA LAINNYA")?>
           <?=projectmenu("KEUW",base_url("kas") , "fas fa-th" , "KAS")?>
+          <?=projectmenu("SuPes",base_url("suratpesanan") , "fas fa-th" , "Surat Pesanan")?>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
