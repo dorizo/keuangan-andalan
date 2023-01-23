@@ -5,6 +5,7 @@
                     <tr>
                       <th>NO</th>
                       <th>PROJECT CODE</th>
+                      <th>PROJECT NAME</th>
                       <th>PROJECT STATUS</th>
                       <th>Nilai Boq</th>
                       <th>MODE</th>
@@ -19,6 +20,7 @@
                       <input type="checkbox" name="bagi[<?=$key?>]" value="<?=$value["project_id"]?>" />
                       </td>
                       <td><?=$value["project_code"]?></td>
+                      <td><?=$value["project_name"]?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
                       <td><?=rupiah($value["nilai_project"])?></td>
