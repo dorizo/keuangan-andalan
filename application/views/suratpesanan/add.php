@@ -17,6 +17,11 @@
                       </div>
                       
                       <div class="form-group">
+                        <label>Nama SURAT PESANAN</label>
+                      <input type="text" name="NamaSuratpesanan" class="form-control" placeholder="">
+                      </div>
+                      
+                      <div class="form-group">
                         <label>NILAI SURAT PESANAN</label>
                         <input type="text" name="nilaiSuratpesanan" class="form-control number-separator">
                       </div>

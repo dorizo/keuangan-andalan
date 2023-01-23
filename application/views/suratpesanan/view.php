@@ -12,6 +12,7 @@
                     <tr>
                       <th>NO CODE</th>
                       <th>NO SURAT PESANAN</th>
+                      <th>NAMA SURAT PESANAN</th>
                       <th>NILAI SURAT PESANAN</th>
                       <th>witel_id</th>
                       <th>MODE</th>
@@ -24,6 +25,7 @@
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["suratpesananCode"]?></td>
                       <td><?=$value["NoSuratpesanan"]?></td>
+                      <td><?=$value["NamaSuratpesanan"]?></td>
                       <td><?=$value["nilaiSuratpesanan"]?></td>
                       <td><?=$value["witel_id"]?></td>
                       <td width=120px>
@@ -39,9 +41,11 @@
                  <tfoot>
                     <tr>
                     
-                    <th>CODE</th>
-                      <th>keterangan</th>
-                      <th>biayalain</th>
+                   
+                    <th>NO CODE</th>
+                      <th>NO SURAT PESANAN</th>
+                      <th>NAMA SURAT PESANAN</th>
+                      <th>NILAI SURAT PESANAN</th>
                       <th>witel_id</th>
                       <th>MODE</th>
                     </tr>
