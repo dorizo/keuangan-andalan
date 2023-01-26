@@ -58,7 +58,17 @@ class Akunbank extends CI_Controller {
 		}
 	}
     public function delete($d){
-        $this->akunbank_model->delete($d);
+        // $this->akunbank_model->delete($d);
         redirect('/akunbank', 'refresh');    
     }
+
+	public function record($r){
+		
+		$data["titlepage"] = "PROYEK ";
+		$data["datatable"] = $this->db->query("select * from akunbank_transaksi at join project p ON at.project_id=p.project_id JOIN akunakutansi aa ON aa.AkunAkuntansiCode=at.AkunAkuntansiCode where at.akunBankCode=$r")->result_array();
+		
+		$this->load->view('template/header' , $data);
+		$this->load->view('akunbank/history' , $data);
+		$this->load->view('template/footer');
+	}
 }

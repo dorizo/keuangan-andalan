@@ -17,6 +17,7 @@
                       <th>bungabank</th>
                       <th>bungapartner</th>
                       <th>MODE</th>
+                      <th>detail</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -31,6 +32,7 @@
                       <td><?=$value["bungabank"]?></td>
                       <td><?=$value["bungapartner"]?></td>
                       <td><a onclick="hapus('<?=base_url('akunbank/delete/'.$value['akunbankCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
+                      <td><a href="<?=base_url('akunbank/record/'.$value['akunbankCode'])?>" class="btn btn-success"><i class="fas fa-arrow-right"></i></a></td>
                     </tr>
                   <?php
                      }
