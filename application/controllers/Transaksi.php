@@ -68,7 +68,7 @@ class Transaksi extends CI_Controller {
 		}else{
 
 			$config['upload_path']          = './pembayaran/';
-			$config['allowed_types']        = 'gif|jpg|png|jpeg';
+			$config['allowed_types']        = '*';
 			$config['max_size']             = 1000;
 			$config['max_width']            = 10240;
 			$config['max_height']           = 7680;
