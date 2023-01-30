@@ -157,16 +157,16 @@
                     ?>
                     <tr>
                       <th><?=strtoupper($value["job_name"])?></th>
-                      <th><?=$value["jaktim"]?></th>
-                      <th><?=$value["jakbar"]?></th>
-                      <th><?=$value["jakut"]?></th>
-                      <th><?=$value["jakpus"]?></th>
-                      <th><?=$value["bogor"]?></th>
-                      <th><?=$value["tanggrang"]?></th>
-                      <th><?=$value["banten"]?></th>
-                      <th><?=$value["cirebon"]?></th>
-                      <th><?=$value["bandung"]?></th>
-                      <th><?=$value["bekasi"]?></th>
+                      <th><?=thousandsCurrencyFormat($value["jaktim"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["jakbar"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["jakut"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["jakpus"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["bogor"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["tanggrang"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["banten"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["cirebon"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["bandung"])?></th>
+                      <th><?=thousandsCurrencyFormat($value["bekasi"])?></th>
                     </tr>
                     <?php
                   }
@@ -174,16 +174,16 @@
                   ?>
                   <tr>
                       <th>TOTAL</th>
-                      <th><?=$jaktim?></th>
-                      <th><?=$jakbar?></th>
-                      <th><?=$jakut?></th>
-                      <th><?=$jakpus?></th>
-                      <th><?=$bogor?></th>
-                      <th><?=$tanggrang?></th>
-                      <th><?=$banten?></th>
-                      <th><?=$cirebon?></th>
-                      <th><?=$bandung?></th>
-                      <th><?=$bekasi?></th>
+                      <th><?=thousandsCurrencyFormat($jaktim)?></th>
+                      <th><?=thousandsCurrencyFormat($jakbar)?></th>
+                      <th><?=thousandsCurrencyFormat($jakut)?></th>
+                      <th><?=thousandsCurrencyFormat($jakpus)?></th>
+                      <th><?=thousandsCurrencyFormat($bogor)?></th>
+                      <th><?=thousandsCurrencyFormat($tanggrang)?></th>
+                      <th><?=thousandsCurrencyFormat($banten)?></th>
+                      <th><?=thousandsCurrencyFormat($cirebon)?></th>
+                      <th><?=thousandsCurrencyFormat($bandung)?></th>
+                      <th><?=thousandsCurrencyFormat($bekasi)?></th>
                     </tr>
                   <tbody>
                   </tbody>
