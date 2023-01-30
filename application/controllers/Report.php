@@ -16,6 +16,7 @@ class Report extends CI_Controller {
 	public function index()
 	{
 		$data["dataresult"] = $this->Report_model->view();
+		$data["dataresult2"] = $this->Report_model->witel();
 		$data["titlepage"] = "PROYEK";
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
