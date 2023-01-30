@@ -38,7 +38,7 @@
                   <tbody>
                   </tbody>
                 </table>
-                <hr /><h4>Total PERWITEL</h4>
+                <hr /><h4>PER WITEL PARAMETER JUMLAH PROJECT</h4>
                 
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
@@ -69,6 +69,81 @@
                   $bekasi = 0;
                   foreach ($dataresult2 as $key => $value) {
                     
+                  $jaktim = $jaktim+ $value["jaktim"];
+                  $jakbar = $jakbar+ $value["jakbar"];
+                  $jakut = $jakut+ $value["jakut"];
+                  $jakpus = $jakpus+ $value["jakpus"];
+                  $bogor = $bogor+ $value["bogor"];
+                  $tanggrang = $tanggrang+ $value["tanggrang"];
+                  $banten = $banten+ $value["banten"];
+                  $cirebon = $cirebon+ $value["cirebon"];
+                  $bandung = $bandung+ $value["bandung"];
+                  $bekasi = $bekasi+ $value["bekasi"];
+                    ?>
+                    <tr>
+                      <th><?=strtoupper($value["job_name"])?></th>
+                      <th><?=$value["jaktim"]?></th>
+                      <th><?=$value["jakbar"]?></th>
+                      <th><?=$value["jakut"]?></th>
+                      <th><?=$value["jakpus"]?></th>
+                      <th><?=$value["bogor"]?></th>
+                      <th><?=$value["tanggrang"]?></th>
+                      <th><?=$value["banten"]?></th>
+                      <th><?=$value["cirebon"]?></th>
+                      <th><?=$value["bandung"]?></th>
+                      <th><?=$value["bekasi"]?></th>
+                    </tr>
+                    <?php
+                  }
+
+                  ?>
+                  <tr>
+                      <th>TOTAL</th>
+                      <th><?=$jaktim?></th>
+                      <th><?=$jakbar?></th>
+                      <th><?=$jakut?></th>
+                      <th><?=$jakpus?></th>
+                      <th><?=$bogor?></th>
+                      <th><?=$tanggrang?></th>
+                      <th><?=$banten?></th>
+                      <th><?=$cirebon?></th>
+                      <th><?=$bandung?></th>
+                      <th><?=$bekasi?></th>
+                    </tr>
+                  <tbody>
+                  </tbody>
+                </table>
+
+                <hr /><h4>PER WITEL PARAMETER NILAI PROJECT</h4>
+                
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                    <tr>
+                      <th>PROJECT STATUS</th>
+                      <th>JAK TIM</th>
+                      <th>JAK BAR</th>
+                      <th>JAK SEL</th>
+                      <th>JAK PUS</th>
+                      <th>BOGOR</th>
+                      <th>TANGGRANG</th>
+                      <th>BANTEN</th>
+                      <th>CIREBON</th>
+                      <th>BANDUNG</th>
+                      <th>BEKASI</th>
+                    </tr>
+                  </thead>
+                  <?php 
+                  $jaktim = 0;
+                  $jakbar = 0;
+                  $jakut = 0;
+                  $jakpus = 0;
+                  $bogor = 0;
+                  $tanggrang = 0;
+                  $banten = 0;
+                  $cirebon = 0;
+                  $bandung = 0;
+                  $bekasi = 0;
+                  foreach ($dataresult3 as $key => $value) {
                   $jaktim = $jaktim+ $value["jaktim"];
                   $jakbar = $jakbar+ $value["jakbar"];
                   $jakut = $jakut+ $value["jakut"];

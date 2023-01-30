@@ -17,6 +17,7 @@ class Report extends CI_Controller {
 	{
 		$data["dataresult"] = $this->Report_model->view();
 		$data["dataresult2"] = $this->Report_model->witel();
+		$data["dataresult3"] = $this->Report_model->nilaiwitel();
 		$data["titlepage"] = "PROYEK";
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
