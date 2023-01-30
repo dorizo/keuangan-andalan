@@ -19,7 +19,7 @@
                     $nilaidata =$nilaidata+ $value["nilai"];
                     ?>
                     <tr>
-                      <th><?=$value["project_status"]?></th>
+                      <th><?=strtoupper($value["project_status"])?></th>
                       <th><?=$value["Count"]?></th>
                       <th><?=rupiah($value["nilai"])?></th>
                     </tr>
@@ -44,16 +44,16 @@
                   <thead>
                     <tr>
                       <th>PROJECT STATUS</th>
-                      <th>jaktim</th>
-                      <th>jakbar</th>
-                      <th>jaksel</th>
-                      <th>jakpus</th>
-                      <th>bogor</th>
-                      <th>tanggrang</th>
-                      <th>banten</th>
-                      <th>cirebon</th>
-                      <th>bandung</th>
-                      <th>bekasi</th>
+                      <th>JAK TIM</th>
+                      <th>JAK BAR</th>
+                      <th>JAK SEL</th>
+                      <th>JAK PUS</th>
+                      <th>BOGOR</th>
+                      <th>TANGGRANG</th>
+                      <th>BANTEN</th>
+                      <th>CIREBON</th>
+                      <th>BANDUNG</th>
+                      <th>BEKASI</th>
                     </tr>
                   </thead>
                   <?php 
@@ -81,7 +81,7 @@
                   $bekasi = $bekasi+ $value["bekasi"];
                     ?>
                     <tr>
-                      <th><?=$value["job_name"]?></th>
+                      <th><?=strtoupper($value["job_name"])?></th>
                       <th><?=$value["jaktim"]?></th>
                       <th><?=$value["jakbar"]?></th>
                       <th><?=$value["jakut"]?></th>
