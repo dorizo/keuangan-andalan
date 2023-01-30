@@ -20,7 +20,7 @@
                     ?>
                     <tr>
                       <th><?=strtoupper($value["project_status"])?></th>
-                      <th><?=$value["Count"]?></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["project_status"])?>" target="_BLANK"><?=$value["Count"]?></a></th>
                       <th><?=rupiah($value["nilai"])?></th>
                     </tr>
                     <?php
@@ -45,8 +45,9 @@
                     <tr>
                       <th>PROJECT STATUS</th>
                       <th>JAK TIM</th>
-                      <th>JAK BAR</th>
                       <th>JAK SEL</th>
+                      <th>JAK BAR</th>
+                      <th>JAK UT</th>
                       <th>JAK PUS</th>
                       <th>BOGOR</th>
                       <th>TANGGRANG</th>
@@ -59,6 +60,7 @@
                   </thead>
                   <?php 
                   $jaktim = 0;
+                  $jaksel = 0;
                   $jakbar = 0;
                   $jakut = 0;
                   $jakpus = 0;
@@ -68,9 +70,12 @@
                   $cirebon = 0;
                   $bandung = 0;
                   $bekasi = 0;
+                  //kode witel untuk ambil url
+                  $witeler = array(6,7,8,9,10,11,12,14,14,15,16);
                   foreach ($dataresult2 as $key => $value) {
                     
                   $jaktim = $jaktim+ $value["jaktim"];
+                  $jaksel = $jaksel+ $value["jaksel"];
                   $jakbar = $jakbar+ $value["jakbar"];
                   $jakut = $jakut+ $value["jakut"];
                   $jakpus = $jakpus+ $value["jakpus"];
@@ -83,16 +88,17 @@
                     ?>
                     <tr>
                       <th><?=strtoupper($value["job_name"])?></th>
-                      <th><?=$value["jaktim"]?></th>
-                      <th><?=$value["jakbar"]?></th>
-                      <th><?=$value["jakut"]?></th>
-                      <th><?=$value["jakpus"]?></th>
-                      <th><?=$value["bogor"]?></th>
-                      <th><?=$value["tanggrang"]?></th>
-                      <th><?=$value["banten"]?></th>
-                      <th><?=$value["cirebon"]?></th>
-                      <th><?=$value["bandung"]?></th>
-                      <th><?=$value["bekasi"]?></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[0]?>" target="_BLANK"><?=$value["jaktim"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[1]?>" target="_BLANK"><?=$value["jaksel"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[2]?>" target="_BLANK"><?=$value["jakbar"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=$value["jakut"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=$value["jakpus"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[5]?>" target="_BLANK"><?=$value["bogor"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[6]?>" target="_BLANK"><?=$value["tanggrang"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[7]?>" target="_BLANK"><?=$value["banten"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[8]?>" target="_BLANK"><?=$value["cirebon"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[9]?>" target="_BLANK"><?=$value["bandung"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[10]?>" target="_BLANK"><?=$value["bekasi"]?></a></th>
                       <th><?=($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"])?></th>
                     </tr>
                     <?php
@@ -102,6 +108,7 @@
                   <tr>
                       <th>TOTAL</th>
                       <th><?=$jaktim?></th>
+                      <th><?=$jaksel?></th>
                       <th><?=$jakbar?></th>
                       <th><?=$jakut?></th>
                       <th><?=$jakpus?></th>
@@ -124,8 +131,9 @@
                     <tr>
                       <th>PROJECT STATUS</th>
                       <th>JAK TIM</th>
-                      <th>JAK BAR</th>
                       <th>JAK SEL</th>
+                      <th>JAK BAR</th>
+                      <th>JAK UT</th>
                       <th>JAK PUS</th>
                       <th>BOGOR</th>
                       <th>TANGGRANG</th>
@@ -138,6 +146,7 @@
                   </thead>
                   <?php 
                   $jaktim = 0;
+                  $jaksel = 0;
                   $jakbar = 0;
                   $jakut = 0;
                   $jakpus = 0;
@@ -150,6 +159,7 @@
                   foreach ($dataresult3 as $key => $value) {
                   $jaktim = $jaktim+ $value["jaktim"];
                   $jakbar = $jakbar+ $value["jakbar"];
+                  $jaksel = $jaksel+ $value["jaksel"];
                   $jakut = $jakut+ $value["jakut"];
                   $jakpus = $jakpus+ $value["jakpus"];
                   $bogor = $bogor+ $value["bogor"];
@@ -161,17 +171,18 @@
                     ?>
                     <tr>
                       <th><?=strtoupper($value["job_name"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["jaktim"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["jakbar"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["jakut"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["jakpus"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["bogor"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["tanggrang"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["banten"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["cirebon"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["bandung"])?></th>
-                      <th><?=thousandsCurrencyFormat($value["bekasi"])?></th>
-                      <th><?=thousandsCurrencyFormat(($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"]))?></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[0]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jaktim"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[1]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jaksel"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[2]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakbar"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakut"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakpus"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[5]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["bogor"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[6]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["tanggrang"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[7]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["banten"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[8]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["cirebon"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[9]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["bandung"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[10]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["bekasi"])?></a></th>
+                     <th><?=thousandsCurrencyFormat(($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"]))?></th>
                     </tr>
                     <?php
                   }
@@ -180,6 +191,7 @@
                   <tr>
                       <th>TOTAL</th>
                       <th><?=thousandsCurrencyFormat($jaktim)?></th>
+                      <th><?=thousandsCurrencyFormat($jaksel)?></th>
                       <th><?=thousandsCurrencyFormat($jakbar)?></th>
                       <th><?=thousandsCurrencyFormat($jakut)?></th>
                       <th><?=thousandsCurrencyFormat($jakpus)?></th>

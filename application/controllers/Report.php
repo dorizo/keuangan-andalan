@@ -24,24 +24,35 @@ class Report extends CI_Controller {
 		$this->load->view('report/view' , $data);
 		$this->load->view('template/footer');
 	}
-	public function edit($id){
-
-		$this->form_validation->set_rules('project_id', 'project_id', 'required');
-        
-        $data["dataresult"] = $this->project_model->viewSinggle($id);
-        $data["datajob"] = $this->job_model->view();
-		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
-	   if ($this->form_validation->run() === FALSE)
-        {
-     	$this->load->view('template/header' , $data);
-		$this->load->view('projectpart/edit' , $data);
+	public function detail(){
+		// print_r($this->input->get());
+		// $data["titlepage"] = "PROYEK";
+		// $data["pluginjs"] = "transaksi.js";
+		// $this->load->view('template/header' , $data);
+		// $this->load->view('report/detail' , $data);
+		// $this->load->view('template/footer');
+		$data["titlepage"] = "HOME";
+		$data["pluginjs"] = "home.js?1";
+		$data["dataresult"] = $this->Report_model->detail($this->input->get());
+		$this->load->view('template/header' , $data);
+		$this->load->view('home', $data);
 		$this->load->view('template/footer');
+	// 	$this->form_validation->set_rules('project_id', 'project_id', 'required');
+        
+    //     $data["dataresult"] = $this->project_model->viewSinggle($id);
+    //     $data["datajob"] = $this->job_model->view();
+	// 	$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+	//    if ($this->form_validation->run() === FALSE)
+    //     {
+    //  	$this->load->view('template/header' , $data);
+	// 	$this->load->view('projectpart/edit' , $data);
+	// 	$this->load->view('template/footer');
 		
-		}else{
-			$this->project_model->edit();	
-            redirect('/project', 'refresh');
+	// 	}else{
+	// 		$this->project_model->edit();	
+    //         redirect('/project', 'refresh');
 		
-		}
+	// 	}
 	}
 
     public function add(){
