@@ -13,7 +13,9 @@
                     </tr>
                   </thead>
                   <?php 
+                  $nilaidata = 0;
                   foreach ($dataresult as $key => $value) {
+                    $nilaidata =$nilaidata+ $value["nilai"];
                     ?>
                     <tr>
                       <th><?=$value["project_status"]?></th>
@@ -24,6 +26,14 @@
                   }
 
                   ?>
+                  <tr>
+                    <th colspan=2></th>
+                    <th>  
+                <?php
+                echo rupiah($nilaidata);
+                ?>
+                </th>
+                  </tr>
                   <tbody>
                   </tbody>
                 </table>
