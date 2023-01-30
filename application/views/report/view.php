@@ -133,6 +133,7 @@
                       <th>CIREBON</th>
                       <th>BANDUNG</th>
                       <th>BEKASI</th>
+                      <th>TOTAL</th>
                     </tr>
                   </thead>
                   <?php 
@@ -170,7 +171,7 @@
                       <th><?=thousandsCurrencyFormat($value["cirebon"])?></th>
                       <th><?=thousandsCurrencyFormat($value["bandung"])?></th>
                       <th><?=thousandsCurrencyFormat($value["bekasi"])?></th>
-                      <th><?=($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"])?></th>
+                      <th><?=thousandsCurrencyFormat(($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"]))?></th>
                     </tr>
                     <?php
                   }
