@@ -29,6 +29,20 @@ class akunbankTransaksi_model extends CI_Model {
         }
         
         public function delete($i){
+            $nm = $this->db->query("SELECT akunBankCode ,transaksiJumlah from akunbank_transaksi where akunbank_transaksiCode=$i ")->row();
+
+            $a = $this->db->query('Select saldo_sekarang from akunbank where akunBankCode='.$nm->akunBankCode)->row();
+            if("DEL" == "CR"){
+             // credit saldo mengurangi dan input ke sini
+             $saldo = $a->saldo_sekarang - str_replace(",", "",$nm->transaksiJumlah);
+             $this->db->query("UPDATE `akunbank` SET saldo_sekarang=$saldo where akunBankCode=".$nm->akunBankCode);
+             $this->db->query("INSERT INTO `akunbank_debit_kredit`( `akunbankCode`, `debit`, `credit`, `saldo`)VALUES (".$nm->akunBankCode.",0,".$nm->transaksiJumlah.",".$saldo.")");
+             }else{
+                 $saldo = $a->saldo_sekarang + str_replace(",", "",$nm->transaksiJumlah);
+                 $this->db->query("UPDATE `akunbank` SET saldo_sekarang=$saldo where akunBankCode=".$nm->akunBankCode);
+                 $this->db->query("INSERT INTO `akunbank_debit_kredit`( `akunbankCode`, `debit`, `credit`, `saldo`)VALUES (".$nm->akunBankCode.",".$nm->transaksiJumlah.",0,".$saldo.")");
+                     
+             }
             $this->db->where("akunbank_transaksiCode",$i);
             $this->db->delete("akunbank_transaksi");
         }
