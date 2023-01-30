@@ -19,7 +19,7 @@ class Pengajuan extends CI_Controller {
 		
 		$data["titlepage"] = "NOTIFIKASI";
 		$data["datatable"] = $this->akunbank_pengajuan_model->pengajuannotiv("PENDING");
-		$data["pluginjs"] = "transaksi.js";
+		$data["pluginjs"] = "project.js?2s2";
 		$this->load->view('template/header' , $data);
 		$this->load->view('Pengajuan/notiv' , $data);
 		$this->load->view('template/footer');
