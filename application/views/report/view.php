@@ -91,8 +91,8 @@
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[0]?>" target="_BLANK"><?=$value["jaktim"]?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[1]?>" target="_BLANK"><?=$value["jaksel"]?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[2]?>" target="_BLANK"><?=$value["jakbar"]?></a></th>
-                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=$value["jakut"]?></a></th>
-                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=$value["jakpus"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=$value["jakut"]?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=$value["jakpus"]?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[5]?>" target="_BLANK"><?=$value["bogor"]?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[6]?>" target="_BLANK"><?=$value["tanggrang"]?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[7]?>" target="_BLANK"><?=$value["banten"]?></a></th>
@@ -174,8 +174,8 @@
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[0]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jaktim"])?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[1]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jaksel"])?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[2]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakbar"])?></a></th>
-                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakut"])?></a></th>
-                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakpus"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[4]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakut"])?></a></th>
+                      <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[3]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["jakpus"])?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[5]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["bogor"])?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[6]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["tanggrang"])?></a></th>
                       <th><a href="<?=base_url("report/detail?project_status=".$value["job_name"])."&witel_id=".$witeler[7]?>" target="_BLANK"><?=thousandsCurrencyFormat($value["banten"])?></a></th>
