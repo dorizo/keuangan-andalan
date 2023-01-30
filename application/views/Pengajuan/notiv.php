@@ -40,7 +40,8 @@
                 </tbody>
                  <tfoot>
                     <tr>
-                      <th>akunbank_pengajuanCode</th>
+                    <th>akunbank_pengajuanCode</th>
+                      <th>Project Code</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
                       <th>JUMLAH TRANSAKSI</th>
