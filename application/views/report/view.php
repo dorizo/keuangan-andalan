@@ -54,6 +54,7 @@
                       <th>CIREBON</th>
                       <th>BANDUNG</th>
                       <th>BEKASI</th>
+                      <th>TOTAL </th>
                     </tr>
                   </thead>
                   <?php 
@@ -92,6 +93,7 @@
                       <th><?=$value["cirebon"]?></th>
                       <th><?=$value["bandung"]?></th>
                       <th><?=$value["bekasi"]?></th>
+                      <th><?=($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"])?></th>
                     </tr>
                     <?php
                   }
@@ -109,7 +111,8 @@
                       <th><?=$cirebon?></th>
                       <th><?=$bandung?></th>
                       <th><?=$bekasi?></th>
-                    </tr>
+                      <th><?=thousandsCurrencyFormat(($jaktim+$jakbar+$jakut+$jakpus+$bogor+$tanggrang+$banten+$cirebon+$bandung+$bekasi))?></th>
+                      </tr>
                   <tbody>
                   </tbody>
                 </table>
@@ -167,6 +170,7 @@
                       <th><?=thousandsCurrencyFormat($value["cirebon"])?></th>
                       <th><?=thousandsCurrencyFormat($value["bandung"])?></th>
                       <th><?=thousandsCurrencyFormat($value["bekasi"])?></th>
+                      <th><?=($value["jaktim"]+$value["jakbar"]+$value["jakut"]+$value["jakpus"]+$value["bogor"]+$value["tanggrang"]+$value["banten"]+$value["cirebon"]+$value["bandung"]+$value["bekasi"])?></th>
                     </tr>
                     <?php
                   }
@@ -184,6 +188,7 @@
                       <th><?=thousandsCurrencyFormat($cirebon)?></th>
                       <th><?=thousandsCurrencyFormat($bandung)?></th>
                       <th><?=thousandsCurrencyFormat($bekasi)?></th>
+                      <th><?=thousandsCurrencyFormat(($jaktim+$jakbar+$jakut+$jakpus+$bogor+$tanggrang+$banten+$cirebon+$bandung+$bekasi))?></th>
                     </tr>
                   <tbody>
                   </tbody>
