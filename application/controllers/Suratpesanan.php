@@ -99,6 +99,7 @@ class Suratpesanan extends CI_Controller {
                 // print_r($value);
                 $datamarga[$key]["suratpesananCode"] = $kd;
                 $datamarga[$key]["project_id"] =  $value;
+				$this->db->query("UPDATE `project` SET `project_status` = 'pemberkasan' WHERE `project_id` = $value");
             }
 			$sss = $this->db->insert_batch("suratpesanandetail" , $datamarga);
 		if($sss){

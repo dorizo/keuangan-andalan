@@ -50,6 +50,10 @@
                           <?=projectmenu("KEUW",base_url("project/generate/".$value["project_id"]) , "fa-money-bill" , "Generate COST CENTER")?>
                           <?=projectmenu("UPRO",base_url("project/edit/".$value["project_id"]) , "fa-money-bill" , "Edit")?>
                           <?=projectmenu("SETPRO",base_url("project/setting/".$value["project_id"]) , "fa-money-bill" , "Setting Project")?>
+                          <?=projectmenu("PMSET",base_url("pmsetting/setting/".$value["project_id"]) , "fa-money-bill" , "Setting Status")?>
+
+                          <?php if($value["project_status"]=="pemberkasan"){ echo projectmenu("BOQFI",base_url("project/boqfinal/".$value["project_id"]) , "fa-money-bill" , "SETTING BOQ FINAL");}?>
+                          
                           <?=projectmenu("KEUW",base_url("transaksi/setting/".$value["project_id"]) , "fa-money-bill" , "Pembayaran Vendor")?>
                           <?=projectmenu("KEUW",base_url("project/done/".$value["project_id"]) , "fa-money-bill" , "Penyelesaian Project")?>
                           <!-- <a class="dropdown-item" href="<?=base_url("project/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> </a>

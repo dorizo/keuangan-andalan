@@ -6,9 +6,14 @@ class Job_model extends CI_Model {
                 $this->load->database();
         }
         public function view(){
-            $db = $this->db->get("job");
+                $db = $this->db->get("job");
             return $db->result_array();
         }
 
+        public function viewPM(){
+                $this->db->where("job_name != 'PAID'");
+                $db = $this->db->get("job");
+            return $db->result_array();
+        }
        
 }

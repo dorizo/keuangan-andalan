@@ -39,6 +39,22 @@ class Project_model extends CI_Model {
               $this->db->update("project" , $p);
         }
         
+        public function editboqfinal(){
+                $this->db->where("project_id", $this->input->post("project_id"));
+                $p = $this->input->post();
+                $p["boqfinal"] = str_replace(",", "",$this->input->post("boqfinal"));
+                $this->db->update("project" , $p);
+          }
+
+        public function editnonnilai(){
+                $this->db->where("project_id", $this->input->post("project_id"));
+                $p = $this->input->post();
+                // $p["nilai_project"] = str_replace(",", "",$this->input->post("nilai_project"));
+                // $p["nilai_boq"] = str_replace(",", "", $this->input->post("nilai_boq"));
+                $this->db->update("project" , $p);
+          }
+        
+        
 
         public function doneproject(){
                 $this->db->where("project_id", $this->input->post("project_id"));

@@ -52,6 +52,29 @@ class Project extends CI_Controller {
 		}
 	}
 
+	public function boqfinal($id){
+
+		$this->form_validation->set_rules('project_id', 'project_id', 'required');
+        
+        $data["dataresult"] = $this->project_model->viewSinggle($id);
+        $data["vendorresult"] = $this->vendor_model->view();
+        $data["witelresult"] = $this->witel_model->view();
+        $data["datajob"] = $this->job_model->view();
+		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('projectpart/boqfinal' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			$this->project_model->editboqfinal();
+			
+            redirect('/project', 'refresh');
+		
+		}
+	}
+
 	public function edit($id){
 
 		$data["kategori"] = $this->db->query("select * from project_cat")->result_array();
