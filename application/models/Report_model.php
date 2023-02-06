@@ -35,5 +35,9 @@ class Report_model extends CI_Model {
         public function reportcatwitel($catid , $witelid){
             return $this->db->query("select COALESCE(SUM(nilai_project),0) as x FROM project where witel_id='$witelid' AND cat_id='$catid'")->row();
         }
+        
+        public function reportcategori($witelid){
+            return $this->db->query("select COALESCE(SUM(nilai_project),0) as x FROM project where witel_id='$witelid'")->row();
+        }
     }
     ?>
