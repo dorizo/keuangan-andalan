@@ -50,7 +50,7 @@
                             }
                         ?>
                         
-                      <th><?=thousandsCurrencyFormat($x)?></th>
+                      <th><?=" <a target='_BLANK' href=".base_url("report/detail?project-cat_id=".$value["cat_id"]).">".thousandsCurrencyFormat($x)?></a></th>
                     </tr>
                     <?php
                   }
