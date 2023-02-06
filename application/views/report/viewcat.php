@@ -42,7 +42,7 @@
                             foreach ($columtable as $key1 => $value1) {
                                 
                                 # code...
-                                echo "<th> <a href=".base_url("report/detail?project-cat_id=".$value["cat_id"])."&witel_id=".$value1["witel_id"].">".thousandsCurrencyFormat($this->report_model->reportcatwitel($value["cat_id"] , $value1["witel_id"])->x)."</th>";
+                                echo "<th> <a target='_BLANK' href=".base_url("report/detail?project-cat_id=".$value["cat_id"])."&witel_id=".$value1["witel_id"].">".thousandsCurrencyFormat($this->report_model->reportcatwitel($value["cat_id"] , $value1["witel_id"])->x)."</a></th>";
                             }
                         ?>
                     </tr>
