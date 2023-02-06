@@ -19,7 +19,9 @@ class Report_model extends CI_Model {
         public function detail($p){
         foreach ($p as $key => $value) {
             # code...
-            $this->db->where($key ,$value);
+            
+
+            $this->db->where(str_replace("-",".",$key),$value);
         }
 
             
@@ -28,6 +30,10 @@ class Report_model extends CI_Model {
         $this->db->order_by("project_id" , "DESC");
         $db = $this->db->get("project");
         return $db->result_array();
+        }
+
+        public function reportcatwitel($catid , $witelid){
+            return $this->db->query("select COALESCE(SUM(nilai_project),0) as x FROM project where witel_id='$witelid' AND cat_id='$catid'")->row();
         }
     }
     ?>

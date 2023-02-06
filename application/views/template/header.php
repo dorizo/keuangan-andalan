@@ -241,6 +241,7 @@
           <?=projectmenu("KEUW",base_url("akunakutansi") , "far fa-circle" , "AKUN AKUTANSI")?>
           <?=projectmenu("KEUW",base_url("vendor") , "far fa-circle" , "VENDOR")?>
           <?=projectmenu("LAPR",base_url("report") , "far fa-circle" , "REPORT")?>
+          <?=projectmenu("LAPR",base_url("ReportKategori") , "far fa-circle" , "REPORT KATEGORI")?>
               
             </ul>
           </li>
