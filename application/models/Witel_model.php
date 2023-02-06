@@ -6,6 +6,7 @@ class Witel_model extends CI_Model {
                 $this->load->database();
         }
         public function view(){
+            $this->db->where("deleteAt is NULL");
             $db = $this->db->get("witel");
             return $db->result_array();
         }
