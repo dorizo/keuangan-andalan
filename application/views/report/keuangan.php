@@ -116,6 +116,20 @@
                         </div>
                     </div>
                    
+                    
+                    <div class="col-4">
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3> <?=rupiah($bungaakunbank->x - $row->totalbungaseluruh)?></h3>
+
+                                <p>BEBAN BUNGA  PERUSAHAAN</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-database"></i>
+                            </div>
+                         
+                        </div>
+                    </div>
 
                     <table id="example" class="table table-striped table-valign-middle" style="font-size:12px">
                   <thead>
