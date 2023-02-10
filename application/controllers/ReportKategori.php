@@ -30,6 +30,8 @@ class ReportKategori extends CI_Controller {
 	public function keuangan(){
 		$data["row"] = $this->report_model->reportresumecount();
         $data["dataresult"] = $this->report_model->reportresume();
+        $data["bungaakunbank"] = $this->report_model->bungaakunbank();
+        $data["bungaakunbankresult"] = $this->report_model->bungaakunbankresult();
 		$data["titlepage"] = "REPORT KEUANGAN";
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
