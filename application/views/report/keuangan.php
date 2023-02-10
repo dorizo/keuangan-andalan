@@ -131,7 +131,7 @@
                         </div>
                     </div>
 
-                    <table id="example" class="table table-striped table-valign-middle" style="font-size:12px">
+                    <table id="example1" class="table table-striped table-valign-middle" style="font-size:12px">
                   <thead>
                   <tr>
                     
