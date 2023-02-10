@@ -54,7 +54,7 @@ class Suratpesanan_model extends CI_Model {
             return $last_id; 
         }
         public function jumlah($id){
-           return $this->db->query("select sum(nilai_project) as mo from suratpesananDetail join project on project.project_id=suratpesananDetail.project_id where suratpesananDetail.suratpesananCode=".$id)->row();
+           return $this->db->query("select sum(nilai_project) as mo from suratpesanandetail join project on project.project_id=suratpesanandetail.project_id where suratpesanandetail.suratpesananCode=".$id)->row();
         }
 
        
