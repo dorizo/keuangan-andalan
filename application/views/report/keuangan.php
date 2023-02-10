@@ -130,43 +130,43 @@
                          
                         </div>
                     </div>
+                    <div class="col-12">
+                        <table id="example1" class="table table-striped table-valign-middle" style="font-size:12px">
+                            <thead>
+                            <tr>
+                                <th>PROJECT ID</th>
+                                <th>PROJECT PAID</th>
+                                <th>nilaiproject</th>
+                                <th>mandor</th>
+                                <th>api</th>
+                                <th>totalbungaseluruh</th>
+                                <th>dibayar</th>
+                                <th>PAID_PROJECT</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                foreach ($dataresult as $key => $value) {
+                            //    print_r($value);
+                                ?>
+                                <tr> 
+                                    <td><?=$value["project_code"]; ?></td>
+                                    <td><?=$value["project_paid"]; ?></td>
+                                    <td><?=rupiah($value["nilaiproject"]); ?></td>
+                                    <td><?=rupiah($value["mandor"]); ?></td>
+                                    <td><?=rupiah($value["api"]); ?></td>
+                                    <td><?=rupiah($value["totalbungaseluruh"]); ?></td>
+                                    <td><?=rupiah($value["dibayar"]); ?></td>
+                                    <td><?=rupiah($value["PAID_PROJECT"]); ?></td>
+                                </tr>
 
-                    <table id="example1" class="table table-striped table-valign-middle" style="font-size:12px">
-                  <thead>
-                  <tr>
-                    
-                    <th>PROJECT ID</th>
-                    <th>PROJECT PAID</th>
-                    <th>nilaiproject</th>
-                    <th>mandor</th>
-                    <th>api</th>
-                    <th>totalbungaseluruh</th>
-                    <th>dibayar</th>
-                    <th>PAID_PROJECT</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                    <?php
-                    foreach ($dataresult as $key => $value) {
-                //    print_r($value);
-                    ?>
-                    <tr> 
-                        <td><?=$value["project_code"]; ?></td>
-                        <td><?=$value["project_paid"]; ?></td>
-                        <td><?=rupiah($value["nilaiproject"]); ?></td>
-                        <td><?=rupiah($value["mandor"]); ?></td>
-                        <td><?=rupiah($value["api"]); ?></td>
-                        <td><?=rupiah($value["totalbungaseluruh"]); ?></td>
-                        <td><?=rupiah($value["dibayar"]); ?></td>
-                        <td><?=rupiah($value["PAID_PROJECT"]); ?></td>
-                    </tr>
-
-                    <?php
-                         # code...
-                        }
-                    ?>
-                  </tbody>
-                </table>
+                                <?php
+                                    # code...
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
 
              </div>
