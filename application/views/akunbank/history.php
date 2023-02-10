@@ -12,6 +12,7 @@
                       <th>akunbank_transaksiCode</th>
                       <th>Akun Akitansi</th>
                       <th>transaksiNote</th>
+                      <th>project Code</th>
                       <th>transaksiDate</th>
                       <th>transaksiJumlah</th>
                       <th>akunBankCode</th>
@@ -26,6 +27,7 @@
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_transaksiCode"]?></td>
                       <td><?=$value["AkunAkutansiName"]?></td>
                       <td><?=$value["transaksiNote"]?></td>
+                      <td><?=$value["project_code"]?></td>
                       
                       <td><?=$value["transaksiDate"]?></td>
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
@@ -42,6 +44,7 @@
                     <th>akunbank_transaksiCode</th>
                       <th>Akun Akitansi</th>
                       <th>transaksiNote</th>
+                      <th>project Code</th>
                       <th>transaksiDate</th>
                       <th>transaksiJumlah</th>
                       <th>akunBankCode</th>
