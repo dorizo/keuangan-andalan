@@ -26,7 +26,8 @@
                       <td class="sorting_1 dtr-control"><?=$value["suratpesananCode"]?></td>
                       <td><?=$value["NoSuratpesanan"]?></td>
                       <td><?=$value["NamaSuratpesanan"]?></td>
-                      <td><?=$value["nilaiSuratpesanan"]?></td>
+                      <td><?=rupiah($this->suratpesanan_model->jumlah($value["suratpesananCode"])->mo)?></td>
+                    
                       <td><?=$value["witel_id"]?></td>
                       <td width=120px>
                         <a onclick="hapus('<?=base_url('suratpesanan/delete/'.$value['suratpesananCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a>
