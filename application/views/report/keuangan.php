@@ -151,7 +151,7 @@
                 //    print_r($value);
                     ?>
                     <tr> 
-                        <td><?=$value["project_id"]; ?></td>
+                        <td><?=$value["project_code"]; ?></td>
                         <td><?=$value["project_paid"]; ?></td>
                         <td><?=rupiah($value["nilaiproject"]); ?></td>
                         <td><?=rupiah($value["mandor"]); ?></td>
