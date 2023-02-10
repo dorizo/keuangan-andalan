@@ -33,7 +33,7 @@ class ReportKategori extends CI_Controller {
         $data["bungaakunbank"] = $this->report_model->bungaakunbank();
         $data["bungaakunbankresult"] = $this->report_model->bungaakunbankresult();
 		$data["titlepage"] = "REPORT KEUANGAN";
-		$data["pluginjs"] = "transaksi.js";
+		$data["pluginjs"] = "home.js?1222";
 		$this->load->view('template/header' , $data);
 		$this->load->view('report/keuangan' , $data);
 		$this->load->view('template/footer');
