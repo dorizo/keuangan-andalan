@@ -150,18 +150,15 @@
                     foreach ($dataresult as $key => $value) {
                 //    print_r($value);
                     ?>
-                    <tr> <td><?=$value["project_id"]; ?></td>
-                    <td><?=$value["project_paid"]; ?></td>
+                    <tr> 
+                        <td><?=$value["project_id"]; ?></td>
+                        <td><?=$value["project_paid"]; ?></td>
                         <td><?=rupiah($value["nilaiproject"]); ?></td>
                         <td><?=rupiah($value["mandor"]); ?></td>
                         <td><?=rupiah($value["api"]); ?></td>
                         <td><?=rupiah($value["totalbungaseluruh"]); ?></td>
                         <td><?=rupiah($value["dibayar"]); ?></td>
                         <td><?=rupiah($value["PAID_PROJECT"]); ?></td>
-                        <td>
-                    
-                        </td>
-                    </tr>
                     </tr>
 
                     <?php
