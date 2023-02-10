@@ -20,11 +20,21 @@ class ReportKategori extends CI_Controller {
 	{
         $data["dataresult"] = $this->projectcat_model->view();
         $data["columtable"] = $this->witel_model->view();
-		$data["titlepage"] = "PROYEK";
+		$data["titlepage"] = "REPORT";
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('report/viewcat' , $data);
 		$this->load->view('template/footer');
     }
+
+	public function keuangan(){
+		$data["row"] = $this->report_model->reportresumecount();
+        $data["dataresult"] = $this->report_model->reportresume();
+		$data["titlepage"] = "REPORT KEUANGAN";
+		$data["pluginjs"] = "transaksi.js";
+		$this->load->view('template/header' , $data);
+		$this->load->view('report/keuangan' , $data);
+		$this->load->view('template/footer');
+	}
 
 }

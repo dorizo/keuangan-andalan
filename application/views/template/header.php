@@ -242,6 +242,7 @@
           <?=projectmenu("VENDOR",base_url("vendor") , "far fa-circle" , "VENDOR")?>
           <?=projectmenu("LAPR",base_url("report") , "far fa-circle" , "REPORT")?>
           <?=projectmenu("LAPR",base_url("ReportKategori") , "far fa-circle" , "REPORT KATEGORI")?>
+          <?=projectmenu("LAPR",base_url("ReportKategori/keuangan") , "far fa-circle" , "REPORT KEUANGAN")?>
               
             </ul>
           </li>
