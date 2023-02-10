@@ -51,6 +51,7 @@
 
 <script src="<?=base_url()?>/asset/plugins/select2/js/select2.min.js"></script>
 <script src="<?=base_url()?>asset/plugins/pace-progress/pace.min.js"></script>
+<script src="https://cdn.datatables.net/plug-ins/1.13.2/sorting/formatted-numbers.js" ></script>
 <?php
 if(!empty($pluginjs)){
   echo "<script src=".base_url("js/".$pluginjs)."></script>";

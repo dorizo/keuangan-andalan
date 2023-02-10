@@ -12,10 +12,9 @@ $(function () {
       "info": true,
       "autoWidth": false,
       "responsive": true,
-      "aoColumns": [
-        null,
-        null,
-        { "sType": "formatted-num" }
-    ]
+      "columnDefs": [{
+        "type": "numeric-comma",
+        "targets": 3
+    }],
     });
   });

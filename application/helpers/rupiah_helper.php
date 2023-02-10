@@ -9,6 +9,13 @@ if ( ! function_exists('rupiah'))
 }
 
 
+if ( ! function_exists('rupiahtable'))
+{
+    function rupiahtable($var = '')
+    {
+    return  number_format($var);
+    }   
+}
 if ( ! function_exists('thousandsCurrencyFormat'))
 {
 function thousandsCurrencyFormat($num) {
