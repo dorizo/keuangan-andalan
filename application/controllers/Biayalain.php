@@ -11,6 +11,8 @@ class Biayalain extends CI_Controller {
 			$this->load->model('project_model');
 			$this->load->model('witel_model');
 			$this->load->model('akunakutansi_model');
+			$this->load->model('akunbank_pengajuan_model');
+			
 			
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
@@ -47,11 +49,15 @@ class Biayalain extends CI_Controller {
 		}
 	}
 
-    public function add(){
+    public function add($pengajuanCode=0){
 
 		$this->form_validation->set_rules('biayalain', 'username', 'required');
-      $data["titlepage"] = "PROYEK ";
-	  
+     	$data["titlepage"] = "PROYEK ";
+	 	$data["pengajuan"] = $this->akunbank_pengajuan_model->pengajuanlainlain();
+		
+		 $data["resultdata"] = $this->akunbank_pengajuan_model->viewsingle($pengajuanCode);
+	//   $data["pengajuanCode"]
+		$data["pengajuanCode"] = $pengajuanCode;
 		$data["akunbank"] = $this->akunbank_model->view();
 		$data["witel"] = $this->witel_model->view();
 		$data["akunakutansi"] = $this->akunakutansi_model->view();

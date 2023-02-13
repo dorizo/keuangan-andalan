@@ -13,7 +13,7 @@
                   <tbody>
                     <?php
                     foreach ($pengajuan as $key => $value) { 
-
+                      if($value["pengajuanstatusCode"]==2){
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_pengajuanCode"]?></td>
@@ -31,7 +31,7 @@
                           ?>
                       </tr>
                   <?php
-                  
+                  }
                      }
                      if($pengajuanCode == 0){
                       return;

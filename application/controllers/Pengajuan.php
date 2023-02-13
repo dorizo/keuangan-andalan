@@ -43,6 +43,7 @@ class Pengajuan extends CI_Controller {
         $data["dataresult"] = $this->project_model->viewSinggle($id);
         $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "PROYEK " . $data["dataresult"]->project_code;
+		$data["pengajuanstatus"] = $this->akunbank_pengajuan_model->pengajuanstatus();
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);
@@ -62,6 +63,7 @@ class Pengajuan extends CI_Controller {
 		$data["titlepage"] = "Transaksi Project ";
 		$data["project_id"] = $id;
 		$data["akunbank"] = $this->akunbank_model->view();
+		$data["pengajuanstatus"] = $this->akunbank_pengajuan_model->pengajuanstatus();
 	//   print_r($data["akunbank"]);
 	   if ($this->form_validation->run() === FALSE)
         {

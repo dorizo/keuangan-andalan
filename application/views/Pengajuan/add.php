@@ -23,17 +23,17 @@
                       <input type="text" name="transaksiJumlah" class="form-control number-separator" placeholder="">
                       </div>
                       
-                      <!-- <div class="form-group">
-                        <label>akunBankCode</label>    
-                        <select name="akunBankCode" class="custom-select">
+                      <div class="form-group">
+                        <label>pengajuanstatus</label>    
+                        <select name="pengajuanstatusCode" class="custom-select">
                         <?php
-                            foreach ($akunbank as $key => $value) {
-                                echo "<option value=\"".$value['akunbankCode']."\">".$value["akunbankCode"]."(".$value['saldo_sekarang'].")</option>";
+                            foreach ($pengajuanstatus as $key => $value) {
+                                echo "<option value=\"".$value['pengajuanstatusCode']."\">".$value["pengajuanstatusName"]."</option>";
                             }
                             ?>
                     
                         </select>
-                      </div> -->
+                      </div>
                       <input type="hidden" name="statusTransaksi" value="PENDING">
                       
                       <div class="form-group">
