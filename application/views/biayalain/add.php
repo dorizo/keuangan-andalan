@@ -13,7 +13,7 @@
                     <?php
                     foreach ($pengajuan as $key => $value) { 
                       if($value["pengajuanstatusCode"]==2){
-
+                        if($value["statusTransaksi"] == "PENDING"){
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_pengajuanCode"]?></td>
@@ -22,20 +22,18 @@
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>">   <i class="fa fa-download"></i></a> </td>
                       <td>
-                        <?php
-                        if($value["statusTransaksi"] == "PENDING"){
-                        ?>
+                       
                         <a href="<?=base_url('biayalain/add/'.$value['akunbank_pengajuanCode'])?>" class="btn btn-success">Proses <i class="fa fa-arrow-right"></i></a></td>
-                        <?php
-                          }
-                          ?>
+                       
                       </tr>
                   <?php
+                  }
                   }
                      }
                      if($pengajuanCode == 0){
                       return;
                      }
+                    //  print_r($resultdata);
                   ?>
 
                 </tbody>
@@ -99,9 +97,11 @@
                       <div class="form-group">
                         <label>Witel Model</label>    
                         <select name="witel_id" class="custom-select">
+                          <option>Pilih Witel</option>
                         <?php
                             foreach ($witel as $key => $value) {
-                                echo "<option value=\"".$value['witel_id']."\">".$value["witel_name"]."(".$value['region_id'].")</option>";
+                              $selected = $value['witel_id']==$resultdata->witel_id?"selected":"";
+                                echo "<option value=\"".$value['witel_id']."\" $selected >".$value["witel_name"]."(".$value['region_id'].")</option>";
                             }
                             ?>
                     

@@ -45,6 +45,12 @@ class akunbank_pengajuan_model extends CI_Model {
             $db = $this->db->get("akunbank_pengajuan");
             return $db->row();
         }
+        public function viewsinglebiayalain($kode){
+            $this->db->join("project" ,"project.project_id=akunbank_pengajuan.project_id");
+            $this->db->where("akunbank_pengajuanCode" , $kode);
+            $db = $this->db->get("akunbank_pengajuan");
+            return $db->row();
+        }
         public function submitedit(){
             $this->db->where("akunbank_pengajuanCode", $this->input->post("akunbank_pengajuanCode"));
             $this->db->update("akunbank_pengajuan" , $this->input->post());

@@ -55,7 +55,7 @@ class Biayalain extends CI_Controller {
      	$data["titlepage"] = "PROYEK ";
 	 	$data["pengajuan"] = $this->akunbank_pengajuan_model->pengajuanlainlain();
 		
-		 $data["resultdata"] = $this->akunbank_pengajuan_model->viewsingle($pengajuanCode);
+		 $data["resultdata"] = $this->akunbank_pengajuan_model->viewsinglebiayalain($pengajuanCode);
 	//   $data["pengajuanCode"]
 		$data["pengajuanCode"] = $pengajuanCode;
 		$data["akunbank"] = $this->akunbank_model->view();
@@ -76,6 +76,8 @@ class Biayalain extends CI_Controller {
 	public function bagi($kd){
 		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
 		$datax = $this->biayalain_model->viewSinggle($kd);
+		$data["datax"] =$datax;
+		$data["resultdata"] = $this->akunbank_pengajuan_model->viewsinglebiayalain($datax->pengajuanCode);
 		$data["titlepage"] = "pembagian biaya dari witel =".$datax->witel_id;
 		$data["project"] = $this->project_model->witelfilter($datax->witel_id);
 	   if ($this->form_validation->run() === FALSE)
