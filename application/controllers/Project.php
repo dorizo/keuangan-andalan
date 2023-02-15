@@ -92,7 +92,7 @@ class Project extends CI_Controller {
 		$this->load->view('template/footer');
 		
 		}else{
-			$this->project_model->edit();
+			$this->project_model->editpms();
 			
             redirect('/project', 'refresh');
 		

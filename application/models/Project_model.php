@@ -39,6 +39,12 @@ class Project_model extends CI_Model {
               $this->db->update("project" , $p);
         }
         
+        public function editpms(){
+                $this->db->where("project_id", $this->input->post("project_id"));
+                $p = $this->input->post();
+                $this->db->update("project" , $p);
+          }
+        
         public function editboqfinal(){
                 $this->db->where("project_id", $this->input->post("project_id"));
                 $p = $this->input->post();
