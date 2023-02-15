@@ -65,6 +65,8 @@
                       
                       <div class="form-group">
                         <label>KETERANGAN</label>
+                        
+                        <input type="hidden" name="pengajuanCode" class="form-control" value="<?=$pengajuanCode?>" placeholder="">
                       <input type="text" name="keterangan" class="form-control" value="<?=$resultdata->transaksiNote?>" placeholder="">
                       </div>
                       

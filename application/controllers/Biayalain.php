@@ -69,7 +69,7 @@ class Biayalain extends CI_Controller {
 		
 		}else{
 			$kd = $this->biayalain_model->submitadd();
-		
+			$this->db->query("UPDATE `akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);				
             redirect('/biayalain/bagi/'.$kd, 'refresh');
 		}
 	}

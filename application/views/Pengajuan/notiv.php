@@ -30,7 +30,7 @@
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
                       <td width="120px">
                       <a target="_BLANK" href="<?=base_url("/project/detail/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-search"></i></a>
-                      <a href="<?=base_url("/transaksi/add/".$value["project_id"]."/".$value["akunbank_pengajuanCode"])?>" class="btn btn-success"><i class="fas fa-arrow-right"></i></a>
+                      <a href="<?=$value["pengajuanstatusCode"]==1?base_url("/transaksi/add/".$value["project_id"]."/".$value["akunbank_pengajuanCode"]):base_url("/biayalain/add/".$value["akunbank_pengajuanCode"])?>" class="btn btn-success"><i class="fas fa-arrow-right"></i></a>
                       </td>
                     </tr>
                   <?php
