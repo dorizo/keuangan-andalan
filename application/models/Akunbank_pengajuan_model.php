@@ -38,6 +38,7 @@ class akunbank_pengajuan_model extends CI_Model {
         public function pengajuannotivsp($id){
             $this->db->where("akunbank_pengajuan.statusTransaksi" , $id);
             $this->db->join("suratpesanan" , "suratpesanan.suratpesananCode=akunbank_pengajuan.project_id" );
+            $this->db->join("witel" , "witel.witel_id=suratpesanan.witel_id" );
             $db = $this->db->get("akunbank_pengajuan");
             return $db->result_array();
         }
