@@ -84,7 +84,8 @@
                       <span class="info-box-text text-center text-muted">Persentase Profit</span>
                       <span class="info-box-number text-center text-muted mb-0">
                         <?php
-                      if(!$dataresult->paymentvendor){
+                        // echo (($dataresult->nilai_project * $dataresult->sharing_owner)/100);
+                      if($dataresult->paymentvendor){
                         $point=0;
                         }else{
                         $point = @(round((((($dataresult->nilai_project * $dataresult->sharing_owner)/100)/($dataresult->paymentvendor+$dataresult->totalbungaseluruh+$dataresult->pembayaranAPI))*100),2));
