@@ -56,7 +56,7 @@
                     if(!$value["paymentvendor"]){
                     $point=0;
                     }else{
-                     $point =  @(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["totalbungaseluruh"]))*100),2));
+                     $point =  @(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["pembayaranAPI"]+$value["totalbungaseluruh"]))*100),2));
                     }
                     if($point <= 0){
                       $background = "bg-primary";
