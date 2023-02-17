@@ -53,7 +53,8 @@
                     <td>
                     Status Project  : <?=$value["project_status"]?><br />
                     <?php
-                    if(!$value["paymentvendor"]){
+                    // echo $value["paymentvendor"]+$value["pembayaranAPI"];
+                    if( $value["paymentvendor"]+$value["pembayaranAPI"] == 0){
                     $point=0;
                     }else{
                      $point =  @(round((((($value["nilai_project"] * $value["sharing_owner"])/100)/($value["paymentvendor"]+$value["pembayaranAPI"]+$value["totalbungaseluruh"]))*100),2));
@@ -64,7 +65,7 @@
                       $background = "bg-danger";
                     }elseif($point < 35){
                       $background = "bg-warning";
-                    }elseif($point < 300){
+                    }elseif($point < 30000){
                       $background = "bg-success";
                     }
                     ?>
