@@ -85,7 +85,8 @@
                       <span class="info-box-number text-center text-muted mb-0">
                         <?php
                         // echo (($dataresult->nilai_project * $dataresult->sharing_owner)/100);
-                      if($dataresult->paymentvendor){
+                     
+                    if( $value["paymentvendor"]+$value["pembayaranAPI"] == 0){
                         $point=0;
                         }else{
                         $point = @(round((((($dataresult->nilai_project * $dataresult->sharing_owner)/100)/($dataresult->paymentvendor+$dataresult->totalbungaseluruh+$dataresult->pembayaranAPI))*100),2));
