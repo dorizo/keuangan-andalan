@@ -11,6 +11,9 @@
                       <!-- text input -->
                       <div class="form-group">
                       <input type="hidden" name="project_id" value="<?=$dataresult->project_id?>" class="form-control" placeholder="Enter ...">
+                      <label>TANGGAL CASH & BANK PROJECT</label>
+                        <input type="date" name="tanggal_cashbank" value="<?=$dataresult->tanggal_cashbank?>" class="form-control" placeholder="Enter ...">
+                        
                         <label>TANGGAL DONE PROJECT</label>
                         <input type="date" name="project_paid" value="<?=$dataresult->project_paid?>" class="form-control" placeholder="Enter ...">
                        
