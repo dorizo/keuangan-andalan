@@ -20,8 +20,8 @@ class akunbank_pengajuan_model extends CI_Model {
             return $db->result_array();
         }
 
-        public function pengajuanstatus(){
-            
+        public function pengajuanstatus($id){
+            $this->db->where("statuspengajuan" ,$id);
             $db = $this->db->get("pengajuanstatus");
             return $db->result_array();
         }
@@ -30,6 +30,14 @@ class akunbank_pengajuan_model extends CI_Model {
         public function pengajuannotiv($id){
             $this->db->where("akunbank_pengajuan.statusTransaksi" , $id);
             $this->db->join("project" , "project.project_id=akunbank_pengajuan.project_id" );
+            $db = $this->db->get("akunbank_pengajuan");
+            return $db->result_array();
+        }
+        
+        
+        public function pengajuannotivsp($id){
+            $this->db->where("akunbank_pengajuan.statusTransaksi" , $id);
+            $this->db->join("suratpesanan" , "suratpesanan.suratpesananCode=akunbank_pengajuan.project_id" );
             $db = $this->db->get("akunbank_pengajuan");
             return $db->result_array();
         }
@@ -47,6 +55,13 @@ class akunbank_pengajuan_model extends CI_Model {
         }
         public function viewsinglebiayalain($kode){
             $this->db->join("project" ,"project.project_id=akunbank_pengajuan.project_id");
+            $this->db->where("akunbank_pengajuanCode" , $kode);
+            $db = $this->db->get("akunbank_pengajuan");
+            return $db->row();
+        }
+        
+        public function viewsinglebiayalainsp($kode){
+            $this->db->join("suratpesanan" ,"suratpesanan.suratpesananCode=akunbank_pengajuan.project_id");
             $this->db->where("akunbank_pengajuanCode" , $kode);
             $db = $this->db->get("akunbank_pengajuan");
             return $db->row();

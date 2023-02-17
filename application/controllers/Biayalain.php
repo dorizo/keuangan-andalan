@@ -68,9 +68,75 @@ class Biayalain extends CI_Controller {
 		$this->load->view('template/footer');
 		
 		}else{
-			$kd = $this->biayalain_model->submitadd();
+
+			$config['upload_path']          = './pembayaran/';
+			$config['allowed_types']        = '*';
+			$config['max_size']             = 1000;
+			$config['max_width']            = 10240;
+			$config['max_height']           = 7680;
+			$config['encrypt_name']           = TRUE;
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('file'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+				$this->load->view('template/header' , $data);
+			   $this->load->view('biayalain/add' , $data);
+			   $this->load->view('template/footer');
+			}else{
+				$kd = $this->biayalain_model->submitadd($this->upload->data("file_name"));
+				
 			$this->db->query("UPDATE `akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);				
             redirect('/biayalain/bagi/'.$kd, 'refresh');
+			}
+		}
+	}
+
+	public function addsp($pengajuanCode=0){
+
+		$this->form_validation->set_rules('biayalain', 'username', 'required');
+     	$data["titlepage"] = "PROYEK ";
+	 	$data["pengajuan"] = $this->akunbank_pengajuan_model->pengajuanlainlain();
+		
+		 $data["resultdata"] = $this->akunbank_pengajuan_model->viewsinglebiayalainsp($pengajuanCode);
+	//   $data["pengajuanCode"]
+		$data["pengajuanCode"] = $pengajuanCode;
+		$data["akunbank"] = $this->akunbank_model->view();
+		$data["witel"] = $this->witel_model->view();
+		$data["akunakutansi"] = $this->akunakutansi_model->view();
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('biayalain/addsp' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+
+
+			$config['upload_path']          = './pembayaran/';
+			$config['allowed_types']        = '*';
+			$config['max_size']             = 1000;
+			$config['max_width']            = 10240;
+			$config['max_height']           = 7680;
+			$config['encrypt_name']           = TRUE;
+
+			$this->load->library('upload', $config);
+
+			if ( ! $this->upload->do_upload('file'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+				$this->load->view('template/header' , $data);
+			   $this->load->view('biayalain/addsp' , $data);
+			   $this->load->view('template/footer');
+			}else{
+				$kd = $this->biayalain_model->submitadd($this->upload->data("file_name"));
+				$this->db->query("UPDATE `akunbank_pengajuan` SET `statusTransaksi` = 'APPROVE' WHERE `akunbank_pengajuanCode` =".$pengajuanCode);				
+				redirect('/biayalain/bagisp/'.$kd, 'refresh');
+			}
+			
 		}
 	}
 	public function bagi($kd){
@@ -84,6 +150,33 @@ class Biayalain extends CI_Controller {
         {
 		$this->load->view('template/header' , $data);
 		$this->load->view('biayalain/bagi' , $data);
+		$this->load->view('template/footer');
+		}else{
+			$this->db->select("sum(nilai_project) as total");
+			$this->db->where_in("project_id" , $this->input->post("bagi"));
+			$data["param"] = $this->db->get("project")->row();
+			$this->db->where_in("project_id" , $this->input->post("bagi"));
+			$data["result"] = $this->db->get("project")->result_array();
+			$data["nilaibagi"] = $datax;
+			// print_r($pquery);
+					$this->load->view('template/header' , $data);
+					$this->load->view('biayalain/formbagi' , $data);
+					$this->load->view('template/footer');
+			
+		}
+	}
+
+	public function bagisp($kd){
+		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
+		$datax = $this->biayalain_model->viewSinggle($kd);
+		$data["datax"] =$datax;
+		$data["resultdata"] = $this->akunbank_pengajuan_model->viewsinglebiayalainsp($datax->pengajuanCode);
+		$data["titlepage"] = "pembagian biaya dari witel =".$datax->witel_id;
+		$data["project"] = $this->project_model->witelfilter($datax->witel_id);
+	   if ($this->form_validation->run() === FALSE)
+        {
+		$this->load->view('template/header' , $data);
+		$this->load->view('biayalain/bagisp' , $data);
 		$this->load->view('template/footer');
 		}else{
 			$this->db->select("sum(nilai_project) as total");

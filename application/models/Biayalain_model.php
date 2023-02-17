@@ -38,9 +38,10 @@ class Biayalain_model extends CI_Model {
             $this->db->where("biayalainCode",$i);
             $this->db->delete("biayalain");
         }
-        public function submitadd(){
+        public function submitadd($add){
             
 			$p = $this->input->post();
+            $p["upload_file"] =  $add;
             $p["biayalain"] =  str_replace(",", "",$this->input->post("biayalain"));
             $a = $this->db->query('Select saldo_sekarang from akunbank where akunBankCode='.$this->input->post("akunBankCode"))->row();
            if( "CR" == "CR"){

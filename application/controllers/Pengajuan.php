@@ -25,6 +25,15 @@ class Pengajuan extends CI_Controller {
 		$this->load->view('template/footer');
 	}
 
+	public function notivsp(){
+		
+		$data["titlepage"] = "NOTIFIKASI";
+		$data["datatable"] = $this->akunbank_pengajuan_model->pengajuannotivsp("PENDING");
+		$data["pluginjs"] = "project.js?2s2";
+		$this->load->view('template/header' , $data);
+		$this->load->view('Pengajuan/notivsp' , $data);
+		$this->load->view('template/footer');
+	}
 
 	public function setting($a)
 	{
@@ -52,18 +61,19 @@ class Pengajuan extends CI_Controller {
 		
 		}else{
 			$this->project_model->edit();	
-            redirect('/project', 'refresh');
+		redirect($_SERVER['HTTP_REFERER']);  
 		
 		}
 	}
 
-    public function add($id){
+    public function add($id , $pengajuan="project"){
 
 		$this->form_validation->set_rules('project_id', 'project_id', 'required');
 		$data["titlepage"] = "Transaksi Project ";
 		$data["project_id"] = $id;
+		$data["pengajuanproses"] = $pengajuan;
 		$data["akunbank"] = $this->akunbank_model->view();
-		$data["pengajuanstatus"] = $this->akunbank_pengajuan_model->pengajuanstatus();
+		$data["pengajuanstatus"] = $this->akunbank_pengajuan_model->pengajuanstatus($pengajuan);
 	//   print_r($data["akunbank"]);
 	   if ($this->form_validation->run() === FALSE)
         {
@@ -91,8 +101,15 @@ class Pengajuan extends CI_Controller {
 				$this->load->view('template/footer');
 			}else{
 				// print_r();		
-				$this->akunbank_pengajuan_model->submitadd($this->upload->data("file_name"));	
+				echo "<script>alert('pengajuan berhasil di input')</script>";
+				$this->akunbank_pengajuan_model->submitadd($this->upload->data("file_name"));
+				if($this->input->post("statusPengajuan")=="project"){
 				redirect('/Pengajuan/setting/'.$id, 'refresh');
+			
+				}else{
+
+					redirect("/suratpesanan", 'refresh');   
+				}	
 			}
 		}
 	}

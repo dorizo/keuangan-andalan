@@ -136,13 +136,19 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <?php if(kondisipermision("KEUW")){ ?>
-          <span class="dropdown-item dropdown-header">KEUANGAN NOTIF</span>
+          <span class="dropdown-item dropdown-header">Pengajuan  project</span>
           <div class="dropdown-divider"></div>
           <a href="<?=base_url("pengajuan");?>" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("select * from akunbank_pengajuan where statusTransaksi='PENDING'")->num_rows()?> PENDING PENGAJUAN
+            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("select * from akunbank_pengajuan where statusTransaksi='PENDING' AND statusPengajuan='project'")->num_rows()?> PENDING PENGAJUAN
           </a>
           <?php } ?>
-         
+          <?php if(kondisipermision("KEUW")){ ?>
+          <span class="dropdown-item dropdown-header">Pengajuan SP</span>
+          <div class="dropdown-divider"></div>
+          <a href="<?=base_url("pengajuan/notivsp");?>" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("select * from akunbank_pengajuan where statusTransaksi='PENDING' AND statusPengajuan='sp'")->num_rows()?> PENDING PENGAJUAN
+          </a>
+          <?php } ?>
         </div>
       </li>
       <li class="nav-item dropdown">

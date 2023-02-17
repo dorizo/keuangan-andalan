@@ -29,10 +29,11 @@
                       <td><?=rupiah($this->suratpesanan_model->jumlah($value["suratpesananCode"])->mo)?></td>
                     
                       <td><?=$value["witel_id"]?></td>
-                      <td width=120px>
+                      <td width=140px>
                         <a onclick="hapus('<?=base_url('suratpesanan/delete/'.$value['suratpesananCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a>
                         <a href="<?=base_url('suratpesanan/detail/'.$value['suratpesananCode'])?>" class="btn btn-success"><i class="fas fa-eye"></i></a>
-                      </td>
+                        <a class="btn btn-danger" href="<?=base_url("pengajuan/add/".$value["suratpesananCode"]."/sp")?>"><i class="fas fa-book"></i></a>
+                        </td>
                       </tr>
                   <?php
                      }

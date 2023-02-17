@@ -11,6 +11,7 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>transaksiNote</label>
+                        <input type="hidden" name="statusPengajuan"  value="<?=$pengajuanproses?>" class="form-control" placeholder="">
                         <input type="text" name="transaksiNote" class="form-control" placeholder="">
                       </div>
                       
