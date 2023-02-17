@@ -76,6 +76,8 @@
                     </div>
                   </div>
                 </div>
+
+                
                 <div class="col-12 col-sm-4">
                   <div class="info-box bg-light">
                     <div class="info-box-content">
@@ -85,10 +87,21 @@
                       if(!$dataresult->paymentvendor){
                         $point=0;
                         }else{
-                        $point = @(round((((($dataresult->nilai_project * $dataresult->sharing_owner)/100)/($dataresult->paymentvendor+$dataresult->totalbungaseluruh))*100),2));
+                        $point = @(round((((($dataresult->nilai_project * $dataresult->sharing_owner)/100)/($dataresult->paymentvendor+$dataresult->totalbungaseluruh+$dataresult->pembayaranAPI))*100),2));
                         }
                         ?>
                          <?=$point?>%
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                  <div class="info-box bg-light">
+                    <div class="info-box-content">
+                      <span class="info-box-text text-center text-muted">PEMBAYARAN LAIN LAIN</span>
+                      <span class="info-box-number text-center text-muted mb-0">
+                        <?=rupiah($dataresult->pembayaranAPI)?>
+                        
                       </span>
                     </div>
                   </div>
