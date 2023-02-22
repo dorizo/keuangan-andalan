@@ -20,6 +20,7 @@
                       <th>Witel</th>
                       <th>PROJECT CODE</th>
                       <th>PROJECT NAME</th>
+                      <th>NO SP</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
                       <th>CATATAN PROJECT</th>
@@ -29,12 +30,17 @@
                   <tbody>
                     <?php
                     foreach ($dataresult as $key => $value) { 
+                      $spnum = $this->db->query("SELECT * FROM `suratpesanan` a JOIN suratpesanandetail b ON a.suratpesananCode=b.suratpesananCode  WHERE b.project_id=".$value["project_id"])->row();
+                      if($spnum){
+                        $spnum = $spnum->NoSuratpesanan;
+                      }
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
                       <td><?=$value["witel"]?></td>
                       <td><?=$value["project_code"]?></td>
                       <td><?=$value["project_name"]?></td>
+                      <td><?=$spnum?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
                       <td><?=$value["project_note"]?></td>
