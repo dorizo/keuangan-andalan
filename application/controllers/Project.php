@@ -7,6 +7,8 @@ class Project extends CI_Controller {
 	{
 			parent::__construct();
 			$this->load->model('project_model');
+			$this->load->model('Report_model');
+			
 			$this->load->model('vendor_model');
 			$this->load->model('witel_model');
 			$this->load->model('akunbankTransaksi_model');
@@ -23,7 +25,17 @@ class Project extends CI_Controller {
 	public function index()
 	{
 		$data["pluginjs"] = "project.js?22";
-		$data["dataresult"] = $this->project_model->view();
+
+		if($this->input->get()){
+			$data["dataresult"] = $this->Report_model->detail($this->input->get());
+	
+		}else{
+			$data["dataresult"] = $this->project_model->view();
+	
+		}
+		$data["witelresult"] = $this->witel_model->view();
+        $data["datajob"] = $this->job_model->view();
+		
 		$data["titlepage"] = "PROYEK";
 		$this->load->view('template/header' , $data);
 		$this->load->view('project' , $data);

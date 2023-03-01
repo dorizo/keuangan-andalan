@@ -13,11 +13,42 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12">
+               
+               <div class="card p-4">
+                <form method="GET">
+                <div class="row">
+                  <div class="col-5">Witel : 
+                    <select class="form-control" name="witel_id">
+                    <?php
+                    foreach ($witelresult as $key => $value) {
+                      ?>
+                    <option value="<?=$value['witel_id']?>"><?php print_r($value["witel_name"])?></option>
+                      <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                  <div class="col-5">Project Status : 
+                    <select class="form-control"  name="project_status">
+                    <?php
+                    foreach ($datajob as $key => $value) {
+                      ?>
+                    <option value="<?=$value['job_name']?>"><?php print_r($value["job_name"])?></option>
+                      <?php
+                      }
+                      ?>
+                  </select>
+                </div>
+                  <div class="col-2"><br /><input type="submit" class="btn btn-success" value="Search" /></div>
+                </div>
+                  </form>
+               </div>
                 <table id="example1" class="table table-bordered table-hover">
                   <thead>
                     <tr>
                       <th>NO</th>
                       <th>Witel</th>
+                      <th>KATEGORI</th>
                       <th>PROJECT CODE</th>
                       <th>PROJECT NAME</th>
                       <th>NO SP</th>
@@ -38,6 +69,8 @@
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["project_id"]?></td>
                       <td><?=$value["witel"]?></td>
+                      <td><?=$value["cat_name"]?></td>
+                      
                       <td><?=$value["project_code"]?></td>
                       <td><?=$value["project_name"]?></td>
                       <td><?=$spnum?></td>
