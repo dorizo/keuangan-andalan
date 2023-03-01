@@ -110,13 +110,15 @@
                 </tbody>
                  <tfoot>
                   <tr>
-                     <th>PROJECT ID</th>
-                      <th>WITEL</th>
+                  <th>NO</th>
+                      <th>Witel</th>
+                      <th>KATEGORI</th>
                       <th>PROJECT CODE</th>
                       <th>PROJECT NAME</th>
+                      <th>NO SP</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
-                      <th>ESTIMASI PROJECT DONE</th>
+                      <th>CATATAN PROJECT</th>
                       <th>MODE</th>
                     </tr>
                  </tfoot>
