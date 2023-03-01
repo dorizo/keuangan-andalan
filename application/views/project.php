@@ -17,7 +17,7 @@
                <div class="card p-4">
                 <form method="GET">
                 <div class="row">
-                  <div class="col-5">Witel : 
+                  <div class="col-3">Witel : 
                     <select class="form-control" name="witel_id">
                     <?php
                     foreach ($witelresult as $key => $value) {
@@ -28,7 +28,7 @@
                     ?>
                   </select>
                 </div>
-                  <div class="col-5">Project Status : 
+                  <div class="col-3">Project Status : 
                     <select class="form-control"  name="project_status">
                     <?php
                     foreach ($datajob as $key => $value) {
@@ -39,6 +39,18 @@
                       ?>
                   </select>
                 </div>
+                  <div class="col-3">Project Kategori : 
+                    <select class="form-control"  name="cat_name">
+                    <?php
+                    foreach ($Projectcat as $key => $value) {
+                      ?>
+                    <option value="<?=$value["cat_name"]?>"><?php print_r($value["cat_name"])?></option>
+                      <?php
+                      }
+                      ?>
+                  </select>
+                </div>
+                
                   <div class="col-2"><br /><input type="submit" class="btn btn-success" value="Search" /></div>
                 </div>
                   </form>

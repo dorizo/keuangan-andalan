@@ -14,6 +14,8 @@ class Project extends CI_Controller {
 			$this->load->model('akunbankTransaksi_model');
 			$this->load->library('zip');
 			$this->load->model('log_project_model');
+			$this->load->model('Projectcat_model');
+			
 			$this->load->model('job_model');
 			$this->load->helper(array('form', 'url','directory'));
 			if(!$this->session->userdata("userCode")){
@@ -35,6 +37,8 @@ class Project extends CI_Controller {
 		}
 		$data["witelresult"] = $this->witel_model->view();
         $data["datajob"] = $this->job_model->view();
+        $data["Projectcat"] = $this->Projectcat_model->view();
+		
 		
 		$data["titlepage"] = "PROYEK";
 		$this->load->view('template/header' , $data);
