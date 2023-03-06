@@ -146,7 +146,8 @@
           <span class="dropdown-item dropdown-header">Pengajuan SP</span>
           <div class="dropdown-divider"></div>
           <a href="<?=base_url("pengajuan/notivsp");?>" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("select * from akunbank_pengajuan where statusTransaksi='PENDING' AND statusPengajuan='sp'")->num_rows()?> PENDING PENGAJUAN
+            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("
+SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratpesananCode`=`akunbank_pengajuan`.`project_id` JOIN `witel` ON `witel`.`witel_id`=`suratpesanan`.`witel_id` WHERE `akunbank_pengajuan`.`statusTransaksi` = 'PENDING'")->num_rows()?> PENDING PENGAJUAN
           </a>
           <?php } ?>
         </div>
