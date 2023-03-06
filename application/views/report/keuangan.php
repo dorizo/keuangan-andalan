@@ -5,7 +5,7 @@
               <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <form>
+                        <form method="get">
                             <div class="row">
                                 <div class="col-3">
                                     <input type="date" value="<?=$this->input->get("mulai")?>" name="mulai" class="form-control" />
@@ -15,6 +15,7 @@
                                 </div>
                                 <div class="col-3">
                                     <select type="date" name="kategori" class="form-control" >
+                                        <option value="paid">paid</value>
                                     </select>
                                 </div>
                                 <div class="col-3">

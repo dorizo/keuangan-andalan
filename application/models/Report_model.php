@@ -41,8 +41,15 @@ class Report_model extends CI_Model {
             return $this->db->query("select COALESCE(SUM(nilai_project),0) as x FROM project where witel_id='$witelid'")->row();
         }
         public function reportresumecount(){
-            return $this->db->query('SELECT sum(nilai_project) as nilaiproject , sum((nilai_project * sharing_vendor)/100) as mandor , sum((nilai_project * sharing_owner)/100) as api ,sum((select  sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) ))  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id AND akunBankCode != 1)) as totalbungaseluruh , sum((SELECT sum(transaksiJumlah) FROM akunbank_transaksi where akunbank_transaksi.project_id=project.project_id)) as dibayar,
-            sum(IF(project_status="PAID",nilai_project,0)) AS PAID_PROJECT , project_paid  FROM project')->row();
+            if($this->input->get()){
+                return $this->db->query('SELECT sum(nilai_project) as nilaiproject , sum((nilai_project * sharing_vendor)/100) as mandor , sum((nilai_project * sharing_owner)/100) as api ,sum((select  sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) ))  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id AND akunBankCode != 1)) as totalbungaseluruh , sum((SELECT sum(transaksiJumlah) FROM akunbank_transaksi where akunbank_transaksi.project_id=project.project_id)) as dibayar,
+            (SELECT sum(nilai_project) from project where
+						 project_status="PAID" AND project_id=project.project_id AND  (project_paid BETWEEN \'2023-03-01\' AND \'2023-03-30\')) AS PAID_PROJECT , project_paid  FROM project')->row();
+            }else{
+                return $this->db->query('SELECT sum(nilai_project) as nilaiproject , sum((nilai_project * sharing_vendor)/100) as mandor , sum((nilai_project * sharing_owner)/100) as api ,sum((select  sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) ))  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id AND akunBankCode != 1)) as totalbungaseluruh , sum((SELECT sum(transaksiJumlah) FROM akunbank_transaksi where akunbank_transaksi.project_id=project.project_id)) as dibayar,
+                sum(IF(project_status="PAID",nilai_project,0)) AS PAID_PROJECT , project_paid  FROM project')->row();
+            }
+        
         }
         
         public function reportresume(){
