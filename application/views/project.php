@@ -24,7 +24,7 @@
                     foreach ($witelresult as $key => $value) {
                       // print_r();
                       $seleced = "";
-                      $sos =  array_search($value["witel_id"],$this->input->get("witel_id"));
+                      $sos =  array_search($value["witel_id"],$this->input->get("witel_id") ?? []);
                       if(!empty($sos) or $sos ===0){
                         $seleced = "selected";
                       }
@@ -41,7 +41,7 @@
                     <?php
                     foreach ($datajob as $key => $value) {
                       $seleced = "";
-                      $sos =  array_search($value["job_name"],$this->input->get("project_status"));
+                      $sos =  array_search($value["job_name"],$this->input->get("project_status") ?? []);
                       if(!empty($sos) or $sos ===0){
                         $seleced = "selected";
                       }
@@ -58,7 +58,7 @@
                     <?php
                     foreach ($Projectcat as $key => $value) {
                       $seleced = "";
-                      $sos =  array_search($value["cat_name"],$this->input->get("cat_name"));
+                      $sos =  array_search($value["cat_name"],$this->input->get("cat_name") ?? []);
                       if(!empty($sos) or $sos ===0){
                         $seleced = "selected";
                       }
