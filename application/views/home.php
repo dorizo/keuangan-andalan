@@ -2,6 +2,66 @@
 <div class="card p-2">
               
               <div class="card-body table-responsive p-0">
+              <div class="card p-4">
+                <form method="GET">
+                <div class="row">
+                  <div class="col-3">Witel : 
+                    <select class="form-control select2" multiple="multiple" name="witel_id[]">
+                    <option value="">ALL DATA</option>
+                    <?php
+                    foreach ($witelresult as $key => $value) {
+                      // print_r();
+                      $seleced = "";
+                      $sos =  array_search($value["witel_id"],$this->input->get("witel_id") ?? []);
+                      if(!empty($sos) or $sos ===0){
+                        $seleced = "selected";
+                      }
+                      ?>
+                    <option   <?=$seleced?>   value="<?=$value['witel_id']?>"><?php print_r($value["witel_name"])?></option>
+                    <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                  <div class="col-3">Project Status : 
+                    <select  class="form-control select2" multiple="multiple"  name="project_status[]">
+                    <option value="">ALL DATA</option>
+                    <?php
+                    foreach ($datajob as $key => $value) {
+                      $seleced = "";
+                      $sos =  array_search($value["job_name"],$this->input->get("project_status") ?? []);
+                      if(!empty($sos) or $sos ===0){
+                        $seleced = "selected";
+                      }
+                      ?>
+                    <option   <?=$seleced?>    <?=$this->input->get("project_status")==$value["job_name"]?"selected":""?>  value="<?=$value['job_name']?>"><?php print_r($value["job_name"])?></option>
+                      <?php
+                      }
+                      ?>
+                  </select>
+                </div>
+                  <div class="col-3">Project Kategori : 
+                  <select  class="form-control select2" multiple="multiple"  name="cat_name[]">
+                    <option value="">ALL DATA</option>
+                    <?php
+                    foreach ($Projectcat as $key => $value) {
+                      $seleced = "";
+                      $sos =  array_search($value["cat_name"],$this->input->get("cat_name") ?? []);
+                      if(!empty($sos) or $sos ===0){
+                        $seleced = "selected";
+                      }
+                      ?>
+                    <option <?=$seleced?>  <?=$this->input->get("cat_name")==$value["cat_name"]?"selected":""?> value="<?=$value["cat_name"]?>"><?php print_r($value["cat_name"])?></option>
+                      <?php
+                      }
+                      ?>
+                  </select>
+                </div>
+                
+                  <div class="col-2"><br /><input type="submit" class="btn btn-success" value="Search" /></div>
+                </div>
+                  </form>
+               </div>
                 <table id="example1" class="table table-striped table-valign-middle" style="font-size:12px">
                   <thead>
                   <tr>
@@ -160,3 +220,11 @@
               </div>
             </div>
 </div>
+   
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
+
+  });
+  </script>
