@@ -18,9 +18,10 @@ class Report_model extends CI_Model {
         }
         public function detail($p){
         foreach ($p as $key => $value) {
+
             # code...
             if(!empty($value)){
-            $this->db->where(str_replace("-",".",$key),$value);
+            $this->db->where_in(str_replace("-",".",$key),$value);
             }
 
         }
