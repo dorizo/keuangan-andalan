@@ -43,7 +43,7 @@ class Report_model extends CI_Model {
         }
         public function reportresumecount(){
             if($this->input->get()){
-                return $this->db->query('SELECT sum(nilai_project) as nilaiproject , sum((nilai_project * sharing_vendor)/100) as mandor , sum((nilai_project * sharing_owner)/100) as api ,sum((select  sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) ))  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id AND akunBankCode != 1)) as totalbungaseluruh , sum((SELECT sum(transaksiJumlah) FROM akunbank_transaksi where akunbank_transaksi.project_id=project.project_id AND  (transaksiDate BETWEEN \''.$this->input->get("mulai").'\' AND \''.$this->input->get("selesai").'\'))) as dibayar,
+                return $this->db->query('SELECT sum(nilai_project) as nilaiproject , sum((nilai_project * sharing_vendor)/100) as mandor , sum((nilai_project * sharing_owner)/100) as api ,sum((select  sum(hitungbunga( b.transaksiJumlah, b.transaksiDate , IF(a.project_paid IS NULL,NOW(),a.project_paid) ))  as x from project a JOIN  akunbank_transaksi b ON b.project_id=a.project_id where a.project_id=project.project_id AND akunBankCode != 1  AND  (transaksiDate BETWEEN \''.$this->input->get("mulai").'\' AND \''.$this->input->get("selesai").'\'))) as totalbungaseluruh , sum((SELECT sum(transaksiJumlah) FROM akunbank_transaksi where akunbank_transaksi.project_id=project.project_id AND  (transaksiDate BETWEEN \''.$this->input->get("mulai").'\' AND \''.$this->input->get("selesai").'\'))) as dibayar,
             (SELECT sum(nilai_project) from project where
 						 project_status="PAID" AND project_id=project.project_id AND  (project_paid BETWEEN \''.$this->input->get("mulai").'\' AND \''.$this->input->get("selesai").'\')) AS PAID_PROJECT , project_paid  FROM project')->row();
             }else{
@@ -63,7 +63,12 @@ class Report_model extends CI_Model {
         }
 
         public function bungaakunbank(){
-            return $this->db->query("SELECT  akunbankName,sum(hitungbunga( b.total_akunbank, b.taggal_peminjaman , NOW() ))  as x  from akunbank b")->row();
+            if($this->input->get()){
+                return $this->db->query("SELECT  akunbankName,sum(hitungbunga( b.total_akunbank, '".$this->input->get('mulai')."' , '".$this->input->get('selesai')."'  ))  as x  from akunbank b")->row();
+            }else{
+                return $this->db->query("SELECT  akunbankName,sum(hitungbunga( b.total_akunbank, b.taggal_peminjaman , NOW() ))  as x  from akunbank b")->row();
+        
+            }
         }
         
     }
