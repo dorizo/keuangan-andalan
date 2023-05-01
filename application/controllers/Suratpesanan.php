@@ -11,6 +11,7 @@ class Suratpesanan extends CI_Controller {
 			$this->load->model('project_model');
 			$this->load->model('witel_model');
 			$this->load->model('akunakutansi_model');
+			$this->load->model("job_model");
 			
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
@@ -46,7 +47,34 @@ class Suratpesanan extends CI_Controller {
 		
 		}
 	}
-
+	public function editkategori($id){
+        
+		$data["titlepage"] = "edit surat pesanan : " . $id;
+        $data["datajob"] = $this->job_model->view_after(11);
+        $data["dataresult"] = $this->suratpesanan_model->allproject($id);
+		$data["suratpesananCode"] = $id;
+		
+		$this->form_validation->set_rules('suratpesananCode', 'suratpesananCode', 'required');
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('suratpesanan/editkategori' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			// print_r($this->input->post());
+			$awwww = $this->suratpesanan_model->allproject($this->input->post("suratpesananCode"));
+			foreach ($awwww as $key => $value) {
+				# code...
+				print_r($value["project_id"]);
+				header("Location: " . $_SERVER["HTTP_REFERER"]);
+				$this->db->query("UPDATE `project` SET `project_status` = '".$this->input->post("project_status")."' WHERE `project_id` =". $value["project_id"]);
+			}
+			// $this->suratpesanan_model->submitedit();	
+            // redirect('/biayalain', 'refresh');
+		
+		}
+	}
     public function add(){
 
 		$this->form_validation->set_rules('NoSuratpesanan', 'NoSuratpesanan', 'required');

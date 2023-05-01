@@ -65,6 +65,7 @@ class Project_model extends CI_Model {
         public function doneproject(){
                 $this->db->where("project_id", $this->input->post("project_id"));
                 $p = $this->input->post();
+                $p["nilai_project_paid"] = str_replace(",", "",$this->input->post("nilai_project_paid"));
                 $this->db->update("project" , $p);
           }
         public function submitadd(){

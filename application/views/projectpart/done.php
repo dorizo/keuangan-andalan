@@ -16,7 +16,19 @@
                         
                         <label>TANGGAL DONE PROJECT</label>
                         <input type="date" name="project_paid" value="<?=$dataresult->project_paid?>" class="form-control" placeholder="Enter ...">
+                        <label>JUMLAH BOQ</label>
+                        <input type="text" name="nilai_project" value="<?=rupiah($dataresult->nilai_project)?>" class="form-control" disabled>
                        
+                        <label>JUMLAH TERBAYARKAN</label>
+                        <input type="text" name="nilai_project_paid" value="<?=$dataresult->nilai_project_paid?>" class="boq form-control  number-separator" placeholder="Enter ...">
+                       
+                        <label>STATUS PEMBAYARAN</label>
+                        <select name="status_paid" class="custom-select">
+                              <option value="<?=$dataresult->status_paid?>"><?=$dataresult->status_paid?></option>
+                              <option value="OUTSTENDING">OUTSTANDING</option>
+                              <option value="LUNAS">LUNAS</option>
+                          </select>
+                           
                         <div class="form-group">
                           <label>Status Project</label>
                           <select name="project_status" class="custom-select">
@@ -32,3 +44,10 @@
             </div>
 
 </div>
+<script>
+  $( document ).ready(function() {
+     $('input.boq').on('input',function(e){
+    });
+});
+
+</script>
