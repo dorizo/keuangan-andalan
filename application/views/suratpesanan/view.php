@@ -26,7 +26,7 @@
                       <td class="sorting_1 dtr-control"><?=$value["suratpesananCode"]?></td>
                       <td><?=$value["NoSuratpesanan"]?></td>
                       <td><?=$value["NamaSuratpesanan"]?></td>
-                      <td><?=rupiah($this->suratpesanan_model->jumlah($value["suratpesananCode"])->mo)?></td>
+                      <td><?=rupiah($this->suratpesanan_model->jumlah($value["suratpesananCode"])->mo+$this->suratpesanan_model->jumlahoutstanding($value["suratpesananCode"])->mo)?></td>
                     
                       <td><?=$value["witel_id"]?></td>
                       <td width=170px>

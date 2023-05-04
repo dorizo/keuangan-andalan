@@ -99,6 +99,8 @@ class Suratpesanan extends CI_Controller {
     public function detail($kd){
 		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
 		$datax = $this->suratpesanan_model->viewSinggle($kd);
+		$data["outstanding"] = $this->project_model->projectoutstendingkode($kd);
+		$data["id"]  = $kd; 
 		$data["titlepage"] = "pembagian biaya dari witel =".$datax->witel_id;
 		$data["project"] = $this->suratpesanan_model->witelfilterpilih($kd);
 	   if ($this->form_validation->run() === FALSE)
@@ -108,6 +110,39 @@ class Suratpesanan extends CI_Controller {
 		$this->load->view('template/footer');
 		}
     }
+	public function addoutstanding($kd){
+		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
+		$datax = $this->suratpesanan_model->viewSinggle($kd);
+		$data["titlepage"] = "pembagian biaya dari witel =".$datax->witel_id;
+		$data["project"] = $this->project_model->projectoutstending();
+	   if ($this->form_validation->run() === FALSE)
+        {
+		$this->load->view('template/header' , $data);
+		$this->load->view('suratpesanan/bagioutstanding' , $data);
+		$this->load->view('template/footer');
+		}else{
+			// $this->db->where_in("project_id" , $this->input->post("bagi"));
+			// $data["result"] = $this->db->get("project")->result_array();
+            // foreach($ );
+            $datamarga = array();
+            foreach ($this->input->post("bagi") as $key => $value) {
+                // print_r($value);
+                $datamarga[$key]["suratpesananCode"] = $kd;
+                $datamarga[$key]["project_id"] =  $value;
+				$x = $this->project_model->viewSinggle($value);
+				$datamarga[$key]["nilai_outstanding"] = ($x->nilai_project-$x->nilai_project_paid);
+				// $this->db->query("UPDATE `project` SET `project_status` = 'pemberkasan' WHERE `project_id` = $value");
+            }
+			// print_r($datamarga);
+			
+			$sss = $this->db->insert_batch("suratpesananoutstanding" , $datamarga);
+		if($sss){
+			echo "<script>alert('data berhasil Di input');</script>";
+			redirect('/suratpesanan/detail/'.$kd, 'refresh'); 
+		}
+			
+		}
+	}
 	public function bagi($kd){
 		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
 		$datax = $this->suratpesanan_model->viewSinggle($kd);
