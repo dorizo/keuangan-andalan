@@ -92,7 +92,7 @@
                     <div class="col-4">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3><?=rupiah($row->PAID_PROJECT)?></h3>
+                                <h3><?=rupiah($row->PAID_PROJECT-$point)?></h3>
 
                                 <p>NILAI PAID</p>
                             </div>
@@ -124,6 +124,19 @@
                                 <h3> <?=rupiah($bungaakunbank->x - $row->totalbungaseluruh)?></h3>
 
                                 <p>BEBAN BUNGA  PERUSAHAAN</p>
+                            </div>
+                            <div class="icon">
+                                <i class="fa fa-database"></i>
+                            </div>
+                         
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3> <?=rupiah($point)?></h3>
+
+                                <p>OUTSTANDING PAYMENT</p>
                             </div>
                             <div class="icon">
                                 <i class="fa fa-database"></i>

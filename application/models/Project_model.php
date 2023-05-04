@@ -81,6 +81,12 @@ class Project_model extends CI_Model {
                 $db = $this->db->get("project a");
                 return $db->result_array();
         }
+        public function projectoutstendingcount(){
+                $this->db->select("(sum(a.nilai_project) - sum(a.nilai_project_paid)) as poin");
+                $this->db->where("status_paid","OUTSTENDING");
+                $db = $this->db->get("project a");
+                return $db->row();
+        }
 
         public function projectoutstendingkode($kode){
                 $this->db->select("a.* , b.suratpesananoutstandingCode,b.suratpesananCode,b.nilai_outstanding");

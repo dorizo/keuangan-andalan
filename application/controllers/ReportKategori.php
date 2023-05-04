@@ -9,6 +9,7 @@ class ReportKategori extends CI_Controller {
 			$this->load->model('projectcat_model');
 			$this->load->model('witel_model');
 			$this->load->model('report_model');
+			$this->load->model('project_model');
             
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
@@ -32,6 +33,7 @@ class ReportKategori extends CI_Controller {
         $data["dataresult"] = $this->report_model->reportresume();
         $data["bungaakunbank"] = $this->report_model->bungaakunbank();
         $data["bungaakunbankresult"] = $this->report_model->bungaakunbankresult();
+        $data["point"] = $this->project_model->projectoutstendingcount()->poin;
 		$data["titlepage"] = "REPORT KEUANGAN";
 		$data["pluginjs"] = "keuangan.js?1222";
 		$this->load->view('template/header' , $data);
