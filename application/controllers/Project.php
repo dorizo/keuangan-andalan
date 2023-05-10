@@ -122,7 +122,7 @@ class Project extends CI_Controller {
 		// echo;
 		$witel = $this->db->query("select * from witel where witel_id=".$data->witel_id)->row();
 		$search = $witel->region_id."-".$witel->witel_code."-".$tgl;
-		$codetahun = $this->db->query("SELECT * , SUBSTRING( REPLACE(project_code, '-', '') , 8) as mn FROM project where project_code LIKE '%-".$tgl."-%' order by mn desc" )->row();
+		$codetahun = $this->db->query("SELECT * , (SUBSTRING( REPLACE(project_code, '-', '') , 8) * 1) as mn FROM project where project_code LIKE '%-".$tgl."-%' order by mn desc" )->row();
 		print_r( $codetahun);
 		$generetecallcenter =  $search."-".str_pad(($codetahun->mn+1), 4, '0', STR_PAD_LEFT);
 		echo $generetecallcenter;
