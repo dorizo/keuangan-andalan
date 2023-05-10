@@ -125,7 +125,7 @@ class Project extends CI_Controller {
 		$codetahun = $this->db->query("SELECT * , SUBSTRING( REPLACE(project_code, '-', '') , 8) as mn FROM project where project_code LIKE '%-".$tgl."-%' order by mn desc" )->row();
 		print_r( $codetahun);
 		$generetecallcenter =  $search."-".str_pad(($codetahun->mn+1), 4, '0', STR_PAD_LEFT);
-		// echo $generetecallcenter;
+		echo $generetecallcenter;
 		die();
 		if(count($parameter) == 4){
 			$dataddd["titlepage"] = "<div class='bg-danger'>ERROR <hr />PROJECT UNTUK COLCANTER INI TELAH DI BUAT = ".$data->project_code."<hr /><a href='".BASE_URL("project")."'>BACK</a></div>";	
