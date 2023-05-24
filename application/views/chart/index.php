@@ -19,7 +19,6 @@
                     </div>
                     <div class="col-4">
                     <select class="form-control select2" multiple="multiple" name="witel_id[]">
-                    <option value="">ALL DATA</option>
                     <?php
                     foreach ($datavendor as $key => $value) {
                     //   print_r($value);
