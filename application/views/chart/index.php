@@ -49,21 +49,24 @@
         $tahunss = 2021;
         $tahunss = $this->input->get("tahun");
         $val = array();
-        foreach ($this->input->get("witel_id") as $key => $value) {
-                # code...
-                $kodes = array();
-               $vendor =  $this->Vendor_model->viewSinggle($value);
-               $val[$key]["name"] = $vendor->vendorName;
-               for ($bulan=0; $bulan < 12 ; $bulan++) { 
-                # code...
-                $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where vendorCode='.$value.' AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
-                // echo $querrrrrV ;
-                $xls = $this->db->query($querrrrrV)->row();
-                // print_r($xls);
-                $kodes[$bulan] = $xls?$xls->boq:0;
-              }
-              $val[$key]["data"] = $kodes;
-            }
+        if (is_array($this->input->get("witel_id")) || is_object($this->input->get("witel_id")))
+        {
+            foreach ($this->input->get("witel_id") as $key => $value) {
+                    # code...
+                    $kodes = array();
+                $vendor =  $this->Vendor_model->viewSinggle($value);
+                $val[$key]["name"] = $vendor->vendorName;
+                for ($bulan=0; $bulan < 12 ; $bulan++) { 
+                    # code...
+                    $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where vendorCode='.$value.' AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
+                    // echo $querrrrrV ;
+                    $xls = $this->db->query($querrrrrV)->row();
+                    // print_r($xls);
+                    $kodes[$bulan] = $xls?$xls->boq:0;
+                }
+                $val[$key]["data"] = $kodes;
+                }
+        }
             
             ?>
         <script>
