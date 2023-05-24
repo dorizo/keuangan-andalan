@@ -25,7 +25,7 @@
                     foreach ($dataresult as $key => $value) { 
                     ?>
                     <tr class="odd">
-                      <td class="sorting_1 dtr-control"><?=$value["vendorCode"]?></td>
+                      <td class="sorting_1 dtr-control"><?=$value["vendorID"]?></td>
                       <td><?=$value["vendorName"]?></td>
                       <td><?=$value["vendorAlamat"]?></td>
                       <td><?=$value["vendorNIK"]?></td>

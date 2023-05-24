@@ -56,7 +56,9 @@
                $val[$key]["name"] = $vendor->vendorName;
                for ($bulan=0; $bulan < 12 ; $bulan++) { 
                 # code...
-                $xls = $this->db->query('SELECT sum(nilai_boq) as boq from project where vendorCode='.$value.' AND DATE_FORMAT(project_date , "%m") = "'.($bulan+1).'"  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;')->row();
+                $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where vendorCode='.$value.' AND DATE_FORMAT(project_date , "%m") = "'.($bulan+1).'"  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
+                // echo $querrrrrV ;
+                $xls = $this->db->query($querrrrrV)->row();
                 // print_r($xls);
                 $kodes[$bulan] = $xls?$xls->boq:0;
               }
