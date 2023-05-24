@@ -92,17 +92,23 @@
           categories: ['jan','Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct' , 'Nov','Des'],
         },
         yaxis: {
-          title: {
-            text: '$ (thousands)'
-          }
-        },
+            labels: {
+                formatter: function(value) {
+                var val = Math.abs(value)
+                if (val >= 1000000) {
+                    val = (val / 1000000).toFixed(0) + ' JT'
+                }
+                return val
+                }
+            }
+            },
         fill: {
           opacity: 1
         },
         tooltip: {
           y: {
             formatter: function (val) {
-              return "$ " + val + " thousands"
+              return "Rp " + val.toLocaleString('en-US')
             }
           }
         }
