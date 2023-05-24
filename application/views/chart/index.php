@@ -73,7 +73,7 @@
           series: <?= json_encode($val);?>,
           chart: {
           type: 'bar',
-          height: 350
+          height: 500
         },
         plotOptions: {
           bar: {
