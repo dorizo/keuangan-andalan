@@ -3,8 +3,8 @@
             <div class="card">
               <div class="card-header">
                 <div class="row mb-5">
-                    <a class="col-6 bg-primary p-2 text-center " href="<?=base_url("chart")?>">VENDOR CHART</a>
-                    <a class="col-6 bg-gray p-2  text-center "  href="<?=base_url("chart/kat")?>">KATEGORI CHART</a>
+                    <a class="col-6 bg-gray p-2 text-center " href="<?=base_url("chart")?>">VENDOR CHART</a>
+                    <a class="col-6 bg-primary p-2  text-center "  href="<?=base_url("chart/kat")?>">KATEGORI CHART</a>
                 </div>
                 <form method="get">
                 <div class="row">
@@ -27,12 +27,12 @@
                     foreach ($datavendor as $key => $value) {
                     //   print_r($value);
                       $seleced = "";
-                      $sos =  array_search($value["vendorCode"],$this->input->get("witel_id") ?? []);
+                      $sos =  array_search($value["job_id"],$this->input->get("witel_id") ?? []);
                       if(!empty($sos) or $sos ===0){
                         $seleced = "selected";
                       }
                       ?>
-                    <option   <?=$seleced?>   value="<?=$value['vendorCode']?>"><?php print_r($value["vendorName"])?></option>
+                    <option   <?=$seleced?>   value="<?=$value['job_id']?>"><?php print_r($value["job_name"])?></option>
                     <?php
                     }
                     ?>
@@ -57,11 +57,11 @@
             foreach ($this->input->get("witel_id") as $key => $value) {
                     # code...
                     $kodes = array();
-                $vendor =  $this->Vendor_model->viewSinggle($value);
-                $val[$key]["name"] = $vendor->vendorName;
+                $vendor =  $this->Job_model->getsingle($value);
+                $val[$key]["name"] = $vendor->job_name;
                 for ($bulan=0; $bulan < 12 ; $bulan++) { 
                     # code...
-                    $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where vendorCode='.$value.' AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
+                    $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where project_status="'.$vendor->job_name.'" AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
                     // echo $querrrrrV ;
                     $xls = $this->db->query($querrrrrV)->row();
                     // print_r($xls);

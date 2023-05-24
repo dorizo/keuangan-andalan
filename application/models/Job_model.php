@@ -10,6 +10,12 @@ class Job_model extends CI_Model {
                 $db = $this->db->get("job");
             return $db->result_array();
         }
+        public function getsingle($id){
+                $this->db->order_by("job_day" , "ASC");
+                $this->db->where("job_id" , $id);
+                $db = $this->db->get("job");
+            return $db->row();
+        }
 
         public function viewPM(){
                 $this->db->order_by("job_day" , "asc");

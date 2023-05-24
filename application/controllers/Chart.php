@@ -8,6 +8,7 @@ class Chart extends CI_Controller {
 			parent::__construct();
 			$this->load->model('Report_model');
 			$this->load->model('Vendor_model');
+			$this->load->model('Job_model');
 			if(!$this->session->userdata("userCode")){
 				redirect('/login', 'refresh');
 			}
@@ -24,6 +25,18 @@ class Chart extends CI_Controller {
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('chart/index' , $data);
+		$this->load->view('template/footer');
+    }
+    public function kat()
+	{
+        $data["dataresult"] = $this->Report_model->view();
+        $data["datavendor"] = $this->Job_model->view();
+		$data["dataresult2"] = $this->Report_model->witel();
+		$data["dataresult3"] = $this->Report_model->nilaiwitel();
+		$data["titlepage"] = "Chart Report";
+		$data["pluginjs"] = "transaksi.js";
+		$this->load->view('template/header' , $data);
+		$this->load->view('chart/kat' , $data);
 		$this->load->view('template/footer');
     }
 
