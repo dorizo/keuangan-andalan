@@ -122,28 +122,40 @@ class Project extends CI_Controller {
 		// echo;
 		$witel = $this->db->query("select * from witel where witel_id=".$data->witel_id)->row();
 		$search = $witel->region_id."-".$witel->witel_code."-".$tgl;
-		$codetahun = $this->db->query("SELECT * , (SUBSTRING( REPLACE(project_code, '-', '') , 8) * 1) as mn FROM project where project_code LIKE '%-".$tgl."-%' order by mn desc" )->row();
+		$codetahun = $this->db->query("SELECT * ,  (SUBSTRING( project_code , 11) * 1) as mn FROM project where project_code LIKE '%-".$tgl."-%' order by mn desc" )->row();
 		// print_r( $codetahun);
 		$generetecallcenter =  $search."-".str_pad(($codetahun->mn+1), 4, '0', STR_PAD_LEFT);
-		// echo $generetecallcenter;
-		// die();
 		if(count($parameter) == 4){
 			$dataddd["titlepage"] = "<div class='bg-danger'>ERROR <hr />PROJECT UNTUK COLCANTER INI TELAH DI BUAT = ".$data->project_code."<hr /><a href='".BASE_URL("project")."'>BACK</a></div>";	
 			$this->load->view('template/header' , $dataddd);
 			$this->load->view('template/footer');
 		}else{
-			$data = array("project_code" => $generetecallcenter );
+			$dataddd["titlepage"] = "<div class='bg-primary card-body'>GENERATE CODE <hr />PROJECT  COLCANTER INI AKAN DIBUAT DENGAN CODE <hr />".$generetecallcenter."<hr /><a class='btn btn-danger' href='".BASE_URL("project")."'>CANCEL</a> <a class='btn btn-danger' href='".BASE_URL("project/generatesubmit/".$id."/".$generetecallcenter)."'>GENERATE</a></div>";	
+			$this->load->view('template/header' , $dataddd);
+			$this->load->view("projectpart/generate");
+			$this->load->view('template/footer');
+			// $this->load->view();
+			// $data = array("project_code" => $generetecallcenter );
+			// $this->db->where("project_id" , $id);
+			// $sss = $this->db->update("project" ,$data);
+			// if($sss){
+				
+			// 	redirect('/project', 'refresh');
+			// }
+		
+		}
+		// ;
+		// $this->
+
+	}
+	public function generatesubmit($id,$generetecallcenter){
+		$data = array("project_code" => $generetecallcenter );
 			$this->db->where("project_id" , $id);
 			$sss = $this->db->update("project" ,$data);
 			if($sss){
 				
 				redirect('/project', 'refresh');
 			}
-		
-		}
-		// ;
-		// $this->
-
 	}
 	
 	public function done($id){

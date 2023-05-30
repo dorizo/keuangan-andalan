@@ -85,6 +85,7 @@
                       <th>NO SP</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
+                      <th>PROJECT START</th>
                       <th>CATATAN PROJECT</th>
                       <th>MODE</th>
                     </tr>
@@ -107,6 +108,7 @@
                       <td><?=$spnum?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=$value["project_done"]?></td>
+                      <td><?=$value["project_date"]?></td>
                       <td><?=$value["project_note"]?></td>
                       <td>
                       <div class="btn-group dropleft">
@@ -149,6 +151,7 @@
                       <th>NO SP</th>
                       <th>PROJECT STATUS</th>
                       <th>ESTIMASI PROJECT DONE</th>
+                      <th>PROJECT START</th>
                       <th>CATATAN PROJECT</th>
                       <th>MODE</th>
                     </tr>
