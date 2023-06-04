@@ -2,10 +2,7 @@
         <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <div class="row mb-5">
-                    <a class="col-6 bg-primary p-2 text-center " href="<?=base_url("chart")?>">VENDOR CHART</a>
-                    <a class="col-6 bg-gray p-2  text-center "  href="<?=base_url("chart/kat")?>">KATEGORI CHART</a>
-                </div>
+                <?php include("menu.php")?>
                 <form method="get">
                 <div class="row">
                     <div class="col-2">TAHUN</div>

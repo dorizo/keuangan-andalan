@@ -11,6 +11,12 @@ class Witel_model extends CI_Model {
             return $db->result_array();
         }
 
+        public function getsingle($id){
+            $this->db->where("deleteAt is NULL");
+            $this->db->where("witel_code" , $id);
+            $db = $this->db->get("witel");
+            return $db->row();
+        }
     }
 
 ?>

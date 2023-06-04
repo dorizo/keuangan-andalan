@@ -22,14 +22,15 @@
                     <div class="col-12 card-body">
                     <?php
                     foreach ($datavendor as $key => $value) {
+                        // print_r($value);
                       $seleced = "";
-                      $sos =  array_search($value["job_id"],$this->input->get("witel_id") ?? []);
+                      $sos =  array_search($value["witel_code"],$this->input->get("witel_id") ?? []);
                       if(!empty($sos) or $sos ===0){
                         $seleced = "checked";
                       }
                       ?>
-                      <input type="checkbox" id="vehicle1" name="witel_id[]" value="<?=$value['job_id']?>" <?=$seleced?>>
-                    <label for="vehicle1"> <?php print_r($value["job_name"])?></label>  
+                      <input type="checkbox" id="vehicle1" name="witel_id[]" value="<?=$value['witel_code']?>" <?=$seleced?>>
+                    <label for="vehicle1"> <?php print_r($value["witel_name"])?></label>  
                     <?php }?>
                     </div>
                     </div>
@@ -52,11 +53,11 @@
             foreach ($this->input->get("witel_id") as $key => $value) {
                     # code...
                     $kodes = array();
-                $vendor =  $this->Job_model->getsingle($value);
-                $val[$key]["name"] = $vendor->job_name;
+                $vendor =  $this->Witel_model->getsingle($value);
+                $val[$key]["name"] = $vendor->witel_name;
                 for ($bulan=0; $bulan < 12 ; $bulan++) { 
                     # code...
-                    $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where project_status="'.$vendor->job_name.'" AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
+                    $querrrrrV = 'SELECT sum(nilai_boq) as boq from project where witel_id="'.$vendor->witel_id.'" AND DATE_FORMAT(project_date , "%m") = '.($bulan+1).'  AND DATE_FORMAT(project_date , "%Y") = "'.$tahunss.'" GROUP BY DATE_FORMAT(project_date , "%Y-%m") ASC;';
                     // echo $querrrrrV ;
                     $xls = $this->db->query($querrrrrV)->row();
                     // print_r($xls);
