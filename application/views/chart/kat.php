@@ -9,7 +9,7 @@
                 <form method="get">
                 <div class="row">
                     <div class="col-2">Vendor LIST</div>
-                    <div class="col-3">
+                    <div class="col-10">
                         
                     <select class="form-control" name="tahun">
                         <?php
@@ -21,22 +21,20 @@
                         ?>
                     </select>
                     </div>
-                    <div class="col-4">
-                    <select class="form-control select2" multiple="multiple" name="witel_id[]">
+                    <div class="card m-2">
+                    <div class="col-12 card-body">
                     <?php
                     foreach ($datavendor as $key => $value) {
-                    //   print_r($value);
                       $seleced = "";
                       $sos =  array_search($value["job_id"],$this->input->get("witel_id") ?? []);
                       if(!empty($sos) or $sos ===0){
-                        $seleced = "selected";
+                        $seleced = "checked";
                       }
                       ?>
-                    <option   <?=$seleced?>   value="<?=$value['job_id']?>"><?php print_r($value["job_name"])?></option>
-                    <?php
-                    }
-                    ?>
-                  </select>
+                      <input type="checkbox" id="vehicle1" name="witel_id[]" value="<?=$value['job_id']?>" <?=$seleced?>>
+                    <label for="vehicle1"> <?php print_r($value["job_name"])?></label>  
+                    <?php }?>
+                    </div>
                     </div>
                     <div class="col-1"><input type="submit" class="btn btn-success" value="search" /></div>
                 </div>
