@@ -18,8 +18,8 @@
                         ?>
                     </select>
                     </div>
-                    <div class="card m-2">
-                    <div class="col-12 card-body">
+                    <div class="col-12 card m-2">
+                    <div class="card-body scroll">
                     <?php
                     foreach ($datavendor as $key => $value) {
                         // print_r($value);
@@ -30,7 +30,7 @@
                       }
                       ?>
                       <input type="checkbox" id="vehicle1" name="witel_id[]" value="<?=$value['witel_code']?>" <?=$seleced?>>
-                    <label for="vehicle1"> <?php print_r($value["witel_name"])?></label>  
+                    <label for="vehicle1"> <?php print_r($value["witel_name"])?></label>  <br />
                     <?php }?>
                     </div>
                     </div>
@@ -128,3 +128,11 @@
 
   });
   </script>
+
+  
+<style>
+    .scroll {
+    max-height: 200px;
+    overflow-y: auto;
+}
+  </style>
