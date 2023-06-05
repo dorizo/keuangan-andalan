@@ -5,7 +5,7 @@
                 <?php include("menu.php")?>
                 <form method="get">
                 <div class="row">
-                    <div class="col-2">Vendor LIST</div>
+                    <!-- <div class="col-2">Vendor LIST</div>
                     <div class="col-10">
                         
                     <select class="form-control" name="tahun">
@@ -17,8 +17,27 @@
                         }
                         ?>
                     </select>
-                    </div>
+                    </div> -->
                     <div class="col-12 card m-2">
+                      
+                    <div class="card-header">
+                    <div class="row">
+                        <div class="col-2 pl-2">TAHUN</div>
+                        <div class="col-10">
+                            
+                        <select class="form-control" name="tahun">
+                            <?php
+                            for ($i=2019; $i <= date('Y') ; $i++) { 
+                                ?>
+                                <option value="<?=$i?>" <?=$this->input->get("tahun")==$i?"selected":""?>><?=$i?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        </div>
+                      </div>
+                        Witel
+                    </div>
                     <div class="card-body scroll">
                     <?php
                     foreach ($datavendor as $key => $value) {

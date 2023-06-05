@@ -4,21 +4,26 @@
               <div class="card-header">
                 <?php include("menu.php")?>
                 <form method="get">
-                <div class="row">
-                    <div class="col-2">TAHUN</div>
-                    <div class="col-10">
-                        
-                    <select class="form-control" name="tahun">
-                        <?php
-                        for ($i=2019; $i <= date('Y') ; $i++) { 
-                            ?>
-                            <option value="<?=$i?>" <?=$this->input->get("tahun")==$i?"selected":""?>><?=$i?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                    </div>
+                     
                     <div class="card m-2 col-12">
+                    <div class="card-header">
+                    <div class="row">
+                        <div class="col-2 pl-2">TAHUN</div>
+                        <div class="col-10">
+                            
+                        <select class="form-control" name="tahun">
+                            <?php
+                            for ($i=2019; $i <= date('Y') ; $i++) { 
+                                ?>
+                                <option value="<?=$i?>" <?=$this->input->get("tahun")==$i?"selected":""?>><?=$i?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        </div>
+                      </div>
+                        PARTNER
+                    </div>
                     <div class="card-body scroll">
                     <?php
                     foreach ($datavendor as $key => $value) {
