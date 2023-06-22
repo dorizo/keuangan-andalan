@@ -9,6 +9,7 @@ class Chart extends CI_Controller {
 			$this->load->model('Report_model');
 			$this->load->model('Vendor_model');
 			$this->load->model('Witel_model');
+			$this->load->model('Projectcat_model');
 			
 			$this->load->model('Job_model');
 			if(!$this->session->userdata("userCode")){
@@ -63,6 +64,19 @@ class Chart extends CI_Controller {
 		$data["pluginjs"] = "transaksi.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('chart/outstanding' , $data);
+		$this->load->view('template/footer');
+    }
+    public function project()
+	{
+        $data["dataresult"] = $this->Report_model->view();
+        $data["datavendor"] = $this->Witel_model->view();
+		$data["dataresult2"] = $this->Report_model->witel();
+        $data["jobresult"] = $this->Projectcat_model->view();
+		$data["dataresult3"] = $this->Report_model->nilaiwitel();
+		$data["titlepage"] = "Chart Report";
+		$data["pluginjs"] = "transaksi.js";
+		$this->load->view('template/header' , $data);
+		$this->load->view('chart/project' , $data);
 		$this->load->view('template/footer');
     }
 
