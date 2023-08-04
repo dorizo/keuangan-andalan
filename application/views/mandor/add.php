@@ -29,6 +29,14 @@
                 <input type="password" name="password" id="passowrd" class="form-control">
               </div>
               
+              <div class="form-group">
+                <label for="inputName">akses</label>
+                <select name="akses" id="akses" class="form-control">
+                  <option value="PM">PM</option>
+                  <option value="waspang">waspang</option>
+                  <option value="admin">admin</option>
+                </select>
+              </div>
               <!-- <div class="form-group">
                 <label for="inputDescription">Project Description</label>
                 <textarea id="inputDescription" class="form-control" rows="4"></textarea>

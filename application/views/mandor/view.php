@@ -11,6 +11,7 @@
                     <th>NIP</th>
                     <th>NAMA</th>
                     <th>USERNAME</th>
+                    <th>POSISI</th>
                     <th width=50px>ACTION</th>
                   </tr>
                   </thead>
@@ -23,6 +24,7 @@
                         <td><?php print_r($value["karyawanNip"]); ?></td>
                         <td><?php print_r($value["karyawanNama"]); ?></td>
                         <td><?php print_r($value["username"])?></td>
+                        <td><?php print_r($value["akses"])?></td>
                         <td>
                         <div class="btn-group">
                             <button type="button" class="btn btn-default">Action</button>

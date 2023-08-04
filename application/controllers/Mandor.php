@@ -45,7 +45,7 @@ class Mandor extends CI_Controller {
 	public function sematkan($id){
 		$this->form_validation->set_rules('role', 'role', 'required');
         $data["titlepage"] = "Admin | Detail Master Role ";
-        $data['datadetail'] = $this->db->query("SELECT * FROM `karyawan` b JOIN `karyawan_project` a  ON a.karyawanCode=b.karyawanCode where b.karyawanCode=$id")->result();
+        $data['datadetail'] = $this->db->query("SELECT * FROM `karyawan` b JOIN `karyawan_project` a  ON a.karyawanCode=b.karyawanCode where a.project_id=$id")->result();
         $data["user"] = $this->db->query("select * from project where project_id=$id")->row();
         $data['permission'] =$this->db->query("select * from karyawan")->result();
 		$this->load->view('template/header' , $data);
