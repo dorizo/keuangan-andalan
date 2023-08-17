@@ -9,8 +9,8 @@ class Mandor_model extends CI_Model {
         public function single($role){
                 // $this->db->where("email" , $this->input->post("username"));
                 // $this->db->where("password" , md5($this->input->post("password")));
-                $this->db->where("userCode" , $role);
-                $db = $this->db->get("user");
+                $this->db->where("karyawanCode" , $role);
+                $db = $this->db->get("karyawan");
                  return $db->row();
             }
         public function view(){
@@ -32,8 +32,8 @@ class Mandor_model extends CI_Model {
         }
         public function delete($id){
 
-                $this->db->where("userCode" , $id);
-                $this->db->update("user");
+                $this->db->where("karyawanCode" , $id);
+                $this->db->delete("karyawan");
         }
 
 }

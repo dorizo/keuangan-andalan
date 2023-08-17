@@ -32,8 +32,7 @@
                               <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu" role="menu">
-                            <?=projectmenu("CR",base_url("mandor/detail/".$value["karyawanCode"]) , "fa-money-bill" , "Detail")?>
-                          
+                           
                               <a class="dropdown-item" href="<?=base_url("mandor/edit/".$value["karyawanCode"]);?>">EDIT</a>
                               <a class="dropdown-item" onclick="hapus('<?=base_url("mandor/delete/".$value['karyawanCode']);?>')">DELETE</a>
                             </div>

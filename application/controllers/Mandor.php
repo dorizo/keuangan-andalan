@@ -24,7 +24,7 @@ class Mandor extends CI_Controller {
 	}
 	public function edit($id){
 
-		$this->form_validation->set_rules('email', 'email', 'required');
+		$this->form_validation->set_rules('karyawanCode', 'karyawanCode', 'required');
         
         $data["dataresult"] = $this->mandor_model->single($id);
         // $data["datajob"] = $this->job_model->view();
@@ -36,7 +36,22 @@ class Mandor extends CI_Controller {
 		$this->load->view('template/footer');
 		
 		}else{
-			$this->mandor_model->submitedit();	
+
+			if($this->input->post("password")){
+					$post = $this->input->post();
+					$post["password"] = md5($this->input->post("password"));
+					$this->db->where("karyawanCode" , $this->input->post("karyawanCode"));
+					$this->db->update("karyawan" , $post);
+			}else{
+					$post = $this->input->post();
+					unset($post["password"]);
+					
+					$this->db->where("karyawanCode" , $this->input->post("karyawanCode"));
+					$this->db->update("karyawan" , $this->input->post());
+			}
+
+
+			// $this->mandor_model->submitedit();	
             redirect('/mandor', 'refresh');
 		
 		}

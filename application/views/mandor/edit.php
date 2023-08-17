@@ -3,7 +3,7 @@
             <form method="post">
             <div class="card-header">
               <h3 class="card-title">General</h3>
-
+    
               <div class="card-tools">
                 <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                   <i class="fas fa-minus"></i>
@@ -12,31 +12,32 @@
             </div>
             <div class="card-body">
               <div class="form-group">
-                <label for="inputName">email</label>
-                <input type="email" value="<?=$dataresult->email?>" name="email" id="inputName" class="form-control">
-                <input type="hidden" value="<?=$dataresult->userCode?>" name="userCode" id="inputName" class="form-control">
+                <label for="inputName">NIP</label>
+                <input type="hidden" name="karyawanCode" id="inputName" class="form-control" value="<?=$dataresult->karyawanCode?>">
+                 <input type="text" name="karyawanNip" id="inputName" class="form-control" value="<?=$dataresult->karyawanNip?>">
+              </div>
+              <div class="form-group">
+                <label for="inputName">NAMA</label>
+                <input type="text" name="karyawanNama" id="inputName" class="form-control" value="<?=$dataresult->karyawanNama?>">
+              </div>
+              
+              <div class="form-group">
+                <label for="inputName">Username</label>
+                <input type="text" name="username" id="inputName" class="form-control" value="<?=$dataresult->username?>">
               </div>
               <div class="form-group">
                 <label for="inputName">Password</label>
-                <input type="password"  value="<?=$dataresult->password?>" name="password" id="passowrd" class="form-control">
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select name="isActive" id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option value="1" <?=$dataresult->isActive==1?"selected":""?>>Active</option>
-                  <option  value="2" <?=$dataresult->isActive==2?"selected":""?>>blocked</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="inputStatus">Status</label>
-                <select name="status" id="inputStatus" class="form-control custom-select">
-                  <option selected disabled>Select one</option>
-                  <option value="Private" <?=$dataresult->status=="Private"?"selected":""?>>Private</option>
-                  <option  value="Public" <?=$dataresult->status=="Public"?"selected":""?>>Public</option>
-                </select>
+                <input type="password" name="password" id="passowrd" class="form-control" >
               </div>
               
+              <div class="form-group">
+                <label for="inputName">akses</label>
+                <select name="akses" id="akses" class="form-control">
+                  <option value="PM" <?=$dataresult->akses=="PM"?"selected":"";?>>PM</option>
+                  <option value="waspang" <?=$dataresult->akses=="waspang"?"selected":"";?>>waspang</option>
+                  <option value="admin" <?=$dataresult->akses=="admin"?"selected":"";?>>admin</option>
+                </select>
+              </div>
               <!-- <div class="form-group">
                 <label for="inputDescription">Project Description</label>
                 <textarea id="inputDescription" class="form-control" rows="4"></textarea>
