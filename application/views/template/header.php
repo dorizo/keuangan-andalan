@@ -251,6 +251,8 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
           <?=projectmenu("LAPR",base_url("ReportKategori") , "far fa-circle" , "REPORT KATEGORI")?>
           <?=projectmenu("LAPR",base_url("ReportKategori/keuangan") , "far fa-circle" , "REPORT KEUANGAN")?>
           <?=projectmenu("LAPR",base_url("chart") , "far fa-circle" , "Chart REPORT")?>
+          <?=projectmenu("LAPR",base_url("absensi") , "far fa-circle" , "Absensi REPORT")?>
+              
               
             </ul>
           </li>
