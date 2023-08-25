@@ -13,6 +13,7 @@
                     <th>USERNAME</th>
                     <th>POSISI</th>
                     <th>Status Absen</th>
+                    <th>TANGGAL</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -26,6 +27,7 @@
                         <td><?php print_r($value["username"])?></td>
                         <td><?php print_r($value["akses"])?></td>
                         <td><?php print_r($value["posisi"])?></td>
+                        <td><?php print_r($value["create_at"])?></td>
                       </tr>
                     </tr>
 
