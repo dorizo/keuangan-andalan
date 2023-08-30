@@ -129,6 +129,7 @@
                           
                           <?=projectmenu("KEUW",base_url("transaksi/setting/".$value["project_id"]) , "fa-money-bill" , "Pembayaran Vendor")?>
                           <?=projectmenu("KEUW",base_url("project/done/".$value["project_id"]) , "fa-money-bill" , "Penyelesaian Project")?>
+                          <?=projectmenu("KEUW","https://karyawan.ciptateknologimuda.com/projectrequest/request/".$value["project_id"]."?".http_build_query($this->session->userdata())  , "fa-money-bill" , "setting Request Budget")?>
                           <!-- <a class="dropdown-item" href="<?=base_url("project/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> </a>
                           <a class="dropdown-item" href="<?=base_url("transaksi/setting/".$value["project_id"])?>"><i class="fas fa-money-bill"></i> </a>
                           <a class="dropdown-item" href="<?=base_url("project/done/".$value["project_id"])?>"><i class="fas fa-user fa-fw"></i> </a> -->
