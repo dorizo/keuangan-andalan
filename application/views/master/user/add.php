@@ -15,6 +15,14 @@
                 <label for="inputName">email</label>
                 <input type="email" name="email" id="inputName" class="form-control">
               </div>
+                <div class="form-group">
+                <label for="inputName">NIK TA</label>
+                <input type="text" name="nik_ta" id="inputName" class="form-control">
+              </div>
+                <div class="form-group">
+                <label for="inputName">NIK API</label>
+                <input type="text" name="nik_api" id="inputName" class="form-control">
+              </div>
               <div class="form-group">
                 <label for="inputName">Password</label>
                 <input type="password" name="password" id="passowrd" class="form-control">

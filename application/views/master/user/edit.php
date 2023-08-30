@@ -16,6 +16,14 @@
                 <input type="email" value="<?=$dataresult->email?>" name="email" id="inputName" class="form-control">
                 <input type="hidden" value="<?=$dataresult->userCode?>" name="userCode" id="inputName" class="form-control">
               </div>
+                <div class="form-group">
+                <label for="inputName">NIK TA</label>
+                <input type="text" name="nik_ta" id="inputName" class="form-control"  value="<?=$dataresult->nik_ta?>">
+              </div>
+                <div class="form-group">
+                <label for="inputName">NIK API</label>
+                <input type="text" name="nik_api" id="inputName" class="form-control"  value="<?=$dataresult->nik_api?>">
+              </div>
               <div class="form-group">
                 <label for="inputName">Password</label>
                 <input type="password"  value="<?=$dataresult->password?>" name="password" id="passowrd" class="form-control">

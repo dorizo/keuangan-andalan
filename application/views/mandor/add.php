@@ -35,6 +35,7 @@
                   <option value="PM">PM</option>
                   <option value="waspang">waspang</option>
                   <option value="admin">admin</option>
+                  <option value="KEUANGAN">KEUANGAN</option>
                 </select>
               </div>
               <!-- <div class="form-group">

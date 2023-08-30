@@ -36,6 +36,7 @@
                   <option value="PM" <?=$dataresult->akses=="PM"?"selected":"";?>>PM</option>
                   <option value="waspang" <?=$dataresult->akses=="waspang"?"selected":"";?>>waspang</option>
                   <option value="admin" <?=$dataresult->akses=="admin"?"selected":"";?>>admin</option>
+                  <option value="KEUANGAN" <?=$dataresult->akses=="KEUANGAN"?"selected":"";?> >KEUANGAN</option>
                 </select>
               </div>
               <!-- <div class="form-group">
