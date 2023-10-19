@@ -22,10 +22,10 @@
                   </thead>
                   <tbody>
                     <?php
-                    foreach ($dataresult as $key => $value) { 
+                    foreach ($dataresult as $key => $value) {
                     ?>
                     <tr class="odd">
-                      <td class="sorting_1 dtr-control"><?=$value["akunbankCode"]?></td>
+                      <td class="sorting_1 dtr-control"><?=$value["akunbankName"]?></td>
                       <td><?=rupiah($value["total_akunbank"])?></td>
                       <td><?=tanggalindo($value["taggal_peminjaman"])?></td>
                       <td><?=rupiah($value["saldo_sekarang"])?></td>
