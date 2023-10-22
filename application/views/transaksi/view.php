@@ -21,14 +21,14 @@
                   </thead>
                   <tbody>
                     <?php
-                    foreach ($datatable as $key => $value) { 
+                    foreach ($datatable as $key => $value) {
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_transaksiCode"]?></td>
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=$value["transaksiDate"]?></td>
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
-                      <td><?=$value["akunBankCode"]?></td>
+                      <td><?=$value["akunbankName"]?></td>
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
                       <td><a onclick="hapus('<?=base_url('transaksi/delete/'.$value['akunbank_transaksiCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
                     </tr>
