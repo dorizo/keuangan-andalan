@@ -205,7 +205,7 @@ class Excelexport extends CI_Controller {
 		$sheet->getPageSetup()->setOrientation(\PhpOffice\PhpSpreadsheet\Worksheet\PageSetup::ORIENTATION_LANDSCAPE);
 	
 		// Set judul file excel nya
-		$sheet->setTitle("Laporan Data Siswa");
+		$sheet->setTitle("Laporan Data WIP API");
 	
 		// Proses file excel
 		header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
