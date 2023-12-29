@@ -58,29 +58,26 @@ class Project extends CI_Controller {
 		  ]
 		];
 	
-		$sheet->setCellValue('A1', "DATA SISWA"); // Set kolom A1 dengan tulisan "DATA SISWA"
-		$sheet->mergeCells('A1:E1'); // Set Merge Cell pada kolom A1 sampai E1
-		$sheet->getStyle('A1')->getFont()->setBold(true); // Set bold kolom A1
 	
 		// Buat header tabel nya pada baris ke 3
-		$sheet->setCellValue('A3', "NO"); // Set kolom A3 dengan tulisan "NO"
-		$sheet->setCellValue('B3', "NIS"); // Set kolom B3 dengan tulisan "NIS"
-		$sheet->setCellValue('C3', "NAMA"); // Set kolom C3 dengan tulisan "NAMA"
-		$sheet->setCellValue('D3', "JENIS KELAMIN"); // Set kolom D3 dengan tulisan "JENIS KELAMIN"
-		$sheet->setCellValue('E3', "ALAMAT"); // Set kolom E3 dengan tulisan "ALAMAT"
+		$sheet->setCellValue('A1', "NO"); // Set kolom A3 dengan tulisan "NO"
+		$sheet->setCellValue('B1', "NIS"); // Set kolom B3 dengan tulisan "NIS"
+		$sheet->setCellValue('C1', "NAMA"); // Set kolom C3 dengan tulisan "NAMA"
+		$sheet->setCellValue('D1', "JENIS KELAMIN"); // Set kolom D3 dengan tulisan "JENIS KELAMIN"
+		$sheet->setCellValue('E1', "ALAMAT"); // Set kolom E3 dengan tulisan "ALAMAT"
 	
 		// Apply style header yang telah kita buat tadi ke masing-masing kolom header
-		$sheet->getStyle('A3')->applyFromArray($style_col);
-		$sheet->getStyle('B3')->applyFromArray($style_col);
-		$sheet->getStyle('C3')->applyFromArray($style_col);
-		$sheet->getStyle('D3')->applyFromArray($style_col);
-		$sheet->getStyle('E3')->applyFromArray($style_col);
+		$sheet->getStyle('A1')->applyFromArray($style_col);
+		$sheet->getStyle('B1')->applyFromArray($style_col);
+		$sheet->getStyle('C1')->applyFromArray($style_col);
+		$sheet->getStyle('D1')->applyFromArray($style_col);
+		$sheet->getStyle('E1')->applyFromArray($style_col);
 	
 		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
 		$siswa = $this->db->query("select * from project")->result();
 	
 		$no = 1; // Untuk penomoran tabel, di awal set dengan 1
-		$numrow = 4; // Set baris pertama untuk isi tabel adalah baris ke 4
+		$numrow = 2; // Set baris pertama untuk isi tabel adalah baris ke 4
 		foreach($siswa as $data){ // Lakukan looping pada variabel siswa
 		  $sheet->setCellValue('A'.$numrow, $no);
 		  $sheet->setCellValue('B'.$numrow, $data->project_code);

@@ -248,6 +248,7 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
           <?=projectmenu("KEUW",base_url("akunakutansi") , "far fa-circle" , "AKUN AKUTANSI")?>
           <?=projectmenu("VENDOR",base_url("vendor") , "far fa-circle" , "VENDOR")?>
           <?=projectmenu("LAPR",base_url("report") , "far fa-circle" , "REPORT")?>
+          <?=projectmenu("KEUW",base_url("excelexport") , "fas fa-th" , "Excel Export")?>
           <?=projectmenu("LAPR",base_url("ReportKategori") , "far fa-circle" , "REPORT KATEGORI")?>
           <?=projectmenu("LAPR",base_url("ReportKategori/keuangan") , "far fa-circle" , "REPORT KEUANGAN")?>
           <?=projectmenu("LAPR",base_url("chart") , "far fa-circle" , "Chart REPORT")?>
