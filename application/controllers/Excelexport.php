@@ -30,7 +30,7 @@ class Excelexport extends CI_Controller {
 		$data["pluginjs"] = "project.js?22";
 
 		if($this->input->get()){
-			$data["dataresult"] = $this->Report_model->detail($this->input->get());
+			$data["dataresult"] = $this->Report_model->detailexport($this->input->get());
 	
 		}else{
 			$data["dataresult"] = $this->project_model->view();
@@ -49,7 +49,7 @@ class Excelexport extends CI_Controller {
     public function export(){
         
 		if($this->input->get()){
-			$dataresult= $this->Report_model->detail($this->input->get());
+			$dataresult= $this->Report_model->detailexport($this->input->get());
 	
 		}else{
 			$dataresult= $this->project_model->view();
@@ -91,7 +91,7 @@ class Excelexport extends CI_Controller {
 		// Buat header tabel nya pada baris ke 3
 		$sheet->setCellValue('A1', "NO"); // Set kolom A3 dengan tulisan "NO"
 		$sheet->setCellValue('B1', "PROJECT KODE"); // Set kolom B3 dengan tulisan "NIS"
-		$sheet->setCellValue('C1', "VENDOR KODE"); // Set kolom C3 dengan tulisan "NAMA"
+		$sheet->setCellValue('C1', "VENDOR"); // Set kolom C3 dengan tulisan "NAMA"
 		$sheet->setCellValue('D1', "WITEL"); // Set kolom D3 dengan tulisan "JENIS KELAMIN"
 		$sheet->setCellValue('E1', "KATEGORI"); // Set kolom E3 dengan tulisan "ALAMAT"
 	
