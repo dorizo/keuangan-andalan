@@ -12,6 +12,8 @@
                       <th>Project Code</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
+                      <th>NILAI MATERIAL</th>
+                      <th>NILAI JASA</th>
                       <th>JUMLAH TRANSAKSI</th>
                       <th>AREA</th>
                       <th>STATUS</th>
@@ -27,6 +29,8 @@
                       <td><?=$value["NoSuratpesanan"]?></td>
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=$value["transaksiDate"]?></td>
+                      <td><?=rupiah($value["nilai_material"])?></td>
+                      <td><?=rupiah($value["nilai_jasa"])?></td>
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
                       <td><?=$value["witel_name"]?></td>
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
@@ -46,6 +50,8 @@
                       <th>Project Code</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
+                      <th>NILAI MATERIAL</th>
+                      <th>NILAI JASA</th>
                       <th>JUMLAH TRANSAKSI</th>
                       <th>AREA</th>
                       <th>STATUS</th>

@@ -20,6 +20,14 @@
                       <input type="date" name="transaksiDate" class="form-control" placeholder="">
                       </div>
                       <div class="form-group">
+                        <label>JUMLAH PENGAJUAN JASA</label>
+                      <input type="text" name="nilai_jasa" class="nilai_jasa form-control number-separator" value="0" placeholder="">
+                      </div>
+                      <div class="form-group">
+                        <label>JUMLAH PENGAJUAN MATERIAL</label>
+                      <input type="text" name="nilai_material" class="nilai_material form-control number-separator"  value="0" placeholder="">
+                      </div>
+                      <div class="form-group">
                         <label>JUMLAH PENGAJUAN</label>
                       <input type="text" name="transaksiJumlah" class="form-control number-separator" placeholder="">
                       </div>
@@ -53,3 +61,21 @@
             </div>
 
 </div>
+
+<script>
+  $( document ).ready(function() {
+     $('input.nilai_material').on('input',function(e){
+    // alert('Changed!')
+    var vv = Number($("input[name='nilai_material']").val().replace(/,/g, '')) + Number($("input[name='nilai_jasa']").val().replace(/,/g, ''));
+      
+      $("input[name='transaksiJumlah']").val(vv);
+    });
+     $('input.nilai_jasa').on('input',function(e){
+    // alert('Changed!')
+      var vv = Number($("input[name='nilai_material']").val().replace(/,/g, '')) + Number($("input[name='nilai_jasa']").val().replace(/,/g, ''));
+      
+      $("input[name='transaksiJumlah']").val(vv);
+    });
+});
+
+</script>
