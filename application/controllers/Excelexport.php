@@ -106,6 +106,7 @@ class Excelexport extends CI_Controller {
 		$sheet->setCellValue('M1', "PAYMENT VENDOR"); // Set kolom C3 dengan tulisan "NAMA"
 		$sheet->setCellValue('N1', "TOTAL SELURUH BUNGA"); // Set kolom D3 dengan tulisan "JENIS KELAMIN"
 		$sheet->setCellValue('O1', "PEMBAYARAN API"); // Set kolom E3 dengan tulisan "ALAMAT"
+		$sheet->setCellValue('P1', "NO SURAT PESANAN"); // Set kolom E3 dengan tulisan "ALAMAT"
 		// Apply style header yang telah kita buat tadi ke masing-masing kolom header
 		$sheet->getStyle('A1')->applyFromArray($style_col);
 		$sheet->getStyle('B1')->applyFromArray($style_col);
@@ -122,6 +123,7 @@ class Excelexport extends CI_Controller {
 		$sheet->getStyle('M1')->applyFromArray($style_col);
 		$sheet->getStyle('N1')->applyFromArray($style_col);
 		$sheet->getStyle('O1')->applyFromArray($style_col);
+		$sheet->getStyle('P1')->applyFromArray($style_col);
 	
 		// Panggil function view yang ada di SiswaModel untuk menampilkan semua data siswanya
 		// $siswa = $this->db->query("select * from project")->result();
@@ -144,6 +146,10 @@ class Excelexport extends CI_Controller {
         //     echo $value[""];
         // }
         foreach ($dataresult as $key => $value) {
+			$spnum = $this->db->query("SELECT * FROM `suratpesanan` a JOIN suratpesanandetail b ON a.suratpesananCode=b.suratpesananCode  WHERE b.project_id=".$value["project_id"])->row();
+			if($spnum){
+			  $spnum = $spnum->NoSuratpesanan;
+			}
 		  $sheet->setCellValue('A'.$numrow, $no);
 		  $sheet->setCellValue('B'.$numrow, $value["project_code"] );
 		  $sheet->setCellValue('C'.$numrow, $value['vendor']);
@@ -159,6 +165,7 @@ class Excelexport extends CI_Controller {
 		  $sheet->setCellValue('M'.$numrow, $value["paymentvendor"]);
 		  $sheet->setCellValue('N'.$numrow, $value["totalbungaseluruh"]);
 		  $sheet->setCellValue('O'.$numrow, $value["pembayaranAPI"]);
+		  $sheet->setCellValue('P'.$numrow , $spnum);
 		  
 		  // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
 		  $sheet->getStyle('A'.$numrow)->applyFromArray($style_row);
@@ -176,6 +183,7 @@ class Excelexport extends CI_Controller {
 		  $sheet->getStyle('M'.$numrow)->applyFromArray($style_row);
 		  $sheet->getStyle('N'.$numrow)->applyFromArray($style_row);
 		  $sheet->getStyle('O'.$numrow)->applyFromArray($style_row);
+		  $sheet->getStyle('P'.$numrow)->applyFromArray($style_row);
 		  
 		  $no++; // Tambah 1 setiap kali looping
 		  $numrow++; // Tambah 1 setiap kali looping
@@ -198,6 +206,7 @@ class Excelexport extends CI_Controller {
 		$sheet->getColumnDimension('M')->setWidth(15); // Set width kolom C
 		$sheet->getColumnDimension('N')->setWidth(15); // Set width kolom D
 		$sheet->getColumnDimension('O')->setWidth(15); // Set width kolom E
+		$sheet->getColumnDimension('P')->setWidth(40); // Set width kolom E
 		// Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
 		$sheet->getDefaultRowDimension()->setRowHeight(-1);
 	

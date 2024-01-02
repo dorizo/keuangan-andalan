@@ -119,6 +119,8 @@
                           <!-- Dropdown menu links -->
                           <a class="dropdown-item" href="<?=base_url("project/detail/".$value["project_id"])?>"><i class="fas fa-search fa-fw"></i> Detail</a>
                           <?=projectmenu("CPRO",base_url("pengajuan/setting/".$value["project_id"]) , "fa-money-bill" , "Pengajuan")?>
+                          <?=projectmenu("CPRO",base_url("perubahanboq/request/".$value["project_id"]) , "fa-money-bill" , "Perubahan BOQ")?>
+                          <?=projectmenu("KEUW",base_url("perubahanboq/request/".$value["project_id"]) , "fa-money-bill" , "Perubahan BOQ")?>
                           <?=projectmenu("KEUW",base_url("project/generate/".$value["project_id"]) , "fa-money-bill" , "Generate COST CENTER")?>
                           <?=projectmenu("UPRO",base_url("project/edit/".$value["project_id"]) , "fa-money-bill" , "Edit")?>
                           <?=projectmenu("SETPRO",base_url("project/setting/".$value["project_id"]) , "fa-money-bill" , "Setting Project")?>
