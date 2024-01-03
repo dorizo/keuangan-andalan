@@ -85,9 +85,9 @@ class Pengajuan extends CI_Controller {
 
 			$config['upload_path']          = './pembayaran/';
 			$config['allowed_types']        = '*';
-			$config['max_size']             = 1000;
-			$config['max_width']            = 10240;
-			$config['max_height']           = 7680;
+			$config['max_size']             = 100000;
+			$config['max_width']            = 102400;
+			$config['max_height']           = 76800;
 			$config['encrypt_name']           = TRUE;
 
 			$this->load->library('upload', $config);
