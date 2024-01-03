@@ -308,6 +308,9 @@ class Project extends CI_Controller {
 		//local dir
 		// $file =  $_SERVER["DOCUMENT_ROOT"]."/backend_andalanpratama/assets/".$id."/";
         $map = directory_map($file, false , true);
+	
+		$data["upload_list"] = $this->db->from("karyawan_upload")->where("project_id" , $id)->order_by("log_date","desc")->get()->result();
+		
 		$data["map"] =  $map;
 		$this->load->view('template/header' , $data);
 		$this->load->view('projectpart/detail' , $data);

@@ -186,61 +186,21 @@
               </div>
 
               <h5 class="mt-5 text-muted">Project files</h5>
-              <ul class="list-unstyled">
-               <?php
-               
-               foreach ($map as $key => $value)
-               {
-                if(is_array($value)){
-                    foreach ($value as $key1 => $value1)
-                    {
-
-                         if(is_array($value1)){
-                            foreach ($value1 as $key2 => $value2)
-                            {
-                                if(is_array($value2)){
-                                    foreach ($value2 as $key3 => $value3)
-                                    {
-                                        if(is_array($value3)){
-                                            foreach ($value3 as $key4 => $value4)
-                                            {
-                                                if(is_array($value4)){
-                                                    foreach ($value4 as $key5 => $value5)
-                                                    {
-                                                        if(is_array($value5)){
-                
-                                                        }else{
-                                                            echo $value5."<br />";
-                                                        }
-                                                    }
-                                                }else{
-                                                    echo $value4."<br />";
-                                                }
-                                            }
-
-                                        }else{
-                                            echo $value3."<br />";
-                                        }
-                                    }
-                                }else{
-                                    echo $value2."<br />";
-                                }
-                            } 
-                        }else{
-                            echo $value1."<br />";
+              <ul class="timeline">
+                <?php foreach ($upload_list as $key => $value) {
+                    # code...
+                ?>
+                <li>
+                  <a href="#" class="float-right"><?=$value->log_date?></a>
+                  <div class="col-12" width="100%">
+                                <?=$value->project_status?>
+                                <a target="_blank" href="<?="https://karyawan.ciptateknologimuda.com/uploads/".$value->filedata?>" >download</a> 
+                            </div>
+                  </li>
+                        <?php
                         }
-                        
-                      
-                    } 
-                }else{
-                    echo $value."<br />";
-                }
-                 
-
-                  
-                }
-              ?>
-              
+                        ?>
+                
               </ul>
               <div class="text-center mt-5 mb-3">
                 <a href="<?=base_url("project/download/".$dataresult->project_id);?>" class="btn btn-sm btn-primary">Download File</a>
