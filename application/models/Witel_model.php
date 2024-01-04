@@ -23,6 +23,13 @@ class Witel_model extends CI_Model {
             $db = $this->db->get("witel");
             return $db->row();
         }
+
+        public function role_witel($userCode){
+            $this->db->where("userCode" , $userCode);
+           $db =  $this->db->get("role_witel");
+            return $db->result();
+
+        }
         
     }
 

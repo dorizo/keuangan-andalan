@@ -31,6 +31,7 @@
                             </button>
                             <div class="dropdown-menu" role="menu">
                             <?=projectmenu("CR",base_url("Master/user/detail/".$value["userCode"]) , "fa-money-bill" , "Detail")?>
+                            <?=projectmenu("CR",base_url("Master/user/detailwitel/".$value["userCode"]) , "fa-money-bill" , "Setting witel")?>
                           
                               <a class="dropdown-item" href="<?=base_url("Master/user/edit/".$value["userCode"]);?>">EDIT</a>
                               <a class="dropdown-item" onclick="hapus('<?=base_url("Master/user/delete/".$value['userCode']);?>')">DELETE</a>

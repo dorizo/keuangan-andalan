@@ -47,9 +47,24 @@ class User extends CI_Controller {
         $data["titlepage"] = "Admin | Detail Master Role ";
         $data['datadetail'] = $this->db->query("SELECT * FROM `user` b JOIN `role_user` a  ON a.userCode=b.userCode JOIN role c ON c.roleCode=a.roleCode where b.userCode=$id")->result();
         $data["user"] = $this->db->query("select * from user where userCode=$id")->row();
+		$data["rolewitel"] = $this->db->query("select * from role_witel where userCode=$id")->row();
+		$data["witel"] = $this->db->query("select * from witel")->row();
         $data['permission'] = $this->db->get('role')->result();
 		$this->load->view('template/header' , $data);
 		$this->load->view('master/user/detail' , $data);
+		$this->load->view('template/footer');
+
+	}
+	
+	public function detailwitel($id){
+		$this->form_validation->set_rules('role', 'role', 'required');
+        $data["titlepage"] = "Admin | Detail Master Role ";
+        $data['datadetail'] = $this->db->query("SELECT * FROM `user` b JOIN `role_user` a  ON a.userCode=b.userCode JOIN role c ON c.roleCode=a.roleCode where b.userCode=$id")->result();
+        $data["user"] = $this->db->query("select * from user where userCode=$id")->row();
+		$data["rolewitel"] = $this->db->query("select * from role_witel JOIN witel ON witel.witel_id = role_witel.witelCode where userCode=$id")->result();
+		$data["witel"] = $this->db->query("select * from witel")->result();
+		$this->load->view('template/header' , $data);
+		$this->load->view('master/user/detailwitel' , $data);
 		$this->load->view('template/footer');
 
 	}
@@ -86,10 +101,23 @@ class User extends CI_Controller {
 			
 		// }
 	} 
+
+	public function addwitel(){
+		$p = $this->input->post();
+		print_r($p);
+		$this->db->insert("role_witel" , $p);
+		redirect($_SERVER['HTTP_REFERER']);
+	}
 	public function delete_detail($id){ 
 
 		$this->db->where("ruCode" , $id);
 		$update = $this->db->delete('role_user');
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+	public function deletewitel($id){ 
+
+		$this->db->where("rolewitelCode" , $id);
+		$update = $this->db->delete('role_witel');
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 

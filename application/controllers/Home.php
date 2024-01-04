@@ -27,7 +27,14 @@ class Home extends CI_Controller {
 			$data["dataresult"] = $this->Report_model->detail($this->input->get());
 	
 		}else{
-			$data["dataresult"] = $this->project_model->view();
+			$array = array();
+			$witel = $this->witel_model->role_witel($this->session->userdata("userCode"));
+			foreach ($witel as $key => $value) {
+				# code...
+				$array[] = $value->witelCode;
+			}
+			
+			$data["dataresult"] = $this->project_model->view($array);
 	
 		}
 		

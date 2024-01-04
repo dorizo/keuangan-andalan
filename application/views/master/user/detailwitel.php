@@ -1,0 +1,116 @@
+<!-- <div class="col-lg-12">
+        <div class="card card-primary">
+            <form method="post">
+            <div class="card-header">
+              <h3 class="card-title">General</h3>
+
+              <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="form-group">
+                <label for="inputName">role</label>
+                <input type="hidden" name="roleCode" value="<?=$dataresult->roleCode?>" id="inputName" class="form-control">
+                <input type="text" name="role" value="<?=$dataresult->role?>" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="inputStatus">Status</label>
+                <select name="status" id="inputStatus" class="form-control custom-select">
+                  <option selected disabled>Select one</option>
+                
+                  <option value="Private" <?=$dataresult->status=="Private"?"selected":""?>>Private</option>
+                  <option  value="Public" <?=$dataresult->status=="Public"?"selected":""?>>Public</option>
+                </select>
+              </div>
+              
+             
+            </div>
+           
+            <div class="card-footer">
+            <a href="<?=base_url("master/user")?>" class="btn btn-secondary">Cancel</a>
+            <input type="submit" value="Edit" class="btn btn-success float-right">
+            </div>
+            </form>
+       </div> -->
+          <!-- /.card -->
+          <div class="col-lg-12">
+        <div class="card card-primary">
+          <div class="card-header">
+              <h3 class="card-title">Role</h3>
+
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                  <i class="fas fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+            <form action="<?php echo base_url() ?>Master/user/addwitel" method="post" role="form" enctype="multipart/form-data">
+              
+                <div class="form-group">
+                  <label>email <?= $user->email; // print_r($witel); ?></label>
+                  <input type="hidden" name="userCode" value="<?= $user->userCode ?>">
+                  <select class="permission select2bs4" multiple="multiple" data-placeholder="Select a role" name="witelCode" style="width: 100%;" required="required">
+                    <?php
+                      foreach($witel as $value){
+                        echo "<option value='$value->witel_id' select>$value->witel_name</option>";
+                      }
+                      ?>
+                  </select>
+                  <button type="submit" class="btn btn-primary mt-1">
+                    <i class="fas fa-plus"></i> Add data 
+                  </button>
+                </div>
+
+
+            </form>
+            
+
+        </div>
+        <div class="card-body" >
+         <?php foreach($rolewitel as $value){ ?>
+         <a href="<?php echo base_url() ?>Master/user/deletewitel/<?= $value->rolewitelCode; ?>">
+          <button type="button" class="btn btn-secondary mb-1" >
+            <i class="fas fa-times-circle"></i> <?= $value->witel_name ?>  
+          </button>
+          </a>
+          <?php } ?>
+
+
+         
+            <!-- div class="col-lg-6">
+              <div >
+                
+                <button type="reset" class="btn btn-warning col cancel">
+                  <i class="fas fa-times-circle"></i>
+                  <span>Cancel upload</span>
+                </button>
+              </div>
+            </div> -->
+          
+        </div>
+</div>
+</div>
+<script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2(
+    {
+       
+                });
+
+
+      
+
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+
+  })
+  
+</script>
+
