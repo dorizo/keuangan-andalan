@@ -12,7 +12,33 @@ class akunbankTransaksi_model extends CI_Model {
             $db = $this->db->get("akunbank_transaksi");
             return $db->result_array();
         }
-
+        public function export($p){
+            foreach ($p as $key => $value) {
+               
+                if($key=="project_start"){ 
+                    
+                    if(!empty($value)){
+                $this->db->where("transaksiDate >= " , $value);
+                    }
+                }elseif($key=="project_done"){
+                    
+                    if(!empty($value)){
+                $this->db->where("transaksiDate <= ", $value);
+                    }
+                }else{
+                    if(!empty($value)){
+                $this->db->where_in(str_replace("-",".",$key),$value);
+                    }
+                };
+                
+            }
+            $this->db->join("project" , "project.project_id=akunbank_transaksi.project_id" );
+            $this->db->join("akunbank" , "akunbank.akunbankCode=akunbank_transaksi.akunBankCode" );
+            $this->db->join("witel" , "witel.witel_id=project.witel_id" );
+            $this->db->join("project_cat" , "project_cat.cat_id=project.cat_id" );
+            $db = $this->db->get("akunbank_transaksi");
+            return $db->result_array();
+        }
         public function sumproject($id){
             $this->db->select_sum('transaksiJumlah');
             $this->db->where("project_id" , $id);

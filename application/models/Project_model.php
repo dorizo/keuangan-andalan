@@ -6,7 +6,7 @@ class Project_model extends CI_Model {
                 $this->load->database();
         }
         public function view($pmparam  = array()){
-        echo $counts = count($pmparam);
+        $counts = count($pmparam);
         if(($counts >= 1)){
                 $this->db->where_in("witel_id"  , $pmparam);
         }
