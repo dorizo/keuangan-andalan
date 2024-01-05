@@ -22,6 +22,25 @@ class Akunbank extends CI_Controller {
 		$this->load->view('akunbank/view' , $data);
 		$this->load->view('template/footer');
 	}
+	public function cangename($id){
+		$data["titlepage"] = "Rubah Data BANK";
+		
+        $data["dataresult"] = $this->akunbank_model->viewsingle($id);
+		$this->form_validation->set_rules('akunbankCode', 'akunbankCode', 'required');
+		if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('akunbank/changename' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			$this->db->where("akunbankCode" , $this->input->post("akunbankCode"));
+			$this->db->update("akunbank" , $this->input->post());	
+            redirect('/akunbank', 'refresh');
+		
+		}
+        
+	}
 	public function edit($id){
 
 		$this->form_validation->set_rules('project_id', 'project_id', 'required');

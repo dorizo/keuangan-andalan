@@ -9,6 +9,7 @@ class Akunbank_model extends CI_Model {
             $db = $this->db->get("akunbank");
             return $db->result_array();
         }
+        
         public function viewsingle($kode){
             $this->db->where("akunbankCode" , $kode);
             $db = $this->db->get("akunbank");

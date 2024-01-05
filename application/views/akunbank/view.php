@@ -15,8 +15,9 @@
                       <th>taggal_peminjaman</th>
                       <th>saldo_sekarang</th>
                       <th>bungabank</th>
-                      <th>bungapartner</th>
+                      <th>Bank accont</th>
                       <th>MODE</th>
+                      <th>edit</th>
                       <th>detail</th>
                     </tr>
                   </thead>
@@ -30,8 +31,9 @@
                       <td><?=tanggalindo($value["taggal_peminjaman"])?></td>
                       <td><?=rupiah($value["saldo_sekarang"])?></td>
                       <td><?=$value["bungabank"]?></td>
-                      <td><?=$value["bungapartner"]?></td>
+                      <td><?=$value["bank_name"]?></td>
                       <td><a onclick="hapus('<?=base_url('akunbank/delete/'.$value['akunbankCode'])?>')" class="btn btn-success"><i class="fas fa-trash"></i></a></td>
+                      <td><a href="<?=base_url('akunbank/cangename/'.$value['akunbankCode'])?>" class="btn btn-success"><i class="fas fa-edit"></i></a></td>
                       <td><a href="<?=base_url('akunbank/record/'.$value['akunbankCode'])?>" class="btn btn-success"><i class="fas fa-arrow-right"></i></a></td>
                     </tr>
                   <?php
@@ -46,7 +48,9 @@
                       <th>taggal_peminjaman</th>
                       <th>saldo_sekarang</th>
                       <th>bungabank</th>
-                      <th>bungapartner</th>
+                      <th>BANK ACCONT</th>
+                      <th>MODE</th>
+                      <th>edit</th>
                       <th>MODE</th>
                     </tr>
                  </tfoot>
