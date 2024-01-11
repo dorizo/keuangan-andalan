@@ -290,6 +290,31 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
               </li> -->
             </ul>
           </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                Project Param
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <?=projectmenu("CR",base_url("Package") , "far fa-circle" , "Peckage")?>
+            <?=projectmenu("CU",base_url("desinator") , "far fa-circle" , "Desinator")?>
+              <!-- <li class="nav-item">
+                <a href="<?=base_url("/Master/role")?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>ROLE</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="<?=base_url("/Master/user")?>" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>USER</p>
+                </a>
+              </li> -->
+            </ul>
+          </li>
           <!-- <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-copy"></i>
