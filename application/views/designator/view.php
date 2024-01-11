@@ -29,7 +29,7 @@
                           $variable= $data["datadetail"] = $this->Designator_model->detail($value["designator_id"]);
                           foreach ($variable as $key => $value) {
                            
-                            echo $value["package_name"]."Material(".rupiah($value['material_price']).")"."jasa(".rupiah($value['service_price']).")<hr />";
+                            echo "<b>".$value["package_name"]."</b> Material(".rupiah($value['material_price']).")"."jasa(".rupiah($value['service_price']).")<hr />";
                           } 
                           ?>
                         
