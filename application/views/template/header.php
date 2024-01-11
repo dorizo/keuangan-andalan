@@ -244,6 +244,9 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
                 </a>
               </li> -->
               
+            <?=projectmenu("CU",base_url("kategori/parent") , "far fa-circle" , "PARENT KATEGORI")?>
+            <?=projectmenu("CU",base_url("kategori/kat") , "far fa-circle" , "KATEGORI")?>
+            <?=projectmenu("CU",base_url("job") , "far fa-circle" , "PROJECT STATUS")?>
           <?=projectmenu("KEUW",base_url("akunbank") , "far fa-circle" , "AKUN BANK")?>
           <?=projectmenu("KEUW",base_url("akunakutansi") , "far fa-circle" , "AKUN AKUTANSI")?>
           <?=projectmenu("VENDOR",base_url("index.php/vendor") , "far fa-circle" , "VENDOR")?>

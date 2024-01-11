@@ -15,6 +15,12 @@ class Projectcat_model extends CI_Model {
                 $db = $this->db->get("project_cat");
             return $db->row();
         }
+        public function editcat(){
+            // $this->db->order_by("cat_id" , "ASC");
+            $this->db->where("cat_id" , $this->input->post("cat_id"));
+          $this->db->update("project_cat", $this->input->post());
+       
+    }
 
     }
 ?>

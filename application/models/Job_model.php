@@ -8,7 +8,7 @@ class Job_model extends CI_Model {
         public function view(){
                 $this->db->order_by("job_day" , "ASC");
                 $db = $this->db->get("job");
-            return $db->result_array();
+            return $db->result_array(); 
         }
         public function getsingle($id){
                 $this->db->order_by("job_day" , "ASC");
@@ -24,6 +24,9 @@ class Job_model extends CI_Model {
             return $db->result_array();
         }
         
+        public function submitadd(){
+            $this->db->insert("job" , $this->input->post());
+        }
         public function view_after($key){
                 $this->db->where("job_day >= $key");
                 $this->db->order_by("job_day" , "ASC");
