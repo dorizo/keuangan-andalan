@@ -186,22 +186,22 @@
               </div>
 
               <h5 class="mt-5 text-muted">Project files</h5>
-              <ul class="timeline">
+              <table class="table">
                 <?php foreach ($upload_list as $key => $value) {
                     # code...
                 ?>
-                <li>
-                  <a href="#" class="float-right"><?=$value->log_date?></a>
-                  <div class="col-12" width="100%">
-                                <?=$value->project_status?>
-                                <a target="_blank" href="<?="https://karyawan.ciptateknologimuda.com/uploads/".$value->filedata?>" >download</a> 
-                            </div>
-                  </li>
+                <tr>
+                 <td> <?=$value->log_date?> </td>
+                 <td><?=$value->project_status?> </td>
+                 <td> <?=$value->ket_upload?> </td>
+                 <td> <a target="_blank" href="<?="https://karyawan.ciptateknologimuda.com/uploads/".$value->filedata?>" ><i class="fa fa-download" aria-hidden="true"></i></a>  </td>
+                           
+                  </tr>
                         <?php
                         }
                         ?>
+                        </table>
                 
-              </ul>
               <div class="text-center mt-5 mb-3">
                 <a href="<?=base_url("project/download/".$dataresult->project_id);?>" class="btn btn-sm btn-primary">Download File</a>
               </div>
