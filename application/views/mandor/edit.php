@@ -17,6 +17,11 @@
                  <input type="text" name="karyawanNip" id="inputName" class="form-control" value="<?=$dataresult->karyawanNip?>">
               </div>
               <div class="form-group">
+                <label for="inputName">User Code</label>
+                <input type="hidden" name="karyawanCode" id="inputName" class="form-control" value="<?=$dataresult->karyawanCode?>">
+                 <input type="text" name="userCode" id="inputName" class="form-control" value="<?=$dataresult->userCode?>">
+              </div>
+              <div class="form-group">
                 <label for="inputName">NAMA</label>
                 <input type="text" name="karyawanNama" id="inputName" class="form-control" value="<?=$dataresult->karyawanNama?>">
               </div>

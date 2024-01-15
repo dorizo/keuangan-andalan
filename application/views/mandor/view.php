@@ -9,6 +9,7 @@
                   <thead>
                   <tr>
                     <th>NIP</th>
+                    <th>UserCode</th>
                     <th>NAMA</th>
                     <th>USERNAME</th>
                     <th>POSISI</th>
@@ -22,6 +23,7 @@
                     ?>
                     <tr>
                         <td><?php print_r($value["karyawanNip"]); ?></td>
+                        <td><?php print_r($value["userCode"]); ?></td>
                         <td><?php print_r($value["karyawanNama"]); ?></td>
                         <td><?php print_r($value["username"])?></td>
                         <td><?php print_r($value["akses"])?></td>

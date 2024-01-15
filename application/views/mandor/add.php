@@ -16,6 +16,10 @@
                 <input type="text" name="karyawanNip" id="inputName" class="form-control">
               </div>
               <div class="form-group">
+                <label for="inputName">NIP</label>
+                <input type="text" name="userCode" id="inputName" class="form-control">
+              </div>
+              <div class="form-group">
                 <label for="inputName">NAMA</label>
                 <input type="text" name="karyawanNama" id="inputName" class="form-control">
               </div>
