@@ -30,6 +30,16 @@ class Witel_model extends CI_Model {
             return $db->result();
 
         }
+        public function submitadd(){
+            $param = $this->input->post();
+            // $param["password"] = password_hash($this->input->post("password") , PASSWORD_DEFAULT);
+            $this->db->insert("witel" , $param);
+        }
+        public function submitedit(){
+            $param = $this->input->post();
+            $this->db->where("witel_id" , $this->input->post("witel_id"));
+            $this->db->update("witel" , $param);
+    }
         
     }
 
