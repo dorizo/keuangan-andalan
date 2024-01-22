@@ -40,6 +40,7 @@
                   <option value="waspang">waspang</option>
                   <option value="admin">admin</option>
                   <option value="KEUANGAN">KEUANGAN</option>
+                  <option value="OWNER">OWNER</option>
                 </select>
               </div>
               <!-- <div class="form-group">

@@ -42,6 +42,7 @@
                   <option value="waspang" <?=$dataresult->akses=="waspang"?"selected":"";?>>waspang</option>
                   <option value="admin" <?=$dataresult->akses=="admin"?"selected":"";?>>admin</option>
                   <option value="KEUANGAN" <?=$dataresult->akses=="KEUANGAN"?"selected":"";?> >KEUANGAN</option>
+                  <option value="OWNER" <?=$dataresult->akses=="OWNER"?"selected":"";?> >OWNER</option>
                 </select>
               </div>
               <!-- <div class="form-group">
