@@ -12,7 +12,7 @@
                   <tbody>
                     <?php
                     foreach ($project as $key => $value) { 
-                      $chekkkk = $value["project_code"] == $resultdata->project_code?"checked":"";
+                      $chekkkk = $value["project_id"] == $resultdata->project_id?"checked":"";
                     ?>
                     <tr class="odd">
                       <td class="sorting_1 dtr-control">

@@ -23,6 +23,10 @@
                     foreach ($result as $key => $value) {
                         # code...
                         $pembagi= round(($value["nilai_project"] / $param->total)*100 , 2);
+                        // echo $pembagi;
+                        if(is_nan($pembagi)){
+                            $pembagi = 100;
+                        }
                         ?>
                             <tr class="odd">
                             <td><?=$value["project_code"]?></td>
