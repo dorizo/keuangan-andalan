@@ -14,6 +14,7 @@
                     <th>POSISI</th>
                     <th>Status Absen</th>
                     <th>TANGGAL</th>
+                    <th>Foto</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -28,6 +29,7 @@
                         <td><?php print_r($value["akses"])?></td>
                         <td><?php print_r($value["posisi"])?></td>
                         <td><?php print_r($value["create_at"])?></td>
+                        <td><a href="<?="https://karyawan.ciptateknologimuda.com/uploads/".$value["image"]?>">Download</td>
                       </tr>
                     </tr>
 

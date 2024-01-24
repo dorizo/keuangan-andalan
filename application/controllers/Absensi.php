@@ -23,7 +23,7 @@ class Absensi extends CI_Controller {
 	public function index()
 	{
 		$data["dataresult"] = $this->absensi_model->view();
-		$data["titlepage"] = "BIAYA LAINYA";
+		$data["titlepage"] = "ABSENSI REPORT";
 		$data["pluginjs"] = "vendor.js";
 		$this->load->view('template/header' , $data);
 		$this->load->view('absen/view' , $data);
