@@ -3,6 +3,14 @@
               <div class="card-header">
                 <h3 class="card-title">FORM INPUT</h3>
               </div>
+              
+              <?php if(!roleuser("FSA")){ ?>
+                <div class="alert alert-danger">FUNGSI SUDAH DI NON AKTIFKAN MOBILE KARYAWAN</div>
+                   
+             <?php return true; 
+             }
+
+                ?>
               <!-- /.card-header -->
               <div class="card-body">
                 <form method="post">

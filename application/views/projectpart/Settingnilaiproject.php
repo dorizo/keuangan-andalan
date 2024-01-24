@@ -10,6 +10,7 @@
                     <div class="col-sm-12">
                       <!-- text input -->
                       <div class="form-group">
+                        <div class="alert alert-danger">fungsi yang hilang atau disable sudah di pindahkan ke aplikasi MOBILE KARYAWAN</div>
                       <label>PROJECT CODE</label>
                         <input type="text" disabled name="project_code" value="<?=$dataresult->project_code?>" class="form-control" placeholder="Enter ...">
                        
@@ -17,10 +18,10 @@
                         <input type="text" name="project_name" value="<?=$dataresult->project_name?>" class="form-control" placeholder="Enter ...">
                        
                         <label>Masukan Nilai Kontrak BOQ</label>
-                        <input type="text" name="nilai_boq" value="<?=$dataresult->nilai_boq?>" class="boq form-control number-separator" placeholder="Enter ...">
+                        <input type="text" name="nilai_boq" readonly value="<?=$dataresult->nilai_boq?>" class="boq form-control number-separator" placeholder="Enter ...">
                         <label>Masukan Nilai SIUJK</label>
                         <input type="hidden" name="project_id" value="<?=$dataresult->project_id?>" class="form-control" placeholder="Enter ...">
-                        <input type="text" name="nilai_project" value="<?=$dataresult->nilai_project?>" class="form-control number-separator" placeholder="Enter ...">
+                        <input type="text" name="nilai_project" readonly value="<?=$dataresult->nilai_project?>" class="form-control number-separator" placeholder="Enter ...">
                         <label>Sharing Vendor (%)</label>
                         <input type="number" name="sharing_vendor" value="<?=$dataresult->sharing_vendor?>" class="form-control number-separator" placeholder="Enter ...">
                         <label>Sharing Owner (%)</label>
@@ -58,8 +59,10 @@
                           </select>
                           
                         </div>
+                        <?php if(roleuser("FSA")){
+                            ?>
                         <div class="form-group">
-                          <label>Status Project</label>
+                          <label>Status Project </label>
                           <select name="project_status" class="custom-select">
                               <option value="<?=$dataresult->project_status?>"><?=$dataresult->project_status?></option>
                               <?php
@@ -72,6 +75,7 @@
                           </select>
                           
                         </div>
+                        <?php } ?>
                       </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -4,7 +4,7 @@ if ( ! function_exists('roleuser'))
     function roleuser($var = '')
     {
         $ci =& get_instance();
-        $ddd =  $ci->db->query("SELECT d.* FROM user a JOIN role_user b ON a.userCode=b.userCode JOIN role_permission c ON c.roleCode=b.roleCode JOIN permission d ON d.permissionCode=c.permissionCode  WHERE a.userCode=".$ci->session->userdata("userCode")." AND d.permission='$var'")->row();
+        $ddd =  $ci->db->query("SELECT d.* FROM user a JOIN role_user b ON a.userCode=b.userCode JOIN role_permission c ON c.roleCode=b.roleCode JOIN permission d ON d.permissionCode=c.permissionCode  WHERE a.userCode=".$ci->session->userdata("userCode")." AND d.permission='$var' AND c.deleteAt IS NULL")->row();
         return $ddd;
     }   
 }
