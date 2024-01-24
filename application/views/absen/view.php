@@ -29,7 +29,7 @@
                         <td><?php print_r($value["akses"])?></td>
                         <td><?php print_r($value["posisi"])?></td>
                         <td><?php print_r($value["create_at"])?></td>
-                        <td><a href="<?="https://karyawan.ciptateknologimuda.com/uploads/".$value["image"]?>">Download</td>
+                        <td><a target="_BLANK" href="<?="https://karyawan.ciptateknologimuda.com/uploads/absen/".$value["image"]?>">Download</td>
                       </tr>
                     </tr>
 
