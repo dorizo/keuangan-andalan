@@ -11,6 +11,33 @@
         </form>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-sm-4 col-6">
+        <div class="description-block border-right">
+        <h5 class="description-header"><?=rupiah($nilaiboq->nilai)?></h5>
+        <span class="description-text">Project Masuk</span>
+        </div>
+
+        </div>
+
+        <div class="col-sm-4 col-6">
+        <div class="description-block border-right">
+        <h5 class="description-header"><?=rupiah($nilaikeluar->nilai)?></h5>
+        <span class="description-text">TOTAL PENGELUARAN</span>
+        </div>
+
+        </div>
+
+        <div class="col-sm-4 col-6">
+        <div class="description-block border-right">
+        <h5 class="description-header"><?=rupiah($projectpaid->nilai)?></h5>
+        <span class="description-text">TOTAL PROFIT</span>
+        </div>
+
+        </div>
+
+    </div>
     <div class="card">
         <div class="card-body">
             <table id="example" class="display" style="width:100%">
