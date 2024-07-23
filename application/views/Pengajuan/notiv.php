@@ -10,6 +10,7 @@
                     <tr> 
                       <th>akunbank_pengajuanCode</th>
                       <th>Project Code</th>
+                      <th>Project Status</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
                       <th>NILAI MATERIAL</th>
@@ -26,6 +27,7 @@
                     <tr class="odd">
                       <td class="sorting_1 dtr-control"><?=$value["akunbank_pengajuanCode"]?></td>
                       <td><?=$value["project_code"]?></td>
+                      <td><?=$value["project_status"]?></td>
                       <td><?=$value["transaksiNote"]?></td>
                       <td><?=$value["transaksiDate"]?></td>
                       <td><?=rupiah($value["nilai_material"])?></td>

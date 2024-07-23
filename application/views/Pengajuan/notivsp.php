@@ -9,7 +9,7 @@
                   <thead>
                     <tr> 
                       <th>akunbank_pengajuanCode</th>
-                      <th>Project Code</th>
+                      <th>NOMOR Surat Pesanan</th>
                       <th>PENGAJUAN NOTE</th>
                       <th>TANGGAL PENGAJUAN</th>
                       <th>NILAI MATERIAL</th>
