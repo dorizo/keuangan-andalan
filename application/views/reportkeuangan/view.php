@@ -47,8 +47,8 @@
                    <td><?=$value["region_name"]?></td>
                    <td><?=$value["cat_name"]?></td>
                    <td><?=$value["transaksiNote"]?></td>
-                   <td><?=$value["debit"]?></td>
-                   <td><?=$value["kredit"]?></td>
+                   <td><?=rupiah($value["debit"])?></td>
+                   <td><?=rupiah($value["kredit"])?></td>
                    <td><?=$value["vendorName"]?></td>
                    </tr>
                 <?php
