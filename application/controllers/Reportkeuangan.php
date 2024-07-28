@@ -35,6 +35,8 @@ class ReportKeuangan extends CI_Controller {
         $data["projectpaid"] =  $this->db->query($projectpaid)->row(); 
         $projectcash = 'select sum(nilai_project_paid) as nilai from project a where date(a.tanggal_cashbank) between date("'.$mulai.'")  AND date("'.$selesai.'")';
         $data["projectcash"] =  $this->db->query($projectcash)->row(); 
+        $oprasional = 'select sum(kredit) as nilai from oprasional a where date(a.tanggal) between date("'.$mulai.'")  AND date("'.$selesai.'")';
+        $data["oprasional"] =  $this->db->query($oprasional)->row(); 
      
         $this->load->view('template/header' , $data);
 		$this->load->view('reportkeuangan/view' , $data);

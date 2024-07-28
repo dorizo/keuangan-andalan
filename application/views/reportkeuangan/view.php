@@ -17,14 +17,24 @@
         <div class="description-block border-right">
         <h5 class="description-header"><?=rupiah($nilaiboq->nilai)?></h5>
         <span class="description-text">Project Masuk</span>
+        <div class="description-text"><a href="">Detail <i class="fa fa-arrow-right"></i></a></div>
         </div>
 
         </div>
 
         <div class="col-sm-3 col-6">
         <div class="description-block border-right">
-        <h5 class="description-header"><?=rupiah($nilaikeluar->nilai)?></h5>
-        <span class="description-text">TOTAL PENGELUARAN</span>
+        <h5 class="description-header"><?=rupiah(($nilaikeluar->nilai+$oprasional->nilai))?></h5>
+        <div class="row">
+            <div class="col-6">
+            <p class="h6"><?=rupiah($oprasional->nilai)?></p>
+             <span class="description-text">Pengeluaran HO</span>
+            </div>
+            <div class="col-6"> 
+                <p class="h6"><?=rupiah($nilaikeluar->nilai)?></p>
+                <span class="description-text">Pengeluaran Project</span>
+            </div>
+        </div>
         </div>
 
         </div>
