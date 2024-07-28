@@ -8,7 +8,7 @@ class Oprasional extends CI_Controller {
 			parent::__construct();
 			$this->load->model('akutansi/Oprasional_model');
 			$this->load->model('akutansi/Akun_model');
-			$this->load->model('akutansi/oprasional_model');
+			$this->load->model('akutansi/Sto_model');
 			$this->load->model('akutansi/Pekerjaan_model');
 			$this->load->model('Witel_model');
 			$this->load->model('Akunakutansi_model');
