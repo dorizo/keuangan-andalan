@@ -61,8 +61,8 @@
                     $totalpaid = 0;
                     $totalBoq = 0;
                     foreach ($dataresult as $key => $value) { 
-                      $totalpaid=$totalpaid + $value["nilai_project"];
-                      $totalBoq=$totalBoq + $value["nilai_project_paid"];
+                      $totalpaid=$totalpaid + $value["nilai_project_paid"];
+                      $totalBoq=$totalBoq + $value["nilai_project"];
                     ?>
                     <tr class="odd">
                       <td><?=$value["witel"]?></td>
