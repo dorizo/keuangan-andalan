@@ -228,6 +228,7 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
           <?=projectmenu("KEUW",base_url("kas") , "fas fa-th" , "Overhead")?>
           <?=projectmenu("KEUW",base_url("akutansi/oprasional") , "fas fa-book" , "Oprasional")?>
           <?=projectmenu("SuPes",base_url("suratpesanan") , "fas fa-th" , "Surat Pesanan")?>
+          <?=projectmenu("KEUW",base_url("suratpesanan") , "fas fa-th" , "Surat Pesanan")?>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
