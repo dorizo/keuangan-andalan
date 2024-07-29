@@ -96,6 +96,15 @@ class Suratpesanan extends CI_Controller {
 		}
 	}
 
+	public function submitnilaiproject(){
+		$title = str_replace( array( '\'', '.', ',' , ';', '<', '>' ), '', $this->input->post("nilai_project_paid"));
+		$this->db->where("project_id" , $this->input->post("project_id"));
+		$this->db->limit(1);
+		$this->db->set("nilai_project_paid" ,$title);
+		$this->db->update('project');
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
     public function detail($kd){
 		$this->form_validation->set_rules('bagi[]', 'bagi', 'required');
 		$datax = $this->suratpesanan_model->viewSinggle($kd);

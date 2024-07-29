@@ -12,6 +12,7 @@ class Oprasional_model extends CI_Model {
                 $this->db->join("witel c" , "c.witel_id=a.witel_id");
                 $this->db->join("sto d" , "d.stoCode=a.stoCode");
                 $this->db->join("pekerjaan f" , "f.pekerjaanCode=a.pekerjaanCode");
+                $this->db->order_by("ID" , "DESC");
                 $db = $this->db->get("oprasional a");
 
                  return $db->result_array();
