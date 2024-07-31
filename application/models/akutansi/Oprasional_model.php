@@ -6,6 +6,8 @@ class Oprasional_model extends CI_Model {
                 $this->load->database();
         }
         public function view(){
+
+                
                 // $this->db->where("email" , $this->input->post("username"));
                 // $this->db->where("a.deleteAt is NULL");
                 $this->db->join("akutansi_akun b" , "b.kode_akun=a.kode_akun");
@@ -13,6 +15,10 @@ class Oprasional_model extends CI_Model {
                 $this->db->join("sto d" , "d.stoCode=a.stoCode");
                 $this->db->join("pekerjaan f" , "f.pekerjaanCode=a.pekerjaanCode");
                 $this->db->order_by("ID" , "DESC");
+                if($this->input->get("mulai")){
+                        $this->db->where("tanggal BETWEEN '".$this->input->get("mulai")."' AND '".$this->input->get("selesai")."'");
+                                
+                }
                 $db = $this->db->get("oprasional a");
 
                  return $db->result_array();

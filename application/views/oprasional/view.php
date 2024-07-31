@@ -5,7 +5,19 @@
               </div>
               
               <div class="card-body p-0" style="overflow-x: auto;">
-                 
+
+                <div class="card">
+                  <div class="card-body">
+                  <form method="get">
+                      <div class="row">
+                          <div class="col-5"><input type="date" class="form-control" value="<?=$this->input->get("mulai")?>" name="mulai" /></div>
+                          <div class="col-5"><input type="date" class="form-control"  value="<?=$this->input->get("selesai")?>"  name="selesai" /></div>
+                          <div class="col-2"><button type="submit" class="btn btn-success" ><i class="fa fa-search"></i></button></div>
+                    
+                      </div>  
+                  </form>
+                  </div>
+              </div>                 
                 <table  style="width:2000px" class="table table-striped table-valign-middle">
                   <thead>
                   <tr>
