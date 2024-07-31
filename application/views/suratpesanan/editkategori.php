@@ -49,7 +49,8 @@
                   <thead>
                     <tr>
                       <th>NO CODE</th>
-                      <th>Witel</th>
+                      <th>project</th>
+                      <th>project Name</th>
                       <th>NAMA SURAT PESANAN</th>
                       <th>NILAI SURAT PESANAN</th>
                       <th>Nilai Paid Project</th>
@@ -62,13 +63,13 @@
                     $totalBoq = 0;
                     foreach ($dataresult as $key => $value) { 
                       $totalpaid=$totalpaid + $value["nilai_project_paid"];
-                      $totalBoq=$totalBoq + $value["nilai_project"];
+                      $totalBoq=$totalBoq + $value["nilai_boq"];
                     ?>
                     <tr class="odd">
                       <td><?=$value["witel"]?></td>
                       <td><?php print_r($value["project_code"])?></td>
                       <td><?=$value["project_status"]?></td>
-                      <td><?=rupiah($value["nilai_project"])?></td>
+                      <td><?=rupiah($value["nilai_boq"])?></td>
                       <td><?=rupiah($value["nilai_project_paid"])?></td>
                       
                       <td>
