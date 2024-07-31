@@ -9,7 +9,7 @@
                   <thead>
                   <tr>
                     <th>CODE STO</th>
-                    <th>AKUN AKUTANSI NAME</th>
+                    <th>STO NAME</th>
                     <th width=50px>ACTION</th>
                   </tr>
                   </thead>
