@@ -68,6 +68,7 @@
                     <tr class="odd">
                       <td><?=$value["witel"]?></td>
                       <td><?php print_r($value["project_code"])?></td>
+                      <td><?php print_r($value["project_name"])?></td>
                       <td><?=$value["project_status"]?></td>
                       <td><?=rupiah($value["nilai_boq"])?></td>
                       <td><?=rupiah($value["nilai_project_paid"])?></td>
