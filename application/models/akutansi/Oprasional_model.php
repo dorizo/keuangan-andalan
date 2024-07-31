@@ -20,23 +20,27 @@ class Oprasional_model extends CI_Model {
         public function viewSinggle($role){
             // $this->db->where("email" , $this->input->post("username"));
             // $this->db->where("password" , md5($this->input->post("password")));
-            $this->db->where("oprasionalCode" , $role);
+            $this->db->where("ID" , $role);
             $db = $this->db->get("oprasional");
              return $db->row();
         }
         public function submitadd(){
                 $param = $this->input->post();
-                // $param["password"] = password_hash($this->input->post("password") , PASSWORD_DEFAULT);
+                $param["debit"] = str_replace(".", "",$this->input->post("debit"));
+                $param["kredit"] = str_replace(".", "", $this->input->post("kredit"));
                 $this->db->insert("oprasional" , $param);
         }
         public function submitedit(){
                 $param = $this->input->post();
-                $this->db->where("oprasionalCode" , $this->input->post("oprasionalCode"));
+                $param["debit"] = str_replace(".", "",$this->input->post("debit"));
+                $param["kredit"] = str_replace(".", "", $this->input->post("kredit"));
+                $this->db->where("ID" , $this->input->post("ID"));
                 $this->db->update("oprasional" , $param);
         }
         public function delete($id){
-                $this->db->where("oprasionalCode" , $id);
-                $this->db->update("oprasional" , array("deleteAt" => date("Y-m-d")));
+                $this->db->where("ID" , $id);
+                $this->db->limit(1);
+                $this->db->delete("oprasional");
         }
         public function detail($id){
             $this->db->select('*');

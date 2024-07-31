@@ -36,7 +36,7 @@
                     ?>
                     <tr>
                         <td><?php print_r($value["tanggal"]); ?></td>
-                        <td><?php print_r($value["kode_project"]); ?></td>
+                        <td><?=date("M",strtotime($value["tanggal"])); ?></td>
                         <td><?php print_r($value["kode_project"]); ?></td>
                         <td><?php print_r($value["nama_akun"]); ?></td>
                         <td><?php print_r($value["kode_akun"]); ?></td>
@@ -47,8 +47,8 @@
                         <td><?php print_r($value["regional_id"]); ?></td>
                         <td><?php print_r($value["pekerjaanName"]); ?></td>
                         <td><?php print_r($value["keterangan"]); ?></td>
-                        <td><?php print_r($value["debit"]); ?></td>
-                        <td><?php print_r($value["kredit"]); ?></td>
+                        <td><?= rupiah($value["debit"]); ?></td>
+                        <td><?=rupiah($value["kredit"]); ?></td>
                         <td><?php print_r($value["diterimaoleh"]); ?></td>
                         <td><?php print_r($value["dikirimoleh"]); ?></td>
                         <td><?php print_r($value["mandor"]); ?></td>
@@ -59,8 +59,8 @@
                               <span class="sr-only">Toggle Dropdown</span>
                             </button>
                             <div class="dropdown-menu" role="menu">
-                              <a class="dropdown-item" href="<?=base_url("akutansi/akun/edit/".$value["ID"]);?>">EDIT</a>
-                              <a class="dropdown-item" onclick="hapus('<?=base_url("akunakutansi/delete/".$value['ID']);?>')">DELETE</a>
+                              <a class="dropdown-item" href="<?=base_url("akutansi/oprasional/edit/".$value["ID"]);?>">EDIT</a>
+                              <a class="dropdown-item" onclick="hapus('<?=base_url("akutansi/oprasional/delete/".$value['ID']);?>')">DELETE</a>
                             </div>
                           </div>
                         </td>

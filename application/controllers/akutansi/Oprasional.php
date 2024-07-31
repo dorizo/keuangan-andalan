@@ -32,10 +32,12 @@ class Oprasional extends CI_Controller {
 	public function edit($id){
 		
 
+		$data["akun"] = $this->Akun_model->view();
+		$data["sto"] = $this->Sto_model->view();
+		$data["witel"] = $this->Witel_model->view();
+		$data["Pekerjaan"] = $this->Pekerjaan_model->view();
 		$this->form_validation->set_rules('stoCode', 'stoCode', 'required');
-        
         $data["dataresult"] = $this->Oprasional_model->viewSinggle($id);
-        // $data["datajob"] = $this->job_model->view();
 		$data["titlepage"] = "Vendor : ";
 	   if ($this->form_validation->run() === FALSE)
         {
