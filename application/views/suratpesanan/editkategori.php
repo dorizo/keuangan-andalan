@@ -42,6 +42,23 @@
                 </form>
               </div>
             </div>
+            <?php 
+              if(roleuser("KEUW")){
+            ?>
+            <div class="card-body">
+                <form method="post" action="<?=base_url("suratpesanan/editprojectdate")?>">
+                  <div class="row">
+                  <input type="hidden" name="suratpesananCode" value="<?=$suratpesananCode?>" />
+                      <label>TANGGAL CASH & BANK PROJECT</label>
+                     <input type="date" name="tanggal_cashbank" class="form-control" placeholder="Enter ...">
+                     <label>TANGGAL DONE PROJECT</label>
+                      <input type="date" name="project_paid" class="form-control" placeholder="Enter ...">
+                      <br />  <br />
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                  </div>
+                </form>
+            </div>
+            <?php }?>
 
 </div>
 

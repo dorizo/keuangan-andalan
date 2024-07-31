@@ -208,4 +208,14 @@ class Suratpesanan extends CI_Controller {
             redirect('/suratpesanan', 'refresh'); 
         }
     }
+
+	public function editprojectdate(){
+			$this->db->where("suratpesananCode" , $this->input->post("suratpesananCode"));
+			$P = $this->db->get("suratpesanandetail")->result_array();
+			$p = [];
+			foreach ($P as $key => $value) {
+				print_r($value);
+			}
+
+	}
 }
