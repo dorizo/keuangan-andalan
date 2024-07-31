@@ -48,6 +48,7 @@ class Sto extends CI_Controller {
 
 		$this->form_validation->set_rules('stoCode', 'stoCode', 'required');
       $data["titlepage"] = "PROYEK ";
+	  print_r($this->input->post());
 	   if ($this->form_validation->run() === FALSE)
         {
      	$this->load->view('template/header' , $data);

@@ -13,11 +13,11 @@
             <div class="card-body">
               <div class="form-group">
                 <label for="inputName">CODE STO</label>
-                <input type="text" name="stocode" id="inputName" class="form-control">
+                <input type="text" name="stoCode" id="inputName" class="form-control">
               </div>
               <div class="form-group">
                 <label for="inputName">NAMA STO</label>
-                <input type="text" name="stoname" id="inputName" class="form-control">
+                <input type="text" name="stoName" id="inputName" class="form-control">
               </div>
             </div>
             <!-- /.card-body -->
