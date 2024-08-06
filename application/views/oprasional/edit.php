@@ -45,10 +45,10 @@
                             <?php
                               foreach ($witel as $key => $value) {
                                 $selected ="";
-                                if($dataresult->witel_id==$value["witel_id"]){
+                                if($dataresult->witel_id==$value["witelhoID"]){
                                   $selected = "selected";
                                 }
-                              echo "<option value='".$value["witel_id"]."' $selected>".$value["witel_name"]."</option>";
+                              echo "<option value='".$value["witelhoID"]."' $selected>".$value["witelhoName"]."</option>";
                               }
                             ?>
                 </select>
