@@ -215,6 +215,7 @@ class Suratpesanan extends CI_Controller {
 			$p = [];
 			foreach ($P as $key => $value) {
 				print_r($value);
+				
 			}
 
 	}

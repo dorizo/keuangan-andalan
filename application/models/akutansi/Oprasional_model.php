@@ -11,7 +11,7 @@ class Oprasional_model extends CI_Model {
                 // $this->db->where("email" , $this->input->post("username"));
                 // $this->db->where("a.deleteAt is NULL");
                 $this->db->join("akutansi_akun b" , "b.kode_akun=a.kode_akun");
-                $this->db->join("witel c" , "c.witel_id=a.witel_id");
+                $this->db->join("witelho c" , "c.witelhoID=a.witel_id");
                 $this->db->join("sto d" , "d.stoCode=a.stoCode");
                 $this->db->join("pekerjaan f" , "f.pekerjaanCode=a.pekerjaanCode");
                 $this->db->order_by("ID" , "DESC");

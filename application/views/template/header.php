@@ -273,6 +273,7 @@ SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratp
           <?=projectmenu("KEUW",base_url("akutansi/akun") , "far fa-circle" , "Master Akun")?>
           <?=projectmenu("KEUW",base_url("akutansi/sto") , "far fa-circle" , "STO")?>
           <?=projectmenu("KEUW",base_url("akutansi/pekerjaan") , "far fa-circle" , "Pekerjaan")?>
+          <?=projectmenu("KEUW",base_url("akutansi/witel") , "far fa-circle" , "witel")?>
             </ul>
           </li>
           <li class="nav-item">

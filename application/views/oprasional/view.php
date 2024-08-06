@@ -54,7 +54,7 @@
                         <td><?php print_r($value["kode_akun"]); ?></td>
                         <td><?php print_r($value["nama_akun"]); ?></td>
                         <td><?php print_r($value["kategori"]); ?></td>
-                        <td><?php print_r($value["witel_name"]); ?></td>
+                        <td><?php print_r($value["witelhoName"]); ?></td>
                         <td><?php print_r($value["stoName"]); ?></td>
                         <td><?php print_r($value["regional_id"]); ?></td>
                         <td><?php print_r($value["pekerjaanName"]); ?></td>

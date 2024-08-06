@@ -42,7 +42,7 @@
                             <option value="">Pilih</option>
                             <?php
                               foreach ($witel as $key => $value) {
-                              echo "<option value='".$value["witel_id"]."'>".$value["witel_name"]."</option>";
+                              echo "<option value='".$value["witelhoID"]."'>".$value["witelhoName"]."</option>";
                               }
                             ?>
                 </select>
