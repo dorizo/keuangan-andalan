@@ -7,9 +7,10 @@
               <!-- /.card-header -->
               <div class="card-body">
                 <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row"><div class="col-sm-12">
-                <table id="example2" class="table table-bordered table-hover">
+                <table id="example2" data-order='[[ 0, "desc" ]]' class="table table-bordered table-hover">
                   <thead>
                     <tr>
+                       <th>akunbankID</th>
                       <th>akunbankCode</th>
                       <th>total_akunbank</th>
                       <th>taggal_peminjaman</th>
@@ -26,7 +27,9 @@
                     foreach ($dataresult as $key => $value) {
                     ?>
                     <tr class="odd">
-                      <td class="sorting_1 dtr-control"><?=$value["akunbankName"]?></td>
+                    
+                    <td class="sorting_1"><?=$value["akunbankCode"]?></td>
+                      <td class=""><?=$value["akunbankName"]?></td>
                       <td><?=rupiah($value["total_akunbank"])?></td>
                       <td><?=tanggalindo($value["taggal_peminjaman"])?></td>
                       <td><?=rupiah($value["saldo_sekarang"])?></td>
@@ -43,6 +46,7 @@
                 </tbody>
                  <tfoot>
                     <tr>
+                    <th>akunbankID</th>
                       <th>akunbankCode</th>
                       <th>total_akunbank</th>
                       <th>taggal_peminjaman</th>

@@ -6,6 +6,7 @@ class Akunbank_model extends CI_Model {
                 $this->load->database();
         }
         public function view(){
+            $this->db->order_by("akunbankCode" , "desc");
             $db = $this->db->get("akunbank");
             return $db->result_array();
         }
