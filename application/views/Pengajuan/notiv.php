@@ -35,7 +35,9 @@
                       <td><?=rupiah($value["transaksiJumlah"])?></td>
                      
                       <td><?=$value["statusTransaksi"]?><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
-                      <td width="120px">
+                      <td width="180px">
+                      <a  onclick="fungsidelete(<?=$value['akunbank_pengajuanCode']?>)" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                     
                       <a target="_BLANK" href="<?=base_url("/project/detail/".$value["project_id"])?>" class="btn btn-success"><i class="fas fa-search"></i></a>
                       <a href="<?=$value["pengajuanstatusCode"]==1?base_url("/transaksi/add/".$value["project_id"]."/".$value["akunbank_pengajuanCode"]):base_url("/biayalain/add/".$value["akunbank_pengajuanCode"])?>" class="btn btn-success"><i class="fas fa-arrow-right"></i></a>
                       </td>
@@ -63,3 +65,24 @@
               <!-- /.card-body -->
             </div>
           </div>
+
+          <script>
+
+function fungsidelete(xx){
+    Swal.fire({
+        title: "APAKAH ANDA YAKIN INGIN REJECT PENGAJUAN INI?",
+        showDenyButton: true,
+        showCancelButton: false,
+        confirmButtonText: "Ya",
+        denyButtonText: `Tidak`
+        }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+            window.location.href="<?=base_url("pengajuan/reject/")?>"+xx
+
+        } else if (result.isDenied) {
+            Swal.fire("Cancel Proses", "", "info");
+        }
+        });
+}
+</script>

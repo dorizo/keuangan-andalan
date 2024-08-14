@@ -119,7 +119,13 @@ class Pengajuan extends CI_Controller {
 		redirect($_SERVER['HTTP_REFERER']);  
     }
 
-
+	public function reject($d){
+		$this->db->set("statusTransaksi" , "REJECT");
+		$this->db->where("akunbank_pengajuanCode" ,$d);
+		$this->db->limit(1);
+		$this->db->update("akunbank_pengajuan");
+		redirect($_SERVER['HTTP_REFERER']);  
+    }
 	
 	public function pengajuanho(){
 		
@@ -136,4 +142,5 @@ class Pengajuan extends CI_Controller {
 		$this->load->view('Pengajuan/pengajuanho' , $data);
 		$this->load->view('template/footer');
 	}
+	
 }
