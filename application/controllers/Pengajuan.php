@@ -118,4 +118,22 @@ class Pengajuan extends CI_Controller {
         $this->akunbank_pengajuan_model->delete($d);
 		redirect($_SERVER['HTTP_REFERER']);  
     }
+
+
+	
+	public function pengajuanho(){
+		
+		$data["titlepage"] = "NOTIFIKASI";
+		
+        $this->db->join("witelho c" , "c.witelhoID=a.witel_id");
+        $this->db->join("sto d" , "d.stoCode=a.stoCode");
+        $this->db->join("pekerjaan f" , "f.pekerjaanCode=a.pekerjaanCode");
+		$this->db->where("kategoriakutansi" , "pending");
+        $this->db->order_by("orCode" , "DESC");
+        $data["datatable"] = $this->db->get("oprasionalrequest a")->result_array();
+		$data["pluginjs"] = "project.js?2s2";
+		$this->load->view('template/header' , $data);
+		$this->load->view('Pengajuan/pengajuanho' , $data);
+		$this->load->view('template/footer');
+	}
 }

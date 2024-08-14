@@ -150,6 +150,14 @@
 SELECT * FROM `akunbank_pengajuan` JOIN `suratpesanan` ON `suratpesanan`.`suratpesananCode`=`akunbank_pengajuan`.`project_id` JOIN `witel` ON `witel`.`witel_id`=`suratpesanan`.`witel_id` WHERE `akunbank_pengajuan`.`statusTransaksi` = 'PENDING'")->num_rows()?> PENDING PENGAJUAN
           </a>
           <?php } ?>
+          
+          <?php if(kondisipermision("KEUW")){ ?>
+          <span class="dropdown-item dropdown-header">Pengajuan HO</span>
+          <div class="dropdown-divider"></div>
+          <a href="<?=base_url("pengajuan/pengajuanho");?>" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> <?=$this->db->query("select * from oprasionalrequest WHERE `kategoriakutansi` = 'PENDING'")->num_rows()?> PENDING PENGAJUAN HO
+          </a>
+          <?php } ?>
         </div>
       </li>
       <li class="nav-item dropdown">

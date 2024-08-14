@@ -127,4 +127,44 @@ class Oprasional extends CI_Controller {
 		$update = $this->db->update('role_permission',$update, array('rpCode' => $id));
 		redirect($_SERVER['HTTP_REFERER']);
 	}
+	public function reject($id){ 
+		$update = array(
+			'kategoriakutansi' => "reject",
+
+		);
+		$update = $this->db->update('oprasionalrequest',$update, array('orCode' => $id));
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	public function pengajuan($id){
+		$this->form_validation->set_rules('stoCode', 'stoCode', 'required');
+      $data["titlepage"] = "PROYEK ";
+		$this->db->join("witelho c" , "c.witelhoID=a.witel_id");
+		$this->db->join("sto d" , "d.stoCode=a.stoCode");
+		$this->db->join("pekerjaan f" , "f.pekerjaanCode=a.pekerjaanCode");
+		$this->db->where("kategoriakutansi" , "pending");
+		$this->db->where("orCode" , $id);
+		$data["result"] = $this->db->get("oprasionalrequest a")->row();
+		$data["orCode"] = $id;
+	  
+		$data["akun"] = $this->Akun_model->view();
+		$data["sto"] = $this->Sto_model->view();
+		$data["witel"] = $this->Witel_model->view();
+		$data["Pekerjaan"] = $this->Pekerjaan_model->view();
+	   if ($this->form_validation->run() === FALSE)
+        {
+     	$this->load->view('template/header' , $data);
+		$this->load->view('oprasional/pengajuan' , $data);
+		$this->load->view('template/footer');
+		
+		}else{
+			$this->db->set("kategoriakutansi" , "approve");
+			$this->db->where("orCode" , $id);
+			$this->db->update("oprasionalrequest");
+			$this->Oprasional_model->submitadd();	
+            redirect('akutansi/oprasional', 'refresh');
+		}
+	}
+
+	
 }
