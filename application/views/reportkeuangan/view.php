@@ -118,67 +118,74 @@ function excel(){
           $($thisbtn).html(
               `<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Loading...`
           );
-          $.ajax({
-              url: "<?=base_url("reportkeuangan/export?mulai=")?>"+m[0].value+"&selesai="+m[1].value,
-              type: "post",
-              dataType: "json",
-              data: m,
-              success: function(data) {
+          window.location.href ="<?=base_url("reportkeuangan/exportnew?mulai=")?>"+m[0].value+"&selesai="+m[1].value;
+          
+            $thisbtn.prop("disabled", false);
+            $($thisbtn).html(
+                `<i class="fa fa-print"></i> Export`
+            );
+        
+          //   $.ajax({
+        //       url: ",
+        //       type: "get",
+        //       dataType: "json",
+        //       data: m,
+        //       success: function(data) {
 
-                let Heading = [
-                    ['Tanggal', 'Bulan', 'Kode Project', 'Nama Akun', 'Kode Akun', 'Akun', 'kategori', 'witel', 'sto', 'regional', 'pekerjaan', 'Keterangan', 'debit', 'kredit', 'diterima oleh', 'dikirim oleh', 'mandor']
-                ];
-                var myFile = "Report_PENYELESAIAN_" + Date.now() + ".xlsx";
-                var myWorkSheet = XLSX.utils.json_to_sheet(data);
-                XLSX.utils.sheet_add_aoa(myWorkSheet, Heading, {
-                    origin: 0
-                });
-                myWorkSheet['!cols'] = [{
-                    width: 20
-                }, {
-                    width: 10
-                }, {
-                    width: 30
-                }, {
-                    width: 30
-                }, {
-                    width: 30
-                }, {
-                    width: 50
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 40
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }, {
-                    width: 20
-                }];
-                // var merges = myWorkSheet['!merges'] = [{ s: 'A1', e: 'D1' }];
-                var myWorkBook = XLSX.utils.book_new();
-                XLSX.utils.book_append_sheet(myWorkBook, myWorkSheet, "myWorkSheet");
-                XLSX.writeFile(myWorkBook, myFile);
-                console.log(data)
-                $thisbtn.prop("disabled", false);
-                $($thisbtn).html(
-                    `<i class="fa fa-print"></i> Export`
-                );
-              }
-            });
+        //         // let Heading = [
+        //         //     ['Tanggal', 'Bulan', 'Kode Project', 'Nama Akun', 'Kode Akun', 'Akun', 'kategori', 'witel', 'sto', 'regional', 'pekerjaan', 'Keterangan', 'debit', 'kredit', 'diterima oleh', 'dikirim oleh', 'mandor']
+        //         // ];
+        //         // var myFile = "Report_PENYELESAIAN_" + Date.now() + ".xlsx";
+        //         // var myWorkSheet = XLSX.utils.json_to_sheet(data);
+        //         // XLSX.utils.sheet_add_aoa(myWorkSheet, Heading, {
+        //         //     origin: 0
+        //         // });
+        //         // myWorkSheet['!cols'] = [{
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 10
+        //         // }, {
+        //         //     width: 30
+        //         // }, {
+        //         //     width: 30
+        //         // }, {
+        //         //     width: 30
+        //         // }, {
+        //         //     width: 50
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 40
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }, {
+        //         //     width: 20
+        //         // }];
+        //         // // var merges = myWorkSheet['!merges'] = [{ s: 'A1', e: 'D1' }];
+        //         // var myWorkBook = XLSX.utils.book_new();
+        //         // XLSX.utils.book_append_sheet(myWorkBook, myWorkSheet, "myWorkSheet");
+        //         // XLSX.writeFile(myWorkBook, myFile);
+        //         // console.log(data)
+        //         $thisbtn.prop("disabled", false);
+        //         $($thisbtn).html(
+        //             `<i class="fa fa-print"></i> Export`
+        //         );
+        //       }
+        //     });
         }
 
 </script>
