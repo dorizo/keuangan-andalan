@@ -194,7 +194,7 @@
                  <td> <?=$value->log_date?> </td>
                  <td><?=$value->project_status?> </td>
                  <td> <?=$value->ket_upload?> </td>
-                 <td> <a target="_blank" href="<?="https://storage.cloud.google.com/ciptateknologimuda/uploads/".$value->filedata?>" ><i class="fa fa-download" aria-hidden="true"></i></a>  </td>
+                 <td> <a target="_blank" href="<?="https://storage.googleapis.com/ciptateknologimuda/uploads/".$value->filedata?>" ><i class="fa fa-download" aria-hidden="true"></i></a>  </td>
                            
                   </tr>
                         <?php
