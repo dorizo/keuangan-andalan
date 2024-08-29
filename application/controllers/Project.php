@@ -316,6 +316,7 @@ class Project extends CI_Controller {
         $map = directory_map($file, false , true);
 	
 		$data["upload_list"] = $this->db->from("karyawan_upload")->where("project_id" , $id)->order_by("log_date","desc")->get()->result();
+		$data["lainlain"] = $this->db->from("biayalain")->join("biayalaindetail" , "biayalain.biayalainCode=biayalaindetail.biayalainCode")->join("project" , "project.project_id=biayalaindetail.project_id")->where("biayalaindetail.project_id" , $id)->get()->result_array();
 		
 		$data["map"] =  $map;
 		$this->load->view('template/header' , $data);

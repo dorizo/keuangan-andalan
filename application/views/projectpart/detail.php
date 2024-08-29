@@ -139,6 +139,25 @@
                   <?php 
                    }
                   ?>
+
+                  <?php
+                  foreach ($lainlain as $key => $value) {
+                    print_r($value["tanggal_transaksi"]);
+                    $totalbunga = $totalbunga + hitungbunga($value["tanggal_transaksi"] ,$value["project_paid"] ,$value["biayalain"] );
+                  ?>
+                    <tr>
+                      <td><?=$value["keterangan"]?></td>
+                      <td><?=tanggalindo($value["tanggal_transaksi"])?></td>
+                      <td><?=rupiah($value["biayalain"])?></td>
+                      <td><?=countday($value["tanggal_transaksi"] ,$value["project_paid"]);?></td>
+                      <td><a target="_BLANK" href="<?=base_url('pembayaran/'.$value['upload_file'])?>"> <i class="fa fa-download"></i></a> </td>
+                      <td><?=rupiah(hitungbunga($value["tanggal_transaksi"] ,$value["project_paid"] ,$value["biayalain"] ));?></td>
+                    </tr>
+                  <?php 
+                   }
+                  ?>
+                  
+                  
                   <tr>
                     <td colspan=5 ></td>
                     <td><?=rupiah($totalbunga)?></td>
